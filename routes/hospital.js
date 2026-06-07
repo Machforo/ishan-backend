@@ -19,6 +19,7 @@ singletons.forEach(({ path, model }) => {
 const collections = [
   { path: '/doctors', model: models.HospitalDoctor },
   { path: '/departments', model: models.HospitalDepartment },
+  { path: '/testimonials', model: models.HospitalTestimonial },
 ];
 
 collections.forEach(({ path, model }) => {

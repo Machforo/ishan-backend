@@ -78,7 +78,7 @@ const navMenuItemSchema = new mongoose.Schema({
 
 const landingPageSchema = new mongoose.Schema({
   logo: { type: String, default: "https://www.ishan.ac/icons/ishan-logo.svg" },
-  newsFlash: [{ text: String }], // For "News Reflected" in Home Banner
+  newsFlash: [{ tag: String, date: String, title: String, body: String }], // For "News Reflected" in Home Banner
   hero: { 
     banners: [bannerSchema] 
   },
@@ -89,6 +89,10 @@ const landingPageSchema = new mongoose.Schema({
     pg: [{ name: String, school: String }],
     diploma: [{ name: String, school: String }],
     doctoral: [{ name: String, school: String }]
+  },
+  programmeSection: {
+    heading: { type: String, default: "Discover your future-ready programme" },
+    subheading: { type: String, default: "Explore programmes across Law, Management, Pharmacy, Ayurveda and Education, approved by BCI, AICTE, PCI, NCISM and NCTE." }
   },
   collegeSection: {
     heading: { type: String, default: "Our 5 Colleges" },
@@ -125,7 +129,9 @@ const landingPageSchema = new mongoose.Schema({
     location: { type: String, default: "Greater Noida, UP" },
     admissionNumber: { type: String, default: "+91-120-2326600" },
     email: { type: String, default: "admissions@ishan.ac" },
-    officeHours: { type: String, default: "9:00 AM - 5:00 PM" }
+    officeHours: { type: String, default: "9:00 AM - 5:00 PM" },
+    instagramHandle: { type: String, default: "@ishan_institutions" },
+    instagramLink: { type: String, default: "#" }
   },
   footerLinks: {
     quickLinks: [{ text: String }],

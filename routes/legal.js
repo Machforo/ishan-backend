@@ -19,6 +19,8 @@ singletons.forEach(({ path, model }) => {
 const collections = [
   { path: '/faculty', model: models.LegalFaculty },
   { path: '/programs', model: models.LegalProgram },
+  { path: '/testimonials', model: models.LegalTestimonial },
+  { path: '/news', model: models.LegalNews },
 ];
 
 collections.forEach(({ path, model }) => {

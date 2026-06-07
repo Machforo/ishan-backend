@@ -7,6 +7,7 @@ const authMiddleware = require('../middleware/auth');
 router.post('/', leadController.createLead);
 
 // Protected: Admin viewing/managing leads
+router.get('/all', authMiddleware, leadController.getAllLeads);
 router.get('/', authMiddleware, leadController.getLeads);
 router.put('/:id/status', authMiddleware, leadController.updateLeadStatus);
 

@@ -38,10 +38,30 @@ const infrastructureSchema = new mongoose.Schema({
 // --- Shared Lead Schema ---
 const Lead = require('./Lead');
 
+// --- Testimonials Collection ---
+const testimonialSchema = new mongoose.Schema({
+  name: String,
+  image: String,
+  designation: String,
+  feedback: String,
+  type: String
+}, { timestamps: true });
+
+// --- News Collection ---
+const newsSchema = new mongoose.Schema({
+  image: String,
+  title: String,
+  date: String,
+  description: String,
+  link: String
+}, { timestamps: true });
+
 module.exports = {
   LegalHomePage: mongoose.model('LegalHomePage', homePageSchema, 'legal_homepages'),
   LegalFaculty: mongoose.model('LegalFaculty', facultySchema, 'legal_faculty'),
   LegalProgram: mongoose.model('LegalProgram', programSchema, 'legal_programs'),
   LegalInfrastructure: mongoose.model('LegalInfrastructure', infrastructureSchema, 'legal_infrastructure'),
+  LegalTestimonial: mongoose.model('LegalTestimonial', testimonialSchema, 'legal_testimonials'),
+  LegalNews: mongoose.model('LegalNews', newsSchema, 'legal_news'),
   LegalLead: mongoose.model('LegalLead', Lead.schema, 'legal_leads'),
 };

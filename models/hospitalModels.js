@@ -36,6 +36,15 @@ const servicesSchema = new mongoose.Schema({
   features: [String]
 }, { timestamps: true });
 
+// --- Testimonials Collection ---
+const testimonialSchema = new mongoose.Schema({
+  name: String,
+  image: String,
+  designation: String,
+  feedback: String,
+  type: String
+}, { timestamps: true });
+
 // --- Shared Lead Schema ---
 const Lead = require('./Lead');
 
@@ -44,5 +53,6 @@ module.exports = {
   HospitalDoctor: mongoose.model('HospitalDoctor', doctorSchema, 'hospital_doctors'),
   HospitalDepartment: mongoose.model('HospitalDepartment', departmentSchema, 'hospital_departments'),
   HospitalServices: mongoose.model('HospitalServices', servicesSchema, 'hospital_services'),
+  HospitalTestimonial: mongoose.model('HospitalTestimonial', testimonialSchema, 'hospital_testimonials'),
   HospitalLead: mongoose.model('HospitalLead', Lead.schema, 'hospital_leads'),
 };

@@ -8,6 +8,7 @@ const models = require('../models/pharmacyModels');
 const singletons = [
   { path: '/homepage', model: models.PharmacyHomePage },
   { path: '/research', model: models.PharmacyResearch },
+  { path: '/contact', model: models.PharmacyContact },
 ];
 
 singletons.forEach(({ path, model }) => {
@@ -19,6 +20,8 @@ singletons.forEach(({ path, model }) => {
 const collections = [
   { path: '/faculty', model: models.PharmacyFaculty },
   { path: '/programs', model: models.PharmacyProgram },
+  { path: '/testimonials', model: models.PharmacyTestimonial },
+  { path: '/news', model: models.PharmacyNews },
 ];
 
 collections.forEach(({ path, model }) => {
