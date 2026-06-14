@@ -79,8 +79,8 @@ const navMenuItemSchema = new mongoose.Schema({
 const landingPageSchema = new mongoose.Schema({
   logo: { type: String, default: "https://www.ishan.ac/icons/ishan-logo.svg" },
   newsFlash: [{ tag: String, date: String, title: String, body: String }], // For "News Reflected" in Home Banner
-  hero: { 
-    banners: [bannerSchema] 
+  hero: {
+    banners: [bannerSchema]
   },
   highlights: [{ text: String }],
   programCategories: [{ id: String, label: String }],
@@ -92,11 +92,15 @@ const landingPageSchema = new mongoose.Schema({
   },
   programmeSection: {
     heading: { type: String, default: "Discover your future-ready programme" },
-    subheading: { type: String, default: "Explore programmes across Law, Management, Pharmacy, Ayurveda and Education, approved by BCI, AICTE, PCI, NCISM and NCTE." }
+    subheading: { type: String, default: "Explore programmes across Law, Management, Pharmacy, Ayurveda and Education, approved by BCI, AICTE, PCI, NCISM and NCTE." },
+    searchPlaceholder: { type: String, default: "Find Programmes" },
+    ctaApply: { type: String, default: "Apply Now" },
+    ctaViewAll: { type: String, default: "View All" }
   },
   collegeSection: {
     heading: { type: String, default: "Our 5 Colleges" },
-    subheading: { type: String, default: "Specialist faculties. One campus." }
+    subheading: { type: String, default: "Specialist faculties. One campus." },
+    description: { type: String, default: "Across Law, Management, Pharmacy, Ayurveda and Education, choose your calling from the Ishan ecosystem, all approved by respective national regulators." }
   },
   colleges: [collegeSchema],
   campusLife: {
@@ -113,8 +117,19 @@ const landingPageSchema = new mongoose.Schema({
   },
   researchCards: [researchCardSchema],
   researchLinks: [{ text: String }],
+  placementSection: {
+    image: { type: String, default: "https://images.pexels.com/photos/31040302/pexels-photo-31040302.jpeg?w=900" },
+    badgeNum: { type: String, default: "100%" },
+    badgeText: { type: String, default: "Placement Assistance" },
+    heading: { type: String, default: "Placement Support at" },
+    highlight: { type: String, default: "Ishan Educational Institutions" },
+    description: { type: String, default: "Our dedicated career advisory and placement team provides comprehensive career counselling to identify the unique and distinctive goals of each student." },
+    ctaText: { type: String, default: "Placement Process" },
+    ctaLink: { type: String, default: "#" },
+    recruitersHeading: { type: String, default: "Our Top Recruiters" }
+  },
   placementStats: [{ num: String, label: String }],
-  recruiters: [{ name: String }],
+  recruiters: [{ name: String, icon: String }],
   testimonials: [testimonialSchema],
   achievements: [achievementSchema],
   aboutImages: [{ url: String }],
@@ -132,6 +147,9 @@ const landingPageSchema = new mongoose.Schema({
     officeHours: { type: String, default: "9:00 AM - 5:00 PM" },
     instagramHandle: { type: String, default: "@ishan_institutions" },
     instagramLink: { type: String, default: "#" }
+  },
+  footerLabels: {
+    about: { type: String }, admissions: { type: String }, quickLinks: { type: String }, approvals: { type: String }, group: { type: String }, copyright: { type: String }, privacy: { type: String }, terms: { type: String }, sitemap: { type: String }
   },
   footerLinks: {
     quickLinks: [{ text: String }],

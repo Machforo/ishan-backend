@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const {
-  IimtHomePage, IimtAboutUs, IimtCourses, IimtCampusLife,
+  IimtHomePage, IimtAboutUs, IimtCourse, IimtCampusLife,
   IimtAdmissions, IimtPlacements, IimtGallery, IimtNewsEvent,
   IimtFeePayment, IimtStudentPortal, IimtContactUs
 } = require('./models/iimtModels');
@@ -82,6 +82,19 @@ async function seed() {
     ],
     contactUs: {
       content: "Ready to start your journey? Speak with our admissions counsellors today. We're here to guide you through programme selection, eligibility, and the admission process."
+    },
+    lifeAtIimt: {
+      heading: "Experience the Holistic Campus Ecosystem",
+      images: [
+        "https://www.burohappold.com/wp-content/uploads/2022/05/BS-CMU_02_Albert-Vecerka-Esto-1024x683.jpg",
+        "https://studyus.dapodik.co.id/wp-content/uploads/2023/08/Exploring-US-University-Facilities-and-Resources-8QR-MPR.jpg",
+        "https://www.kclas.ac.in/wp-content/uploads/2021/01/gallery-05.jpg",
+        "https://www.sanskriti.edu.in/images/sports1.jpg",
+        "https://www.accurate.in/engg/img/sports/sports.webp",
+        "https://woxsen.edu.in/uploads/A20230824084254.webp",
+        "https://lavasa.christuniversity.in/uploads/userfiles/IMG_1100_JPG.jpg",
+        "https://www.iecaonline.com/wp-content/uploads/2018/03/College-Campus-cropped-scaled.jpg"
+      ]
     }
   });
   console.log('✅ Seeded: Homepage');
@@ -147,71 +160,75 @@ async function seed() {
   console.log('✅ Seeded: About Us');
 
   // ─── 3. COURSES ──────────────────────────────────────────────────────────────
-  await IimtCourses.deleteMany({});
-  await IimtCourses.create({
-    courses: [
-      {
-        programName: "BBA",
-        duration: "3 Years (6 Semesters)",
-        annualFee: "₹50,000 per year",
-        annualIntake: "60 Seats",
-        eligibility: "10+2 from any recognised board with any stream",
-        overview: "The Bachelor of Business Administration (BBA) programme at IIMT is designed to develop the next generation of business leaders. The programme provides a rigorous grounding in management principles, economics, marketing, human resources, and finance — while simultaneously developing soft skills, analytical thinking, and leadership capabilities.\n\nStudents benefit from live industry projects, guest lectures by corporate professionals, and a dedicated placement programme. The CUET-based admission process ensures meritocratic selection.",
-        curriculumStructure: "Semester 1-2: Business Fundamentals — Principles of Management, Business Communication, Economics, Financial Accounting, Business Mathematics\n\nSemester 3-4: Core Specialisation — Marketing Management, Human Resource Management, Financial Management, Business Law, Research Methodology\n\nSemester 5-6: Advanced & Applied — Strategic Management, Entrepreneurship, Electives (Marketing/HR/Finance), Live Project, Campus Placement Preparation",
-        careerScope: "BBA graduates from IIMT are equipped for roles in Banking & Financial Services, Marketing & Sales, Human Resource Management, Retail Management, Entrepreneurship, and preparation for MBA programmes at premier institutions.\n\nRecent BBA graduates have joined HDFC Bank, ICICI Bank, Kotak Mahindra, Amazon, Byju's, and various FMCG and consulting firms."
-      },
-      {
-        programName: "B.Com",
-        duration: "3 Years (6 Semesters)",
-        annualFee: "₹45,000 per year",
-        annualIntake: "60 Seats",
-        eligibility: "10+2 with Commerce from any recognised board",
-        overview: "The Bachelor of Commerce (B.Com) programme at IIMT provides a comprehensive education in accounting, commerce, taxation, and financial management. The programme is uniquely enhanced with practical certifications in Tally, GST Filing, and Auditing — making graduates immediately work-ready.\n\nAffiliated to CCS University, the B.Com degree is recognised by all government and private institutions. Graduates are eligible for CA, ICWA, CS, and MBA programmes.",
-        curriculumStructure: "Semester 1-2: Financial Accounting, Business Economics, Business Mathematics & Statistics, Corporate Law\n\nSemester 3-4: Cost Accounting, Income Tax, Company Law, Auditing, Banking & Insurance\n\nSemester 5-6: Advanced Accounting, GST & Indirect Taxation, Financial Management, Tally ERP Certification, Internship",
-        careerScope: "B.Com graduates are hired for roles in Accounting, Banking, Taxation, Financial Analysis, and Auditing. IIMT's Tally and GST certification gives graduates an edge in CA firms, banks, and corporate finance departments.\n\nTop recruiters include Deloitte, KPMG, HDFC Bank, Axis Bank, and numerous regional firms."
-      },
-      {
-        programName: "BCA",
-        duration: "3 Years (6 Semesters)",
-        annualFee: "₹55,000 per year",
-        annualIntake: "60 Seats",
-        eligibility: "10+2 from any recognised board (PCM preferred)",
-        overview: "The Bachelor of Computer Applications (BCA) programme at IIMT prepares students for careers in software development, database management, web technologies, and IT infrastructure. The programme combines strong theoretical foundations with extensive hands-on lab sessions — ensuring graduates can contribute from Day 1 in a professional environment.\n\nStudents have access to 120+ computer systems, licensed development environments, and IIMT's dedicated Python and web development lab.",
-        curriculumStructure: "Semester 1-2: Fundamentals of Computing, C Programming, Web Technologies (HTML/CSS), Mathematics for Computing, Database Basics\n\nSemester 3-4: Data Structures, Java Programming, DBMS with MySQL, Networking Fundamentals, Software Engineering\n\nSemester 5-6: Python Programming, Cloud Computing, Android Development, Cyber Security Basics, Final Project",
-        careerScope: "BCA graduates join as Software Developers, Web Developers, IT Support Engineers, Database Administrators, and Systems Analysts. Many BCA graduates advance to MCA or MTech programmes.\n\nRecent placement partners include Infosys, Wipro, TCS, HCL, Tech Mahindra, and various software startups."
-      },
-      {
-        programName: "M.Com",
-        duration: "2 Years (4 Semesters)",
-        annualFee: "₹40,000 per year",
-        annualIntake: "30 Seats",
-        eligibility: "B.Com or equivalent graduation with minimum 50% marks",
-        overview: "The Master of Commerce (M.Com) programme at IIMT is a postgraduate programme that deepens the student's understanding of advanced commerce, financial management, corporate governance, and research methods.\n\nM.Com graduates are positioned for senior roles in finance, teaching, research, and corporate planning. The programme is ideal for students pursuing NET/JRF for academic careers.",
-        curriculumStructure: "Semester 1-2: Advanced Financial Accounting, Business Environment, Research Methodology, Corporate Tax Planning, Managerial Economics\n\nSemester 3-4: Securities & Capital Markets, International Finance, Dissertation / Major Project, Electives in Specialisation Area",
-        careerScope: "M.Com graduates occupy roles in Corporate Finance, Investment Banking, Academic Research, and CA/ICWA offices. Many pursue UGC NET/JRF to enter academia.\n\nInstitutions like Deloitte, RBI, SEBI, and state PSUs recruit M.Com postgraduates from IIMT."
-      },
-      {
-        programName: "B.Ed",
-        duration: "2 Years (4 Semesters)",
-        annualFee: "₹60,000 per year",
-        annualIntake: "100 Seats",
-        eligibility: "Graduation in any subject with minimum 50% marks",
-        overview: "The Bachelor of Education (B.Ed) programme at IIMT is approved by the National Council for Teacher Education (NCTE) and affiliated to CCS University, Meerut. This professional teacher training programme equips graduates with the pedagogical skills, subject knowledge, and teaching methodologies required to excel in secondary and senior secondary education.\n\nThe 2-year curriculum includes extensive school internship placements in affiliated schools across Greater Noida — providing real classroom experience under expert supervision.",
-        curriculumStructure: "Year 1: Childhood and Growing Up, Contemporary India and Education, Learning and Teaching, Language Across the Curriculum, Understanding Disciplines & Subjects, School Internship I\n\nYear 2: Gender, School and Society, Knowledge and Curriculum, Assessment for Learning, Creating Inclusive School, Specialisation Pedagogy Subjects, School Internship II",
-        careerScope: "B.Ed graduates are eligible to teach at secondary and senior secondary schools (Classes 6-12) across India. Teaching opportunities exist in CBSE, ICSE, state board schools, both private and government.\n\nRecent B.Ed graduates from IIMT have joined Delhi Public School, Ryan International, KV, and various state government schools through TET/CTET qualifying examinations."
-      },
-      {
-        programName: "M.Ed",
-        duration: "2 Years (4 Semesters)",
-        annualFee: "₹55,000 per year",
-        annualIntake: "50 Seats",
-        eligibility: "B.Ed with minimum 55% marks",
-        overview: "The Master of Education (M.Ed) programme at IIMT is the highest professional qualification for educators, approved by NCTE. It trains educational administrators, researchers, teacher educators, and curriculum specialists to reform and lead educational institutions.\n\nM.Ed graduates are well-positioned for senior roles in school administration, teacher training institutions (DIETs, CTEs), and educational policy bodies.",
-        curriculumStructure: "Year 1: Education in Emerging Indian Society, Educational Research & Statistics, Philosophical Perspectives in Education, Psychological Perspectives in Education, Sociological Perspectives\n\nYear 2: Educational Administration & Management, Curriculum Development, ICT in Education, Specialisation Elective, Dissertation / Research Project",
-        careerScope: "M.Ed graduates work as Teacher Educators, Educational Administrators, Curriculum Designers, Educational Consultants, and Researchers. They are eligible for Lecturer/Assistant Professor posts in B.Ed colleges and are NET/JRF qualified for academic research roles."
-      },
-    ]
-  });
+  await IimtCourse.deleteMany({});
+  await IimtCourse.create([
+    {
+      programName: "BBA",
+      duration: "3 Years (6 Semesters)",
+      annualFee: "₹50,000 per year",
+      annualIntake: "60 Seats",
+      eligibility: "10+2 from any recognised board with any stream",
+      overview: "The Bachelor of Business Administration (BBA) programme at IIMT is designed to develop the next generation of business leaders. The programme provides a rigorous grounding in management principles, economics, marketing, human resources, and finance — while simultaneously developing soft skills, analytical thinking, and leadership capabilities.\n\nStudents benefit from live industry projects, guest lectures by corporate professionals, and a dedicated placement programme. The CUET-based admission process ensures meritocratic selection.",
+      curriculumStructure: "Semester 1-2: Business Fundamentals — Principles of Management, Business Communication, Economics, Financial Accounting, Business Mathematics\n\nSemester 3-4: Core Specialisation — Marketing Management, Human Resource Management, Financial Management, Business Law, Research Methodology\n\nSemester 5-6: Advanced & Applied — Strategic Management, Entrepreneurship, Electives (Marketing/HR/Finance), Live Project, Campus Placement Preparation",
+      careerScope: "BBA graduates from IIMT are equipped for roles in Banking & Financial Services, Marketing & Sales, Human Resource Management, Retail Management, Entrepreneurship, and preparation for MBA programmes at premier institutions.\n\nRecent BBA graduates have joined HDFC Bank, ICICI Bank, Kotak Mahindra, Amazon, Byju's, and various FMCG and consulting firms.",
+      slug: "bba"
+    },
+    {
+      programName: "B.Com",
+      duration: "3 Years (6 Semesters)",
+      annualFee: "₹45,000 per year",
+      annualIntake: "60 Seats",
+      eligibility: "10+2 with Commerce from any recognised board",
+      overview: "The Bachelor of Commerce (B.Com) programme at IIMT provides a comprehensive education in accounting, commerce, taxation, and financial management. The programme is uniquely enhanced with practical certifications in Tally, GST Filing, and Auditing — making graduates immediately work-ready.\n\nAffiliated to CCS University, the B.Com degree is recognised by all government and private institutions. Graduates are eligible for CA, ICWA, CS, and MBA programmes.",
+      curriculumStructure: "Semester 1-2: Financial Accounting, Business Economics, Business Mathematics & Statistics, Corporate Law\n\nSemester 3-4: Cost Accounting, Income Tax, Company Law, Auditing, Banking & Insurance\n\nSemester 5-6: Advanced Accounting, GST & Indirect Taxation, Financial Management, Tally ERP Certification, Internship",
+      careerScope: "B.Com graduates are hired for roles in Accounting, Banking, Taxation, Financial Analysis, and Auditing. IIMT's Tally and GST certification gives graduates an edge in CA firms, banks, and corporate finance departments.\n\nTop recruiters include Deloitte, KPMG, HDFC Bank, Axis Bank, and numerous regional firms.",
+      slug: "bcom"
+    },
+    {
+      programName: "BCA",
+      duration: "3 Years (6 Semesters)",
+      annualFee: "₹55,000 per year",
+      annualIntake: "60 Seats",
+      eligibility: "10+2 from any recognised board (PCM preferred)",
+      overview: "The Bachelor of Computer Applications (BCA) programme at IIMT prepares students for careers in software development, database management, web technologies, and IT infrastructure. The programme combines strong theoretical foundations with extensive hands-on lab sessions — ensuring graduates can contribute from Day 1 in a professional environment.\n\nStudents have access to 120+ computer systems, licensed development environments, and IIMT's dedicated Python and web development lab.",
+      curriculumStructure: "Semester 1-2: Fundamentals of Computing, C Programming, Web Technologies (HTML/CSS), Mathematics for Computing, Database Basics\n\nSemester 3-4: Data Structures, Java Programming, DBMS with MySQL, Networking Fundamentals, Software Engineering\n\nSemester 5-6: Python Programming, Cloud Computing, Android Development, Cyber Security Basics, Final Project",
+      careerScope: "BCA graduates join as Software Developers, Web Developers, IT Support Engineers, Database Administrators, and Systems Analysts. Many BCA graduates advance to MCA or MTech programmes.\n\nRecent placement partners include Infosys, Wipro, TCS, HCL, Tech Mahindra, and various software startups.",
+      slug: "bca"
+    },
+    {
+      programName: "M.Com",
+      duration: "2 Years (4 Semesters)",
+      annualFee: "₹40,000 per year",
+      annualIntake: "30 Seats",
+      eligibility: "B.Com or equivalent graduation with minimum 50% marks",
+      overview: "The Master of Commerce (M.Com) programme at IIMT is a postgraduate programme that deepens the student's understanding of advanced commerce, financial management, corporate governance, and research methods.\n\nM.Com graduates are positioned for senior roles in finance, teaching, research, and corporate planning. The programme is ideal for students pursuing NET/JRF for academic careers.",
+      curriculumStructure: "Semester 1-2: Advanced Financial Accounting, Business Environment, Research Methodology, Corporate Tax Planning, Managerial Economics\n\nSemester 3-4: Securities & Capital Markets, International Finance, Dissertation / Major Project, Electives in Specialisation Area",
+      careerScope: "M.Com graduates occupy roles in Corporate Finance, Investment Banking, Academic Research, and CA/ICWA offices. Many pursue UGC NET/JRF to enter academia.\n\nInstitutions like Deloitte, RBI, SEBI, and state PSUs recruit M.Com postgraduates from IIMT.",
+      slug: "mcom"
+    },
+    {
+      programName: "B.Ed",
+      duration: "2 Years (4 Semesters)",
+      annualFee: "₹60,000 per year",
+      annualIntake: "100 Seats",
+      eligibility: "Graduation in any subject with minimum 50% marks",
+      overview: "The Bachelor of Education (B.Ed) programme at IIMT is approved by the National Council for Teacher Education (NCTE) and affiliated to CCS University, Meerut. This professional teacher training programme equips graduates with the pedagogical skills, subject knowledge, and teaching methodologies required to excel in secondary and senior secondary education.\n\nThe 2-year curriculum includes extensive school internship placements in affiliated schools across Greater Noida — providing real classroom experience under expert supervision.",
+      curriculumStructure: "Year 1: Childhood and Growing Up, Contemporary India and Education, Learning and Teaching, Language Across the Curriculum, Understanding Disciplines & Subjects, School Internship I\n\nYear 2: Gender, School and Society, Knowledge and Curriculum, Assessment for Learning, Creating Inclusive School, Specialisation Pedagogy Subjects, School Internship II",
+      careerScope: "B.Ed graduates are eligible to teach at secondary and senior secondary schools (Classes 6-12) across India. Teaching opportunities exist in CBSE, ICSE, state board schools, both private and government.\n\nRecent B.Ed graduates from IIMT have joined Delhi Public School, Ryan International, KV, and various state government schools through TET/CTET qualifying examinations.",
+      slug: "bed"
+    },
+    {
+      programName: "M.Ed",
+      duration: "2 Years (4 Semesters)",
+      annualFee: "₹55,000 per year",
+      annualIntake: "50 Seats",
+      eligibility: "B.Ed with minimum 55% marks",
+      overview: "The Master of Education (M.Ed) programme at IIMT is the highest professional qualification for educators, approved by NCTE. It trains educational administrators, researchers, teacher educators, and curriculum specialists to reform and lead educational institutions.\n\nM.Ed graduates are well-positioned for senior roles in school administration, teacher training institutions (DIETs, CTEs), and educational policy bodies.",
+      curriculumStructure: "Year 1: Education in Emerging Indian Society, Educational Research & Statistics, Philosophical Perspectives in Education, Psychological Perspectives in Education, Sociological Perspectives\n\nYear 2: Educational Administration & Management, Curriculum Development, ICT in Education, Specialisation Elective, Dissertation / Research Project",
+      careerScope: "M.Ed graduates work as Teacher Educators, Educational Administrators, Curriculum Designers, Educational Consultants, and Researchers. They are eligible for Lecturer/Assistant Professor posts in B.Ed colleges and are NET/JRF qualified for academic research roles.",
+      slug: "med"
+    }
+  ]);
   console.log('✅ Seeded: Courses');
 
   // ─── 4. CAMPUS LIFE ──────────────────────────────────────────────────────────

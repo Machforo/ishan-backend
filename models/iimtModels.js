@@ -24,6 +24,12 @@ const iimtHomePageSchema = new mongoose.Schema({
   successStories: {
     students: [{ photo: String, feedback: String, name: String }],
     parents: [{ photo: String, feedback: String, name: String }]
+  },
+  footer: {
+    quickLinks: [{ label: String, href: String }],
+    programs: [{ label: String, href: String }],
+    socialLinks: [{ platform: String, href: String }],
+    contact: { address: String, phone: String, email: String }
   }
 }, { timestamps: true });
 
@@ -58,6 +64,10 @@ const iimtCourseSchema = new mongoose.Schema({
   careerScope: String,
   quickFacts: String,
   careerOutcome: String,
+  duration: String,
+  annualFee: String,
+  annualIntake: String,
+  eligibility: String,
   slug: { type: String, unique: true }
 }, { timestamps: true });
 
@@ -91,7 +101,15 @@ const iimtCampusLifeSchema = new mongoose.Schema({
   culturalActivities: {
     images: [String],
     highlights: [String]
-  }
+  },
+  faculty: [{
+    name: String,
+    designation: String,
+    dept: String,
+    qualification: String,
+    specialisation: String,
+    image: String
+  }]
 }, { timestamps: true });
 
 // --- IIMT Admissions ---
@@ -123,12 +141,10 @@ const iimtGallerySchema = new mongoose.Schema({
 
 // --- IIMT News & Events ---
 const iimtNewsEventSchema = new mongoose.Schema({
-  events: [{ 
-    title: String, 
-    date: Date, 
-    description: String, 
-    image: String 
-  }]
+  title: String, 
+  date: Date, 
+  description: String, 
+  image: String 
 }, { timestamps: true });
 
 // --- IIMT Fee Payment ---
@@ -149,12 +165,18 @@ const iimtStudentPortalSchema = new mongoose.Schema({
 
 // --- IIMT Contact Us ---
 const iimtContactUsSchema = new mongoose.Schema({
-  details: { 
-    address: String, 
-    phone: String, 
-    email: String, 
-    mapEmbed: String 
-  }
+  mainContact: {
+    address: String,
+    phone: String,
+    email: String,
+    mapEmbed: String
+  },
+  collegeContacts: [{
+    collegeName: String,
+    phone: String,
+    email: String,
+    address: String
+  }]
 }, { timestamps: true });
 
 const Lead = require('./Lead');

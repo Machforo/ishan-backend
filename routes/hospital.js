@@ -8,6 +8,7 @@ const models = require('../models/hospitalModels');
 const singletons = [
   { path: '/homepage', model: models.HospitalHomePage },
   { path: '/services', model: models.HospitalServices },
+  { path: '/aboutus', model: models.HospitalAboutUs },
 ];
 
 singletons.forEach(({ path, model }) => {

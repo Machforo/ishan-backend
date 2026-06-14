@@ -107,7 +107,7 @@ const faqSchema = new mongoose.Schema({
 
 const newsSchema = new mongoose.Schema({
   title: String,
-  date: Date,
+  date: String,
   image: String,
   description: String,
   link: String
@@ -127,6 +127,22 @@ const testimonialSchema = new mongoose.Schema({
   designation: String,
   feedback: String,
   image: String
+}, { timestamps: true });
+
+// --- Contact Singleton ---
+const contactSchema = new mongoose.Schema({
+  mainContact: {
+    address: String,
+    phone: String,
+    email: String,
+    mapEmbed: String
+  },
+  collegeContacts: [{
+    collegeName: String,
+    phone: String,
+    email: String,
+    address: String
+  }]
 }, { timestamps: true });
 
 // --- Shared Lead Schema (Imported) ---
@@ -149,4 +165,5 @@ module.exports = {
   AyurvedaBlog: mongoose.model('AyurvedaBlog', blogSchema, 'ayurveda_blogs'),
   AyurvedaTestimonial: mongoose.model('AyurvedaTestimonial', testimonialSchema, 'ayurveda_testimonials'),
   AyurvedaLead: mongoose.model('AyurvedaLead', Lead.schema, 'ayurveda_leads'),
+  AyurvedaContact: mongoose.model('AyurvedaContact', contactSchema, 'ayurveda_contacts'),
 };

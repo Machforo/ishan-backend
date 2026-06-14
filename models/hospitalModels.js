@@ -48,6 +48,12 @@ const testimonialSchema = new mongoose.Schema({
 // --- Shared Lead Schema ---
 const Lead = require('./Lead');
 
+// --- About Us Singleton ---
+const aboutUsSchema = new mongoose.Schema({
+  ourStory: { image: String, description: String },
+  missionVision: { vision: String, mission: String, values: [String] }
+}, { timestamps: true });
+
 module.exports = {
   HospitalHomePage: mongoose.model('HospitalHomePage', homePageSchema, 'hospital_homepages'),
   HospitalDoctor: mongoose.model('HospitalDoctor', doctorSchema, 'hospital_doctors'),
@@ -55,4 +61,5 @@ module.exports = {
   HospitalServices: mongoose.model('HospitalServices', servicesSchema, 'hospital_services'),
   HospitalTestimonial: mongoose.model('HospitalTestimonial', testimonialSchema, 'hospital_testimonials'),
   HospitalLead: mongoose.model('HospitalLead', Lead.schema, 'hospital_leads'),
+  HospitalAboutUs: mongoose.model('HospitalAboutUs', aboutUsSchema, 'hospital_aboutus'),
 };

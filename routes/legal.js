@@ -8,6 +8,7 @@ const models = require('../models/legalModels');
 const singletons = [
   { path: '/homepage', model: models.LegalHomePage },
   { path: '/infrastructure', model: models.LegalInfrastructure },
+  { path: '/contact', model: models.LegalContact },
 ];
 
 singletons.forEach(({ path, model }) => {

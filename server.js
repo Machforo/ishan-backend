@@ -68,6 +68,27 @@ app.use('/api/hospital', hospitalRoutes);
 app.use('/api/legal', legalRoutes);
 app.use('/api/pharmacy', pharmacyRoutes);
 
+const marqueeRoutes = require('./routes/marquee');
+app.use('/api/marquee', marqueeRoutes);
+
+const collegeHeadRoutes = require('./routes/collegeHeadAndText');
+app.use('/api/college-head', collegeHeadRoutes);
+
+const programmeHeadRoutes = require('./routes/programmeHeadAndText');
+app.use('/api/programme-head', programmeHeadRoutes);
+
+const placementHeadRoutes = require('./routes/placementHeadAndText');
+app.use('/api/placement-head', placementHeadRoutes);
+
+const placementHeadV2Routes = require('./routes/placementHeadV2');
+app.use('/api/placement-head-v2', placementHeadV2Routes);
+
+const heroV2Routes = require('./routes/heroV2Content');
+app.use('/api/hero-v2', heroV2Routes);
+
+const statsStripRoutes = require('./routes/statsStrip');
+app.use('/api/stats-strip', statsStripRoutes);
+
 // Landing Pages
 const landingPage1Routes = require('./routes/landingPage1');
 const landingPage2Routes = require('./routes/landingPage2');

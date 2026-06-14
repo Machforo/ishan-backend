@@ -56,6 +56,22 @@ const newsSchema = new mongoose.Schema({
   link: String
 }, { timestamps: true });
 
+// --- Contact Singleton ---
+const contactSchema = new mongoose.Schema({
+  mainContact: {
+    address: String,
+    phone: String,
+    email: String,
+    mapEmbed: String
+  },
+  collegeContacts: [{
+    collegeName: String,
+    phone: String,
+    email: String,
+    address: String
+  }]
+}, { timestamps: true });
+
 module.exports = {
   LegalHomePage: mongoose.model('LegalHomePage', homePageSchema, 'legal_homepages'),
   LegalFaculty: mongoose.model('LegalFaculty', facultySchema, 'legal_faculty'),
@@ -64,4 +80,5 @@ module.exports = {
   LegalTestimonial: mongoose.model('LegalTestimonial', testimonialSchema, 'legal_testimonials'),
   LegalNews: mongoose.model('LegalNews', newsSchema, 'legal_news'),
   LegalLead: mongoose.model('LegalLead', Lead.schema, 'legal_leads'),
+  LegalContact: mongoose.model('LegalContact', contactSchema, 'legal_contacts'),
 };
