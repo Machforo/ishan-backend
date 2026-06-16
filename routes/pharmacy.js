@@ -55,7 +55,11 @@ const collections = [
 
 collections.forEach(({ path, model }) => {
   router.get(path, genericCtrl.getCollection(model));
-  router.post(path, authMiddleware, genericCtrl.createItem(model));
+  if (path === '/feedback') {
+    router.post(path, genericCtrl.createItem(model));
+  } else {
+    router.post(path, authMiddleware, genericCtrl.createItem(model));
+  }
   router.put(`${path}/:id`, authMiddleware, genericCtrl.updateItem(model));
   router.delete(`${path}/:id`, authMiddleware, genericCtrl.deleteItem(model));
 });

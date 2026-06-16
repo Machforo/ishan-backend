@@ -101,6 +101,9 @@ const mandatoryDisclosureSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const codeOfConductSchema = new mongoose.Schema({
+  title: String,
+  subtitle: String,
+  content: String,
   intro: String,
   image: String,
   rules: [{ category: String, items: String }]
