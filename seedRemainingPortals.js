@@ -247,44 +247,105 @@ async function seed() {
 
   await hospitalModels.HospitalHomePage.deleteMany({});
   await hospitalModels.HospitalHomePage.create({
-    banners: [{
-      heading: "Classical Ayurvedic Healing",
-      subheading: "Experienced MD Vaidyas & authentic Panchkarma therapies under one roof.",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80",
-      ctaText: "Book Appointment"
-    }],
+    opdHours: "Mon–Sat, 9 AM – 4 PM",
+    experienceText: "30+ Years of Trust",
+    contactPhone: "+91-9582761166",
+    contactEmail: "hospital@ishan.ac",
+    contactAddress: "Ishan Campus, Greater Noida, Gautam Buddh Nagar, UP – 201310",
+    departmentsHeading: "9 OPD Departments",
+    departmentsSubheading: "Comprehensive Ayurvedic care across all major specialities, led by experienced practitioners.",
+    panchkarmaHeading: "Panchkarma Therapy Centre",
+    panchkarmaDescription: "Our Panchkarma Centre offers the five classical purification therapies — Vamana, Virechana, Basti, Nasya, and Raktamokshana — administered by certified Ayurvedic physicians in a serene, healing environment.",
+    panchkarmaImage: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80",
+    panchkarmaBenefits: [
+      "Ancient purification therapies for modern ailments",
+      "Personalised treatment plans by experienced Vaidyas",
+      "Authentic Ayurvedic medicines prepared in-house",
+      "Comprehensive pre & post therapy care",
+      "Tranquil healing environment with herbal garden"
+    ],
+    accreditationsHeading: "Accreditations & Approvals",
+    accreditationsSubheading: "Trust & Quality",
+    doctorsHeading: "Meet Our Ayurvedic Doctors",
+    doctorsSubheading: "Expert Care",
+    doctorsDescription: "Our team of qualified Ayurvedic physicians brings decades of clinical experience and deep knowledge of classical texts.",
+    banners: [
+      {
+        heading: "Classical Ayurvedic Healing",
+        subheading: "Experienced MD Vaidyas & authentic Panchkarma therapies under one roof.",
+        image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80",
+        ctaText: "Book Appointment"
+      },
+      {
+        heading: "NCISM Approved Teaching Hospital",
+        subheading: "Offering affordable, evidence-informed traditional healthcare since decades.",
+        image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1200&q=80",
+        ctaText: "Know More"
+      }
+    ],
     stats: [
       { label: "Patients Treated Yearly", value: "25000+", description: "Trusted by thousands" },
       { label: "OPD Departments", value: "9", description: "Covering all major specialities" },
       { label: "Years of Excellence", value: "30", description: "Decades of authentic healing" },
       { label: "Panchkarma Therapies", value: "15", description: "Classical & proven treatments" }
     ],
-    aboutHospital: {
-      title: "Welcome to Ishan Ayurvedic Hospital",
-      content: "Ishan Ayurvedic Hospital is a leading provider of natural healthcare in the Delhi NCR region. As the teaching hospital of Ishan Ayurvedic Medical College, we provide NCISM-approved, affordable care backed by traditional principles.",
-      image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80"
-    }
+    institutionalProfile: {
+      heading: "Caring with Ayurveda, Healing with Tradition",
+      subheading: "Welcome to Ishan Ayurvedic Hospital",
+      description: "Ishan Ayurvedic Hospital represents the clinical wing of Ishan Ayurvedic Medical College, offering the finest authentic care in Delhi NCR. With a dedicated team of Ayurvedic specialists and modern medical backup, we treat chronic ailments, promote preventive wellness, and administer customized Panchakarma programs.",
+      image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
+      ctaText: "Discover Our Journey",
+      ctaLink: "/about"
+    },
+    whyChooseUs: [
+      { heading: "Experienced Vaidyas", description: "Our treatments are guided by highly qualified Ayurvedic doctors and Panchkarma specialists.", icon: "Award" },
+      { heading: "Authentic Medicines", description: "We use high-quality, pure Ayurvedic formulations sourced from trusted traditional pharmacies.", icon: "Heart" },
+      { heading: "Holistic Approach", description: "We address the root causes of illnesses, not just the symptoms, through tailored therapy plans.", icon: "Users" },
+      { heading: "State-of-the-Art Facility", description: "A peaceful environment with fully-equipped, hygienic Panchkarma rooms and modern amenities.", icon: "Leaf" }
+    ],
+    gallery: [
+      { image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=400&q=80" },
+      { image: "https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=400&q=80" },
+      { image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80" },
+      { image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=400&q=80" }
+    ],
+    accreditations: [
+      { text: "NCISM (National Commission for Indian System of Medicine)" },
+      { text: "CCIM (Central Council of Indian Medicine)" },
+      { text: "Dr. A.P.J. Abdul Kalam Technical University" },
+      { text: "Govt. of Uttar Pradesh – DGME" },
+      { text: "Pharmacy Council of India" },
+      { text: "UGC Recognised" }
+    ]
   });
 
   await hospitalModels.HospitalAboutUs.deleteMany({});
   await hospitalModels.HospitalAboutUs.create({
+    title: "Why Ishan Ayurvedic Hospital?",
+    subtitle: "The only private NCISM-approved Ayurvedic teaching hospital in Delhi NCR offering world-class holistic care.",
     ourStory: {
       image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80",
-      description: "Ishan Ayurvedic Hospital is committed to bringing the ancient science of Ayurveda to the modern world..."
+      description: "Ishan Ayurvedic Hospital is committed to bringing the ancient science of Ayurveda to the modern world. As the teaching hospital of Ishan Ayurvedic Medical College, we combine rigorous academic training with compassionate patient care.\n\nLocated in the heart of Greater Noida, we serve the Delhi NCR region with affordable, evidence-informed Ayurvedic treatments. Our Panchkarma centre, equipped with modern amenities and traditional therapy rooms, offers a healing experience that addresses the root cause of disease.\n\nFrom chronic lifestyle disorders to acute conditions, our team of experienced Vaidyas works holistically — integrating Ayurvedic medicines, Panchkarma therapies, Yoga, and dietary guidance to restore balance and well-being."
     },
     missionVision: {
       vision: "To render accessible, safe, and authentic Ayurvedic treatments to all segments of society.",
       mission: "To integrate classical therapeutic regimens with modern diagnostic standards.",
-      values: ["Authenticity", "Empathy", "Integrity", "Excellence"]
+      values: ["Personalised Care", "In-House Pharmacy", "Herbal Garden", "Research-Backed", "Patient-Centric"]
     }
   });
 
   await hospitalModels.HospitalServices.deleteMany({});
   await hospitalModels.HospitalServices.create({
-    title: "Our Holistic Healthcare Services",
-    description: "We offer complete diagnostic and therapeutic services based on classical Ayurveda.",
-    image: "",
-    features: ["Personalised Consultations", "Authentic Panchkarma", "Therapeutic Yoga", "In-house Ayurvedic Dispensary"]
+    title: "Patient Services",
+    description: "Everything you need for a seamless healthcare experience at Ishan Ayurvedic Hospital.",
+    servicesList: [
+      { name: "OPD Schedule & Timetable", desc: "View weekly OPD schedule with doctor timings.", icon: "Calendar", path: "/patient-services/opd-schedule" },
+      { name: "IPD — In-Patient Admission", desc: "Admission process, room types, rates & amenities.", icon: "Stethoscope", path: "/patient-services/ipd" },
+      { name: "Health Articles & Blog", desc: "Seasonal health tips, Ayurvedic diet, treatment FAQs.", icon: "BookOpen", path: "/patient-services/blog" },
+      { name: "Patient FAQs", desc: "Answers to common questions about Ayurvedic treatment.", icon: "HelpCircle", path: "/patient-services/faqs" },
+      { name: "Medical Camps & Outreach", desc: "Free health camps in Greater Noida & NCR.", icon: "FileText", path: "/patient-services/camps" },
+      { name: "Patient Portal", desc: "Login for prescriptions, reports & appointment history.", icon: "User", path: "/patient-portal" }
+    ]
   });
 
   await hospitalModels.HospitalDoctor.deleteMany({});
@@ -297,7 +358,9 @@ async function seed() {
       experience: "15+ years",
       image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&h=400",
       opdTimings: "Mon, Wed, Fri (9:00 AM - 2:00 PM)",
-      specialization: ["Arthritis", "Diabetes Management", "Gastrointestinal Disorders"]
+      specialization: ["Arthritis", "Diabetes Management", "Gastrointestinal Disorders"],
+      category: "Medicine",
+      days: "Mon, Wed, Fri"
     },
     {
       name: "Dr. Rajesh Kumar",
@@ -307,14 +370,62 @@ async function seed() {
       experience: "12+ years",
       image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&h=400",
       opdTimings: "Mon–Sat (9:00 AM - 4:00 PM)",
-      specialization: ["Detoxification", "Stress Management", "Rejuvenation"]
+      specialization: ["Detoxification", "Stress Management", "Rejuvenation"],
+      category: "Therapy",
+      days: "Mon, Tue, Wed, Thu, Fri, Sat"
     }
   ]);
 
   await hospitalModels.HospitalDepartment.deleteMany({});
   await hospitalModels.HospitalDepartment.create([
-    { name: "Kayachikitsa", description: "General medicine department treating chronic disorders.", image: "", treatments: ["Basti", "Shaman Chikitisa"], slug: "kayachikitsa" },
-    { name: "Panchkarma", description: "Therapies for systemic detoxification and health restoration.", image: "", treatments: ["Vamana", "Virechana", "Nasya", "Basti", "Raktamokshana"], slug: "panchkarma" }
+    {
+      name: "Kayachikitsa",
+      description: "General medicine department treating chronic disorders.",
+      image: "",
+      treatments: ["Basti", "Shaman Chikitisa"],
+      slug: "kayachikitsa",
+      subtitle: "General Medicine",
+      path: "/departments/kayachikitsa",
+      color: "from-emerald-500 to-teal-500",
+      category: "Medicine",
+      icon: "Leaf"
+    },
+    {
+      name: "Panchkarma",
+      description: "Therapies for systemic detoxification and health restoration.",
+      image: "",
+      treatments: ["Vamana", "Virechana", "Nasya", "Basti", "Raktamokshana"],
+      slug: "panchkarma",
+      subtitle: "Detoxification & Rejuvenation",
+      path: "/departments/panchakarma",
+      color: "from-rose-500 to-pink-500",
+      category: "Therapy",
+      icon: "Heart"
+    },
+    {
+      name: "Shalya Tantra",
+      description: "Ayurvedic surgery department managing anorectal and other surgical issues.",
+      image: "",
+      treatments: ["Ksharasutra", "Agnikarma"],
+      slug: "shalya",
+      subtitle: "Ayurvedic Surgery",
+      path: "/departments/shalya",
+      color: "from-blue-500 to-indigo-500",
+      category: "Surgery",
+      icon: "Scissors"
+    },
+    {
+      name: "Prasuti & Stri Roga",
+      description: "Obstetrics and gynaecology offering holistic maternity care.",
+      image: "",
+      treatments: ["Yoni Dhavana", "Uttarabasti"],
+      slug: "prasuti",
+      subtitle: "Gynecology & Obstetrics",
+      path: "/departments/prasuti",
+      color: "from-amber-500 to-orange-500",
+      category: "Medicine",
+      icon: "Baby"
+    }
   ]);
 
   await hospitalModels.HospitalTestimonial.deleteMany({});
@@ -324,7 +435,16 @@ async function seed() {
       image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=80",
       designation: "Patient",
       feedback: "The Basti therapy at Ishan Hospital gave me incredible relief from chronic back pain. High quality care.",
-      type: "Ayurveda"
+      type: "Ayurveda",
+      rating: 5
+    },
+    {
+      name: "Suman Lata",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80",
+      designation: "Patient",
+      feedback: "Very neat and clean Panchkarma rooms. Staff are extremely polite and the doctors are very knowledgeable.",
+      type: "Ayurveda",
+      rating: 5
     }
   ]);
 

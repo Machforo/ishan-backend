@@ -3,12 +3,14 @@ const router = express.Router();
 const authMiddleware = require('../middleware/auth');
 const genericCtrl = require('../controllers/genericController');
 const models = require('../models/hospitalModels');
+const ayurvedaModels = require('../models/ayurvedaModels');
 
 // --- Singleton Configuration Routes ---
 const singletons = [
   { path: '/homepage', model: models.HospitalHomePage },
   { path: '/services', model: models.HospitalServices },
   { path: '/aboutus', model: models.HospitalAboutUs },
+  { path: '/hospital', model: ayurvedaModels.AyurvedaHospital }
 ];
 
 singletons.forEach(({ path, model }) => {
@@ -21,6 +23,7 @@ const collections = [
   { path: '/doctors', model: models.HospitalDoctor },
   { path: '/departments', model: models.HospitalDepartment },
   { path: '/testimonials', model: models.HospitalTestimonial },
+  { path: '/panchkarma', model: models.HospitalPanchkarma },
 ];
 
 collections.forEach(({ path, model }) => {

@@ -356,6 +356,12 @@ const footerSchema = new mongoose.Schema({
   campus: [{ label: String, href: String }]
 }, { timestamps: true });
 
+const infrastructureSchema = new mongoose.Schema({
+  library: { image: String, content: String, totalBooks: String },
+  mootCourt: { image: String, description: String },
+  hostel: { image: String, content: String }
+}, { timestamps: true });
+
 module.exports = {
   LegalHomePage: mongoose.model('LegalHomePage', homePageSchema, 'legal_homepages'),
   LegalAboutUs: mongoose.model('LegalAboutUs', aboutUsSchema, 'legal_aboutus'),
@@ -402,5 +408,6 @@ module.exports = {
   LegalNavbar: mongoose.model('LegalNavbar', navbarSchema, 'legal_navbars'),
   LegalFooter: mongoose.model('LegalFooter', footerSchema, 'legal_footers'),
   LegalMandatoryDisclosure: mongoose.model('LegalMandatoryDisclosure', mandatoryDisclosureSchema, 'legal_mandatorydisclosure'),
-  LegalCodeOfConduct: mongoose.model('LegalCodeOfConduct', codeOfConductSchema, 'legal_codeofconduct')
+  LegalCodeOfConduct: mongoose.model('LegalCodeOfConduct', codeOfConductSchema, 'legal_codeofconduct'),
+  LegalInfrastructure: mongoose.model('LegalInfrastructure', infrastructureSchema, 'legal_infrastructures')
 };
