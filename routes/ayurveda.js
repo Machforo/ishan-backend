@@ -16,6 +16,9 @@ const singletons = [
   { path: '/facilities', model: models.AyurvedaFacilities },
   { path: '/digital', model: models.AyurvedaDigitalServices },
   { path: '/contact', model: models.AyurvedaContact },
+  { path: '/siteconfig', model: models.AyurvedaSiteConfig },
+  { path: '/mandatorydisclosure', model: models.AyurvedaMandatoryDisclosure },
+  { path: '/codeofconduct', model: models.AyurvedaCodeOfConduct },
 ];
 
 singletons.forEach(({ path, model }) => {
@@ -26,9 +29,15 @@ singletons.forEach(({ path, model }) => {
 // --- Collection Based Routes (CRUD) ---
 const collections = [
   { path: '/courses', model: models.AyurvedaCourse },
+  { path: '/departments', model: models.AyurvedaDepartment },
   { path: '/faculty', model: models.AyurvedaFaculty },
+  { path: '/visiting-faculty', model: models.AyurvedaVisitingFaculty },
   { path: '/faqs', model: models.AyurvedaFAQ },
   { path: '/news', model: models.AyurvedaNews },
+  { path: '/events', model: models.AyurvedaEvent },
+  { path: '/photo-gallery', model: models.AyurvedaPhotoGallery },
+  { path: '/video-gallery', model: models.AyurvedaVideoGallery },
+  { path: '/press-coverage', model: models.AyurvedaPressCoverage },
   { path: '/blogs', model: models.AyurvedaBlog },
   { path: '/testimonials', model: models.AyurvedaTestimonial },
 ];

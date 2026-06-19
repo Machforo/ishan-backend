@@ -1,0 +1,422 @@
+[
+  {
+    "slug": "ayurvedic-siddhanta",
+    "name": "Ayurvedic Siddhanta",
+    "type": "Foundational",
+    "subtitle": "Foundation of all Ayurvedic learning � Tridosha, Pancha Mahabhuta, Prakriti, classical texts",
+    "description": "<p>Ayurvedic Siddhanta � or Fundamentals of Ayurveda � is the cornerstone of all Ayurvedic learning. This department introduces students to the philosophical foundations: Tridosha (Vata, Pitta, Kapha), Pancha Mahabhuta, Prakriti, Saptadhatu, and the classical texts of Charaka Samhita and Sushruta Samhita. Every clinical judgment in Ayurveda begins with the frameworks established in this department.</p><p>Students develop proficiency in Padartha Vigyana, Maulik Siddhanta, Sanskrit as the language of Ayurveda, and classical text interpretation. The department bridges Ayurvedic philosophy with modern science, laying the intellectual foundation for all subsequent clinical training.</p>",
+    "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Padartha Vigyana & Maulik Siddhanta",
+        "description": "<p>Comprehensive study of Charaka Samhita and Sushruta Samhita shloka, building the philosophical framework for clinical practice.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Classical Text Study",
+        "description": "<p>Sanskrit proficiency and classical text interpretation essential for all BAMS examinations and clinical documentation.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Clinical Application",
+        "description": "<p>Prakriti analysis methodology applied in hospital OPD settings, connecting foundational concepts to daily clinical practice.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Research Foundation",
+        "description": "<p>Research into classical formulations and Ayurvedic philosophy, contributing to evidence-based Ayurvedic scholarship.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "rachana-sharir",
+    "name": "Rachana Sharir (Anatomy)",
+    "type": "Foundational",
+    "subtitle": "Human anatomy from Ayurvedic and modern perspectives � Srotas, Marma, gross anatomy, and embryology",
+    "description": "<p>Rachana Sharir teaches human anatomy from both Ayurvedic and modern perspectives � encompassing Srotas (body channels), Marma (vital points), gross anatomy, and embryology. The department is equipped with a dissection hall where students gain direct anatomical knowledge, building the structural foundation for clinical Ayurvedic practice.</p><p>Facilities include a dissection hall with ethical protocols, an anatomical models collection, charts, specimen cabinet, and cross-sectional anatomy resources. Students study cadaveric dissection, bone collection, surface anatomy on living models, and Ayurvedic Marma mapping for clinical application.</p>",
+    "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Dissection Hall",
+        "description": "<p>Cadaveric dissection with strict ethical protocols � direct learning from human anatomy that no model can fully replicate.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Anatomical Models & Charts",
+        "description": "<p>Extensive collection of anatomical models, charts, and specimen cabinet for systematic and visual anatomical study.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Marma Point Mapping",
+        "description": "<p>Ayurvedic Marma (vital point) mapping on living models � connecting classical Ayurvedic anatomy to clinical practice.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Modern Anatomy Integration",
+        "description": "<p>Parallel study of Ayurvedic Sharira and modern anatomical systems including embryology, histology, and gross anatomy.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "kriya-sharir",
+    "name": "Kriya Sharir (Physiology)",
+    "type": "Foundational",
+    "subtitle": "Functional physiology from Ayurvedic and modern perspectives � Agni, Dhatus, Malas, and physiological systems",
+    "description": "<p>Kriya Sharir explores functional physiology from both Ayurvedic and modern lenses � Agni (digestive fire), Dhatus (tissues), Malas (waste), and Srotas (channels) alongside modern physiological systems including cardiovascular, respiratory, nervous, and digestive systems.</p><p>The physiology laboratory is equipped with pulse oximeters, spirometers, sphygmomanometers, blood glucose testing equipment, urine analysis apparatus, and ECG demonstration units. Students conduct lab experiments, study classical text and modern textbook in parallel, and explore Prakriti-based physiological variation.</p>",
+    "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Physiology Lab Setup",
+        "description": "<p>Modern physiology lab with pulse oximeter, spirometer, ECG, and biochemistry equipment supporting parallel classical-modern study.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Agni & Dhatu Study",
+        "description": "<p>In-depth study of Agni Siddhanta, Dhatu Poshana Krama, and Mala formation � the Ayurvedic physiological framework.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Lab Experiments",
+        "description": "<p>Hands-on physiological experiments including pulse measurement, respiratory function, and blood analysis correlating with Ayurvedic concepts.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Prakriti Physiology",
+        "description": "<p>Study of Prakriti-based physiological variation � how constitutional type influences physiological parameters.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "dravyaguna-vigyana",
+    "name": "Dravyaguna Vigyana",
+    "type": "Foundational",
+    "subtitle": "Science of medicinal plants � Rasa, Guna, Veerya, Vipaka, and Prabhava connected to the Herbal Garden",
+    "description": "<p>Dravyaguna Vigyana is the science of Ayurvedic pharmacognosy � the study of medicinal plants and their properties: Rasa (taste), Guna (property), Veerya (potency), Vipaka (post-digestive effect), and Prabhava (specific action). This department is uniquely connected to the college's living Herbal Garden of over 200 medicinal species.</p><p>Students use the departmental crude drug specimen collection, plant identification materials, and microscopy equipment. Regular identification exercises in the Herbal Garden, drug action analysis sessions, and pharmacological cross-referencing build practical competence in Ayurvedic plant medicine.</p>",
+    "image": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Crude Drug Collection",
+        "description": "<p>Extensive crude drug specimen collection for systematic study of plant-derived Ayurvedic medicines in their natural form.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Herbal Garden Link",
+        "description": "<p>Direct access to the campus Herbal Garden of 200+ medicinal species for fresh specimen identification and collection.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Plant Identification",
+        "description": "<p>Plant identification laboratory with microscopy, botanical keys, and herbarium resources for morphological drug study.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Pharmacological Study",
+        "description": "<p>Pharmacological cross-referencing between classical Ayurvedic drug properties and modern phytochemical research.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "rasa-shastra",
+    "name": "Rasa Shastra & Bhaishajya Kalpana",
+    "type": "Foundational",
+    "subtitle": "Classical Ayurvedic pharmaceutics � preparation of Rasaushadhi, Asava-Arishta, Churna, Lehya, and Taila",
+    "description": "<p>Rasa Shastra and Bhaishajya Kalpana is the classical pharmaceutical branch of Ayurveda � covering the preparation of Rasaushadhi (mineral medicines), Asava-Arishta (fermented preparations), Churna (powders), Lehya (electuaries), and Taila (medicated oils). It is the bridge between raw medicinal material and finished Ayurvedic medicine.</p><p>A dedicated pharmaceutical Ayurveda manufacturing lab provides mortars, crucibles, heating apparatus, fermentation vessels, and quality checking equipment. Students prepare classical formulations in batches under faculty supervision, learning documentation and GMP principles alongside traditional techniques.</p>",
+    "image": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Manufacturing Lab",
+        "description": "<p>Fully equipped Ayurvedic pharmaceutical lab with traditional and modern apparatus for preparation of all dosage forms.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Classical Formulations",
+        "description": "<p>Preparation of Rasaushadhi, Asava-Arishta, Churna, Lehya, and Taila following classical Shastriya methods.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Quality Checking",
+        "description": "<p>Quality checking protocols for Ayurvedic formulations � organoleptic testing, density, pH, and classical quality parameters.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "GMP Principles",
+        "description": "<p>Application of Good Manufacturing Practice (GMP) principles to classical Ayurvedic pharmaceutical production.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "kaumarabhritya",
+    "name": "Kaumarabhritya (Ayurvedic Paediatrics)",
+    "type": "Clinical",
+    "subtitle": "Ayurvedic child health � from conception to adolescence, Suvarna Prashan, and hospital paediatric OPD",
+    "description": "<p>Kaumarabhritya is the Ayurvedic speciality of child health � encompassing care from conception through adolescence. Key areas include Suvarna Prashan (gold-based immunity building), childhood diseases, growth monitoring, developmental health, and Ayurvedic neonatal care. Students receive clinical exposure through the hospital's Paediatrics OPD.</p><p>Students observe the Kaumarabhritya OPD at IAMC's teaching hospital, participating in preventive, curative, and promotive child healthcare. Classical text study is combined with modern paediatric correlation and case discussion with senior Vaidyas.</p>",
+    "image": "https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Paediatrics OPD Exposure",
+        "description": "<p>Regular OPD rotation at the teaching hospital's Paediatrics clinic � real case exposure for clinical competence.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Suvarna Prashan",
+        "description": "<p>Study and practice of Suvarna Prashan � the Ayurvedic immunity-building protocol for children from infancy.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Developmental Health",
+        "description": "<p>Ayurvedic assessment of child growth, development milestones, and constitutional management from birth onwards.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Classical Texts",
+        "description": "<p>Classical Ayurvedic texts on paediatrics correlated with modern paediatric medicine for comprehensive child healthcare.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "prasuti-stri-roga",
+    "name": "Prasuti & Stri Roga (OB/GYN)",
+    "type": "Clinical",
+    "subtitle": "Ayurvedic women health � antenatal care, postnatal care, menstrual disorders, PCOS, and hospital OPD rotation",
+    "description": "<p>Prasuti and Stri Roga is the Ayurvedic speciality for women's health � encompassing antenatal care (Garbhini Paricharya), postnatal care (Sutika Paricharya), menstrual disorders, PCOS management, menopausal care, and infertility. Clinical exposure is provided through the teaching hospital's dedicated OPD.</p><p>Students rotate through the Prasuti and Stri Roga OPD, antenatal ward, and postnatal care unit. Ayurvedic classical protocols are studied alongside modern gynaecology, equipping students for comprehensive women's healthcare practice.</p>",
+    "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Antenatal OPD Rotation",
+        "description": "<p>Structured hospital rotation through antenatal, delivery, and postnatal care under senior Vaidya supervision.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Garbhini Paricharya",
+        "description": "<p>Comprehensive study of Garbhini Paricharya � classical Ayurvedic antenatal care protocols from conception to birth.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Stri Roga Management",
+        "description": "<p>Clinical management of PCOS, menstrual disorders, leucorrhoea, and menopausal conditions using Ayurvedic protocols.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Modern Correlation",
+        "description": "<p>Integration of Ayurvedic Stri Roga with modern gynaecological diagnostics and obstetric management principles.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "kayachikitsa",
+    "name": "Kayachikitsa (Ayurvedic Internal Medicine)",
+    "type": "Clinical",
+    "subtitle": "The largest clinical department � management of chronic diseases through classical Ayurvedic medicine and daily OPD",
+    "description": "<p>Kayachikitsa � Ayurvedic Internal Medicine � is the largest clinical department at IAMC, managing chronic conditions including diabetes (Madhumeha), arthritis (Amavata), digestive disorders (Anaha, Arsha), neurological conditions (Vata-vyadhi), and respiratory diseases. The department has the highest patient OPD volume in the teaching hospital.</p><p>Daily OPD rotation from Year 3, case discussion sessions, treatment protocol design, and Nadi Pariksha (pulse diagnosis) practice are central to clinical training. Charaka Samhita's clinical chapters form the textual foundation, supplemented by modern disease correlation and evidence-based Ayurvedic protocols.</p>",
+    "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Daily OPD Rotation",
+        "description": "<p>Daily hospital OPD rotation from Year 3 � highest patient volume in the teaching hospital for maximum clinical exposure.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Nadi Pariksha Training",
+        "description": "<p>Systematic training in Nadi Pariksha (Ayurvedic pulse diagnosis) � the cornerstone of Ayurvedic clinical assessment.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Chronic Disease Management",
+        "description": "<p>Clinical management of Madhumeha, Amavata, Vata-vyadhi, Kasa, Shwasa, and Arsha using classical Ayurvedic protocols.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Evidence-Based Protocols",
+        "description": "<p>Evidence-based Ayurvedic treatment protocols combining Charaka Samhita guidelines with contemporary clinical research.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "panchkarma",
+    "name": "Panchkarma",
+    "type": "Clinical",
+    "subtitle": "Ayurveda's premier purification therapy � Vamana, Virechana, Basti, Nasya, Raktamokshana with dedicated therapy rooms",
+    "description": "<p>Panchkarma is Ayurveda's premier therapeutic purification system � comprising Vamana (emesis), Virechana (purgation), Basti (enema), Nasya (nasal administration), and Raktamokshana (bloodletting). Both preventive and therapeutic, it removes accumulated Doshas and is taught in close connection with the hospital's Panchkarma centre.</p><p>The training facility includes dedicated Panchkarma therapy rooms in the teaching hospital where students learn Abhyanga (oil massage), Shirodhara (head oil drip), Pinda Sweda (bolus fomentation) alongside the five classical Shodhana procedures under Vaidya supervision.</p>",
+    "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Dedicated Therapy Rooms",
+        "description": "<p>Dedicated Panchkarma therapy rooms in the teaching hospital for hands-on practical training in all classical procedures.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Shodhana Procedures",
+        "description": "<p>Supervised training in all five Shodhana procedures � Vamana, Virechana, Basti, Nasya, and Raktamokshana.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Snehana & Swedana",
+        "description": "<p>Practical training in Abhyanga, Shirodhara, Pinda Sweda, and other Purvakarma preparatory therapies.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Patient Assessment",
+        "description": "<p>Patient assessment for Panchkarma eligibility � Prakriti determination, Dosha analysis, and contraindication screening.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "shalya-tantra",
+    "name": "Shalya Tantra (Ayurvedic Surgery)",
+    "type": "Clinical",
+    "subtitle": "Ayurvedic surgical science � Ksharasutra, Agnikarma, Jalaukavacharana, wound management with OT facility",
+    "description": "<p>Shalya Tantra is Ayurvedic surgery � encompassing Ksharasutra (para-surgical treatment for ano-rectal diseases), Agnikarma (thermal therapy), Jalaukavacharana (leech therapy), and wound management (Vrana Chikitsa). The department has an operation theatre facility for minor surgical training.</p><p>The OT is equipped for minor surgical procedures, including a dedicated Ksharasutra therapy unit and a wound care clinic. Teaching follows Sushruta Samhita's surgical chapters alongside modern surgical principles, with supervised hands-on training in para-surgical techniques.</p>",
+    "image": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Operation Theatre Facility",
+        "description": "<p>Fully equipped OT for minor surgical training � preparing students for both classical Ayurvedic and para-surgical procedures.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Ksharasutra Therapy",
+        "description": "<p>Dedicated Ksharasutra therapy unit for training in this classical para-surgical treatment for ano-rectal conditions.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Agnikarma & Leech Therapy",
+        "description": "<p>Supervised hands-on training in Agnikarma (thermal therapy) and Jalaukavacharana (leech therapy) on eligible patients.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Wound Care Clinic",
+        "description": "<p>Comprehensive wound care clinic for Vrana Chikitsa � classical Ayurvedic wound management from assessment to dressing.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "shalakya-tantra",
+    "name": "Shalakya Tantra (ENT & Ophthalmology)",
+    "type": "Clinical",
+    "subtitle": "Ayurvedic speciality for diseases of eye, ear, nose, and throat with dedicated Shalakya OPD",
+    "description": "<p>Shalakya Tantra is the Ayurvedic speciality for diseases of the eye (Netra Chikitsa), ear (Karna Chikitsa), nose (Nasa Chikitsa), and throat/mouth (Mukha Chikitsa). A dedicated Shalakya OPD in the teaching hospital provides students with regular clinical exposure.</p><p>Specialty procedures include Netrabasti (eye bath), Karnapoorana (ear oil instillation), Nasya (nasal drops), and Gandusha (mouth gargling). Students study classical Sushruta and Vagbhata chapters, rotate through the OPD, and receive practical procedure training under supervision.</p>",
+    "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Shalakya OPD Rotation",
+        "description": "<p>Dedicated Shalakya OPD at the teaching hospital providing regular case exposure in eye, ear, nose, and throat conditions.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Netra Chikitsa",
+        "description": "<p>Training in Netrabasti, Tarpana, Putapaka and other classical Ayurvedic ophthalmic therapeutic procedures.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "ENT Procedures",
+        "description": "<p>Practical training in Karnapoorana, Nasya administration, and Gandusha for ENT conditions.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Classical Text Study",
+        "description": "<p>Study of Sushruta Samhita and Ashtanga Hridaya Shalakya chapters � the classical textual foundation for ENT and ophthalmology.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "swasthavritta-yoga",
+    "name": "Swasthavritta & Yoga",
+    "type": "Clinical",
+    "subtitle": "Ayurvedic preventive health � Dinacharya, Ritucharya, Yoga therapy, community health, and medical camps",
+    "description": "<p>Swasthavritta and Yoga is the department of Ayurvedic preventive and social medicine � covering Dinacharya (daily routine), Ritucharya (seasonal adaptation), Yoga therapy, community health, and occupational health. It represents the backbone of Ayurvedic wellness philosophy and is uniquely positioned at the intersection of prevention and clinical practice.</p><p>The department has a dedicated Yoga hall with an experienced Yoga teacher, morning practice sessions for students, and therapeutic Yoga integration for clinical applications. Medical camp programmes are co-ordinated through this department, and World Yoga Day events are a major annual institutional highlight.</p>",
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Dedicated Yoga Hall",
+        "description": "<p>Dedicated Yoga hall with daily morning practice sessions � Yoga is both a subject and a daily practice at IAMC.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Dinacharya & Ritucharya",
+        "description": "<p>In-depth study of Dinacharya and Ritucharya � the Ayurvedic frameworks for daily and seasonal health maintenance.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Medical Camp Programme",
+        "description": "<p>Medical camp coordination including free health camps for communities surrounding Greater Noida campus.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Therapeutic Yoga",
+        "description": "<p>Therapeutic Yoga integration for clinical applications in chronic disease management and rehabilitation.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "agada-tantra",
+    "name": "Agada Tantra (Toxicology & Forensic Medicine)",
+    "type": "Foundational",
+    "subtitle": "Ayurvedic toxicology � Vishaghna plants, poison management, food toxicology, medico-legal cases",
+    "description": "<p>Agada Tantra covers Ayurvedic toxicology and forensic medicine � including Vishaghna (antidote) plants, classical poison management, food and environmental toxicology, and medico-legal cases. The department also prepares students for the Forensic Pharmacy Certificate (FPC) examination.</p><p>The department maintains toxicological specimens, a Vishaghna plant collection, and medico-legal reference materials. Teaching combines classical Agada Tantra texts with modern forensic medicine, medico-legal documentation practicals, and poison identification exercises.</p>",
+    "image": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Toxicological Specimens",
+        "description": "<p>Collection of toxicological specimens and reference materials for systematic study of classical and modern poison management.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Vishaghna Plants",
+        "description": "<p>Vishaghna (antidote) plant collection connected to the Herbal Garden � classical Ayurvedic toxicological remedies.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Medico-Legal Practicals",
+        "description": "<p>Medico-legal documentation practicals including inquest reports, injury certificates, and forensic examination procedures.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Forensic Medicine",
+        "description": "<p>Modern forensic medicine correlation with Agada Tantra classical texts for comprehensive toxicology training.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "samhita-sanskrit",
+    "name": "Samhita & Sanskrit",
+    "type": "Foundational",
+    "subtitle": "Sanskrit � the language of Ayurveda � mastery of Charaka, Sushruta, and Ashtanga Hridaya classical texts",
+    "description": "<p>Sanskrit is the language of Ayurveda. Mastery of classical texts � Charaka Samhita, Sushruta Samhita, Ashtanga Hridaya � requires Sanskrit proficiency. This department builds the linguistic and philosophical foundation for all BAMS study, enabling students to access primary Ayurvedic sources directly.</p><p>Students learn basic Sanskrit grammar, Ayurvedic Sanskrit vocabulary, verse memorisation of key shlokas (essential for university examinations), text translation, and interpretation. Interactive language lab sessions, Sanskrit for clinical application, and verse interpretation competitive events make learning engaging and purposeful.</p>",
+    "image": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=800&auto=format&fit=crop",
+    "highlights": [
+      {
+        "icon": "BookOpen",
+        "title": "Interactive Language Lab",
+        "description": "<p>Interactive language lab for Sanskrit instruction combining grammar, vocabulary, and Ayurvedic text reading proficiency.</p>"
+      },
+      {
+        "icon": "Microscope",
+        "title": "Shloka Memorisation",
+        "description": "<p>Systematic memorisation of key shlokas from Charaka, Sushruta, and Ashtanga Hridaya � essential for university examinations.</p>"
+      },
+      {
+        "icon": "Award",
+        "title": "Classical Text Translation",
+        "description": "<p>Classical text translation and interpretation sessions building ability to engage with primary Ayurvedic sources.</p>"
+      },
+      {
+        "icon": "Users",
+        "title": "Sanskrit for Clinicians",
+        "description": "<p>Sanskrit for clinical application � terminology used in OPD, formulation writing, and patient documentation in Ayurveda.</p>"
+      }
+    ]
+  }
+]
