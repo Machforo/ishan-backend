@@ -15,6 +15,9 @@ const singletons = [
   { path: '/feepayment', model: models.IimtFeePayment },
   { path: '/studentportal', model: models.IimtStudentPortal },
   { path: '/contact', model: models.IimtContactUs },
+  { path: '/academics', model: models.IimtAcademics },
+  { path: '/learning', model: models.IimtLearning },
+  { path: '/studentzone', model: models.IimtStudentZone },
 ];
 
 singletons.forEach(({ path, model }) => {

@@ -73,7 +73,7 @@ const iimtCourseSchema = new mongoose.Schema({
 
 // --- IIMT Campus Life ---
 const iimtCampusLifeSchema = new mongoose.Schema({
-  infrastructure: { image: String, content: String },
+  infrastructure: { image: String, content: String, facilities: [{ icon: String, title: String, desc: String, link: String }] },
   itLabs: { 
     specs: {
       computers: String,
@@ -81,26 +81,31 @@ const iimtCampusLifeSchema = new mongoose.Schema({
       software: String,
       timings: String
     },
-    rules: [String]
+    rules: [{ text: String }]
   },
   library: {
     image: String,
-    totalBooks: String,
-    digitalAccess: String,
-    eJournals: String,
-    seating: String
+    content: String,
+    specs: [{ label: String, value: String }]
   },
   auditorium: {
     image: String,
-    seating: String,
-    avStatus: String,
-    events: String
+    content: String,
+    specs: [{ label: String, value: String }]
   },
-  sports: [{ image: String, title: String, link: String }],
-  hostel: { image: String, content: String },
+  sports: {
+    content: String,
+    specs: [{ label: String, value: String }]
+  },
+  hostel: {
+    image: String,
+    content: String,
+    amenities: [{ text: String }],
+    specs: [{ label: String, value: String }]
+  },
   culturalActivities: {
-    images: [String],
-    highlights: [String]
+    content: String,
+    specs: [{ label: String, value: String }]
   },
   faculty: [{
     name: String,
@@ -109,7 +114,53 @@ const iimtCampusLifeSchema = new mongoose.Schema({
     qualification: String,
     specialisation: String,
     image: String
+  }],
+  visitingFaculty: [{
+    name: String,
+    org: String,
+    specialisation: String,
+    dept: String
   }]
+}, { timestamps: true });
+
+
+// --- IIMT Student Zone ---
+const iimtStudentZoneSchema = new mongoose.Schema({
+  downloads: {
+    pageTitle: String,
+    pageSubtitle: String,
+    files: [{ name: String, fileType: String, category: String, size: String, link: String }]
+  },
+  pastPapers: {
+    pageTitle: String,
+    pageSubtitle: String,
+    subheading: String,
+    heading: String,
+    description: String,
+    footerText: String,
+    papers: [{ name: String, program: String, year: String, size: String, link: String, semester: String }]
+  },
+  codeOfConduct: {
+    pageTitle: String,
+    pageSubtitle: String,
+    content: String
+  },
+  antiRagging: {
+    pageTitle: String,
+    pageSubtitle: String,
+    helplinePhone: String,
+    content: String
+  },
+  grievanceRedressal: {
+    pageTitle: String,
+    pageSubtitle: String,
+    content: String
+  },
+  privacyPolicy: {
+    pageTitle: String,
+    pageSubtitle: String,
+    content: String
+  }
 }, { timestamps: true });
 
 // --- IIMT Admissions ---
@@ -130,6 +181,90 @@ const iimtPlacementsSchema = new mongoose.Schema({
   process: [{ step: String, desc: String }],
   partners: [{ name: String, logo: String }],
   studentSuccess: [{ name: String, company: String, feedback: String, photo: String }]
+}, { timestamps: true });
+
+
+// --- IIMT Learning & Activities ---
+const iimtLearningSchema = new mongoose.Schema({
+  eventsCalendar: {
+    pageTitle: String,
+    pageSubtitle: String,
+    subheading: String,
+    heading: String,
+    description: String,
+    ctaText1: String,
+    ctaText2: String,
+    registerText: String,
+    events: [{
+      name: String,
+      date: String,
+      venue: String,
+      category: String,
+      description: String
+    }]
+  },
+  skillDevelopment: {
+    pageTitle: String,
+    pageSubtitle: String,
+    description: String,
+    skills: [{ text: String }]
+  },
+  debatesGD: {
+    pageTitle: String,
+    pageSubtitle: String,
+    subheading: String,
+    heading: String,
+    description: String,
+    participationLabel: String,
+    participationPoints: [{ text: String }],
+    activities: [{
+      title: String,
+      description: String,
+      icon: String
+    }],
+    highlightsHeading: String,
+    pastHighlights: String,
+    highlightsFooter: String
+  },
+  industrialVisits: {
+    pageTitle: String,
+    pageSubtitle: String,
+    subheading: String,
+    heading: String,
+    description: String,
+    sectors: [{
+      label: String,
+      icon: String
+    }],
+    whyVisitsMatterHeading: String,
+    whyVisitsMatter: [{ text: String }],
+    recentVisitsHeading: String,
+    visits: [{
+      company: String,
+      sector: String,
+      program: String,
+      year: String,
+      outcome: String
+    }]
+  },
+  guestLectures: {
+    pageTitle: String,
+    pageSubtitle: String,
+    subheading: String,
+    heading: String,
+    description: String,
+    whatToExpectTitle: String,
+    whatToExpectDesc: String,
+    nationalSeminarsHeading: String,
+    nationalSeminars: String,
+    events: [{
+      speaker: String,
+      designation: String,
+      topic: String,
+      date: String,
+      takeaways: String
+    }]
+  }
 }, { timestamps: true });
 
 // --- IIMT Gallery ---
@@ -176,7 +311,19 @@ const iimtContactUsSchema = new mongoose.Schema({
     phone: String,
     email: String,
     address: String
-  }]
+  }],
+  feedback: {
+    pageTitle: String,
+    pageSubtitle: String,
+    description: String
+  },
+  careers: {
+    pageTitle: String,
+    pageSubtitle: String,
+    description: String,
+    email: String,
+    jobs: [{ title: String, qualification: String, dept: String, type: { type: String } }]
+  }
 }, { timestamps: true });
 
 const Lead = require('./Lead');
@@ -189,12 +336,15 @@ module.exports = {
   IimtCampusLife: mongoose.model('IimtCampusLife', iimtCampusLifeSchema, 'iimt_campuslife'),
   IimtAdmissions: mongoose.model('IimtAdmissions', iimtAdmissionsSchema, 'iimt_admissions'),
   IimtPlacements: mongoose.model('IimtPlacements', iimtPlacementsSchema, 'iimt_placements'),
+  IimtLearning: mongoose.model('IimtLearning', iimtLearningSchema, 'iimt_learning'),
   IimtGallery: mongoose.model('IimtGallery', iimtGallerySchema, 'iimt_gallery'),
   IimtNewsEvent: mongoose.model('IimtNewsEvent', iimtNewsEventSchema, 'iimt_newsevents'),
   IimtFeePayment: mongoose.model('IimtFeePayment', iimtFeePaymentSchema, 'iimt_feepayment'),
   IimtStudentPortal: mongoose.model('IimtStudentPortal', iimtStudentPortalSchema, 'iimt_studentportal'),
   IimtContactUs: mongoose.model('IimtContactUs', iimtContactUsSchema, 'iimt_contactus'),
   
+
+  IimtStudentZone: mongoose.model('IimtStudentZone', iimtStudentZoneSchema, 'iimt_studentzone'),
   IimtLead: mongoose.model('IimtLead', Lead.schema, 'iimt_leads'),
   IimtJobApplication: mongoose.model('IimtJobApplication', JobApplication.schema, 'iimt_jobapplications'),
 };

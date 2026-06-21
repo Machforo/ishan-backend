@@ -22,14 +22,18 @@ exports.getSection = (Model) => async (req, res) => {
 exports.updateSection = (Model) => async (req, res) => {
   try {
     let config = await Model.findOne();
+    const updateData = { ...req.body };
+    delete updateData._id;
+    delete updateData.__v;
     if (config) {
-      config = await Model.findByIdAndUpdate(config._id, req.body, { new: true, overwrite: true });
+      config = await Model.findByIdAndUpdate(config._id, updateData, { new: true, overwrite: true });
     } else {
-      config = new Model(req.body);
+      config = new Model(updateData);
       await config.save();
     }
     res.json(config);
   } catch (err) {
+    console.error("Error in updateSection:", err);
     res.status(400).json({ message: err.message });
   }
 };
@@ -139,14 +143,14 @@ exports.updateApplicationStatus = async (req, res) => {
 
 // --- Site Contacts (College Supports) ---
 exports.getContacts = async (req, res) => {
-    try {
-      const contacts = await IimtContact.find().sort({ orderIndex: 1 });
-      res.json(contacts);
-    } catch (err) {
-      res.status(500).json({ message: err.message });
-    }
-  };
-  
+  try {
+    const contacts = await IimtContact.find().sort({ orderIndex: 1 });
+    res.json(contacts);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 exports.createContact = async (req, res) => {
   try {
     const contact = new IimtContact(req.body);

@@ -20,10 +20,13 @@ exports.getSection = (Model) => async (req, res) => {
 exports.updateSection = (Model) => async (req, res) => {
   try {
     let config = await Model.findOne();
+    const updateData = { ...req.body };
+    delete updateData._id;
+    delete updateData.__v;
     if (config) {
-      config = await Model.findByIdAndUpdate(config._id, req.body, { new: true, overwrite: true });
+      config = await Model.findByIdAndUpdate(config._id, updateData, { new: true, overwrite: true });
     } else {
-      config = new Model(req.body);
+      config = new Model(updateData);
       await config.save();
     }
     res.json(config);

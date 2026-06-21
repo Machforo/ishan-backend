@@ -19,10 +19,13 @@ exports.getHomePage = async (req, res) => {
 exports.updateHomePage = async (req, res) => {
   try {
     let config = await HomePage.findOne();
+    const updateData = { ...req.body };
+    delete updateData._id;
+    delete updateData.__v;
     if (config) {
-      config = await HomePage.findByIdAndUpdate(config._id, req.body, { new: true, overwrite: true });
+      config = await HomePage.findByIdAndUpdate(config._id, updateData, { new: true, overwrite: true });
     } else {
-      config = new HomePage(req.body);
+      config = new HomePage(updateData);
       await config.save();
     }
     res.json(config);
