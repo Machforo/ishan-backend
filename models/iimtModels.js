@@ -278,6 +278,35 @@ const iimtLearningSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
+// --- IIMT Academics ---
+const iimtAcademicsSchema = new mongoose.Schema({
+  educationOverview: {
+    description: String,
+    highlights: [String]
+  },
+  pedagogyLabs: {
+    introTitle: String,
+    introDesc: String,
+    introPoints: [String],
+    facilities: [{
+      title: String,
+      description: String,
+      icon: String
+    }],
+    practiceTeachingDesc: String
+  },
+  certificatePrograms: {
+    introText: String,
+    programs: [{
+      name: String,
+      duration: String,
+      fee: String,
+      eligibility: String,
+      desc: String
+    }]
+  }
+}, { timestamps: true });
+
 // --- IIMT Gallery ---
 const iimtGallerySchema = new mongoose.Schema({
   photos: [{ title: String, url: String }],
@@ -353,6 +382,7 @@ module.exports = {
   IimtFeePayment: mongoose.model('IimtFeePayment', iimtFeePaymentSchema, 'iimt_feepayment'),
   IimtStudentPortal: mongoose.model('IimtStudentPortal', iimtStudentPortalSchema, 'iimt_studentportal'),
   IimtContactUs: mongoose.model('IimtContactUs', iimtContactUsSchema, 'iimt_contactus'),
+  IimtAcademics: mongoose.model('IimtAcademics', iimtAcademicsSchema, 'iimt_academics'),
   
 
   IimtStudentZone: mongoose.model('IimtStudentZone', iimtStudentZoneSchema, 'iimt_studentzone'),
