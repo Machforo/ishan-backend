@@ -152,9 +152,9 @@ const landingPageSchema = new mongoose.Schema({
     about: { type: String }, admissions: { type: String }, quickLinks: { type: String }, approvals: { type: String }, group: { type: String }, copyright: { type: String }, privacy: { type: String }, terms: { type: String }, sitemap: { type: String }
   },
   footerLinks: {
-    quickLinks: [{ text: String }],
-    rankings: [{ text: String }],
-    group: [{ text: String }]
+    quickLinks: [{ text: String, url: String }],
+    rankings: [{ text: String, url: String }],
+    group: [{ text: String, url: String }]
   },
   floatingWidgets: {
     whatsapp: { type: String, default: "911234567890" },
