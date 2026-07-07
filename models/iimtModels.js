@@ -2,6 +2,17 @@ const mongoose = require('mongoose');
 
 // --- IIMT HomePage ---
 const iimtHomePageSchema = new mongoose.Schema({
+  header: {
+    phone: String,
+    email: String,
+    logoText: String,
+    logoSubtext: String,
+    alertText: String,
+    alertLinkText: String,
+    alertLink: String,
+    portalLinks: [{ label: String, href: String }],
+    navLinks: [{ label: String, href: String, featured: { img: String, title: String, desc: String, href: String }, columns: [{ heading: String, icon: String, links: [{ label: String, href: String }] }], extraImgs: [{ img: String, caption: String, href: String }] }]
+  },
   banners: [{ 
     heading: String, 
     subheading: String, 
