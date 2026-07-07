@@ -73,7 +73,7 @@ const socialPostSchema = new mongoose.Schema({
 
 const navMenuItemSchema = new mongoose.Schema({
   title: String,
-  items: [{ name: String }]
+  items: [{ name: String, url: String }]
 });
 
 const landingPageSchema = new mongoose.Schema({
