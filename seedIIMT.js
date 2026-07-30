@@ -10,7 +10,7 @@ require('dotenv').config();
 const {
   IimtHomePage, IimtAboutUs, IimtCourse, IimtCampusLife,
   IimtAdmissions, IimtPlacements, IimtGallery, IimtNewsEvent,
-  IimtFeePayment, IimtStudentPortal, IimtContactUs, IimtAcademics, IimtLearning
+  IimtFeePayment, IimtStudentPortal, IimtContactUs, IimtAcademics, IimtLearning, IimtStudentZone
 } = require('./models/iimtModels');
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/ishan-cms';
@@ -328,7 +328,14 @@ async function seed() {
     pageSubheading: "Transforming potential into performance through academic excellence since 1994.",
     journeyHeading: "Milestones of Growth",
     ourStory: {
-      image: "/assets/students-library.jpg",
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80",
+      bannerImage: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
+      editorialPhotos: [
+        { url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=400&q=80" }
+      ],
+      timelineInfographic: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
       description: "Ishan Institute of Management & Technology (IIMT), established in 1994, is the flagship institution of Ishan Educational Group — one of the most respected education conglomerates in the Delhi NCR region. Over three decades, IIMT has evolved from a single institution into a multi-programme centre of excellence, shaping the careers of thousands of graduates across business, technology, and education disciplines.\n\nAffiliated to Chaudhary Charan Singh University, Meerut, IIMT is approved by UGC, AICTE, and NCTE. The institute holds NAAC accreditation, the highest quality benchmark bestowed upon Indian institutions of higher learning."
     },
     ourJourney: [
@@ -353,33 +360,54 @@ async function seed() {
       name: "Dr. Priya Sharma",
       designation: "Director, IIMT",
       message: "At IIMT, we believe that education is not just about degrees — it is about developing individuals who are ready to lead, innovate, and contribute meaningfully to society. Our institution stands on three pillars: academic rigour, industry relevance, and character formation.\n\nOver the past three decades, we have had the privilege of guiding thousands of young minds as they embarked on their professional journeys. Many of our alumni today occupy senior positions in leading corporations, public institutions, and are running their own enterprises — a testament to the transformative power of the education we provide.\n\nAs we move forward, our focus remains on staying ahead of the curve — integrating emerging technologies, fostering entrepreneurial thinking, and building partnerships with industry leaders to ensure our students are not just employed, but empowered.",
-      image: "/assets/director.jpg"
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      candidImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80"
     },
     missionVision: {
       vision: "To be a nationally recognised institution of excellence that empowers students with knowledge, skills, and values to lead meaningful and impactful careers in a dynamic global environment.",
       mission: "To provide accessible, high-quality, industry-relevant education through innovation in teaching, research, and community engagement — nurturing well-rounded professionals equipped to meet real-world challenges.",
-      coreValues: [{ text: "Integrity" }, { text: "Excellence" }, { text: "Innovation" }, { text: "Inclusion" }, { text: "Service" }]
+      coreValues: [{ text: "Integrity" }, { text: "Excellence" }, { text: "Innovation" }, { text: "Inclusion" }, { text: "Service" }],
+      bannerImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80",
+      editorialPhotos: [
+        { url: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80" }
+      ]
     },
     approvalsAffiliations: [
-      { name: "NAAC — National Assessment and Accreditation Council", image: "", subheading: "Quality accreditation benchmark.", description: "National Assessment and Accreditation Council." },
+      { name: "NAAC — National Assessment and Accreditation Council", image: "https://iimt.ishan.ac/images/accreditation/ugc-logo.gif", subheading: "Quality accreditation benchmark.", description: "National Assessment and Accreditation Council." },
       { name: "UGC — University Grants Commission", image: "https://iimt.ishan.ac/images/accreditation/ugc-logo.gif", subheading: "Recognition under Section 2(f) of UGC Act.", description: "University Grants Commission." },
       { name: "AICTE — All India Council for Technical Education", image: "https://iimt.ishan.ac/images/accreditation/aicte-logo.png", subheading: "Approval for BBA and BCA programs.", description: "All India Council for Technical Education." },
       { name: "NCTE — National Council for Teacher Education", image: "https://iimt.ishan.ac/images/accreditation/ncte-logo.png", subheading: "Approval for B.Ed and M.Ed programs.", description: "National Council for Teacher Education." },
-      { name: "CCS University, Meerut — Chaudhary Charan Singh University", image: "", subheading: "Affiliation for all degree programs.", description: "Chaudhary Charan Singh University, Meerut." },
+      { name: "CCS University, Meerut — Chaudhary Charan Singh University", image: "https://iimt.ishan.ac/images/accreditation/ncte-logo.png", subheading: "Affiliation for all degree programs.", description: "Chaudhary Charan Singh University, Meerut." },
       { name: "SCERT", image: "https://iimt.ishan.ac/images/accreditation/scert-logo.jpg", subheading: "Recognition for education programs.", description: "State Council of Educational Research & Training." },
     ],
+    campusCredibilityPhoto: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80",
     whyIimt: {
-      content: "Choosing IIMT is choosing a future-ready education. Here is why thousands of students and parents trust us:\n\n1. NAAC Accredited quality assurance with a proven 30-year track record\n2. Affiliated to CCS University — a UGC-recognised state university\n3. 90%+ consistent placement rate with 150+ active recruiting partners\n4. Industry-integrated curriculum with live projects and internship support\n5. Expert faculty including PhD holders, IIM/IIT alumni, and industry practitioners\n6. Certificate programmes in Tally, GST, Digital Marketing, and Python\n7. INFLIBNET N-LIST digital library with 6,000+ e-journals\n8. Safe, green campus with modern infrastructure and hostel facilities\n9. Strong alumni network of 10,000+ professionals for mentorship and referrals\n10. Transparent fee structure with scholarship options for deserving students"
+      content: "Choosing IIMT is choosing a future-ready education. Here is why thousands of students and parents trust us:\n\n1. NAAC Accredited quality assurance with a proven 30-year track record\n2. Affiliated to CCS University — a UGC-recognised state university\n3. 90%+ consistent placement rate with 150+ active recruiting partners\n4. Industry-integrated curriculum with live projects and internship support\n5. Expert faculty including PhD holders, IIM/IIT alumni, and industry practitioners\n6. Certificate programmes in Tally, GST, Digital Marketing, and Python\n7. INFLIBNET N-LIST digital library with 6,000+ e-journals\n8. Safe, green campus with modern infrastructure and hostel facilities\n9. Strong alumni network of 10,000+ professionals for mentorship and referrals\n10. Transparent fee structure with scholarship options for deserving students",
+      bannerImage: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=80",
+      images: [
+        { url: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=400&q=80" }
+      ]
     },
     bestPractices: [
-      { title: "Industry-Academia Interface", content: "Regular guest lectures from industry experts, corporate tie-ups, and live project modules ensure students stay connected with real-world business practices throughout their programme." },
-      { title: "Mentor-Mentee Programme", content: "Each incoming student is assigned a faculty mentor who provides academic and career guidance throughout the degree. Monthly one-on-one sessions help students navigate challenges and stay on track." },
-      { title: "Continuous Assessment", content: "Beyond semester exams, students are assessed through presentations, case studies, group discussions, and assignments — developing communication, analytical, and critical thinking skills." },
-      { title: "Entrepreneurship Cell", content: "The E-Cell organises ideathons, startup bootcamps and mentoring sessions. Students with promising business ideas receive guidance from alumni entrepreneurs and incubation support." },
-      { title: "Digital Learning Integration", content: "Smart classrooms, e-learning portals, and Moodle-based assignment tracking keep students engaged in a blended learning environment that supports both in-class and remote participation." },
+      { title: "Industry-Academia Interface", content: "Regular guest lectures from industry experts, corporate tie-ups, and live project modules ensure students stay connected with real-world business practices throughout their programme.", image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=400&q=80" },
+      { title: "Mentor-Mentee Programme", content: "Each incoming student is assigned a faculty mentor who provides academic and career guidance throughout the degree. Monthly one-on-one sessions help students navigate challenges and stay on track.", image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=400&q=80" },
+      { title: "Continuous Assessment", content: "Beyond semester exams, students are assessed through presentations, case studies, group discussions, and assignments — developing communication, analytical, and critical thinking skills.", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80" },
+      { title: "Entrepreneurship Cell", content: "The E-Cell organises ideathons, startup bootcamps and mentoring sessions. Students with promising business ideas receive guidance from alumni entrepreneurs and incubation support.", image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" },
+      { title: "Digital Learning Integration", content: "Smart classrooms, e-learning portals, and Moodle-based assignment tracking keep students engaged in a blended learning environment that supports both in-class and remote participation.", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" },
     ],
+    bestPracticesBanner: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
     greenInitiatives: {
-      content: "IIMT is committed to creating a sustainable campus that serves as a live laboratory for environmental stewardship:\n\nSolar Energy: Rooftop solar panels generate renewable energy, reducing our dependence on conventional power by over 20%.\n\nCampus Plantation: Over 1,500 trees and plants across the campus create green corridors, reduce heat islands, and improve air quality.\n\nWaste Management: A comprehensive waste segregation and recycling programme diverts over 60% of campus waste from landfills. Composting units convert organic waste into fertilizer for campus gardens.\n\nWater Conservation: Rainwater harvesting systems and efficient fixtures reduce water consumption across the campus.\n\nAwareness Programmes: Regular workshops, seminars, and competitions on environmental themes instill ecological consciousness in students. Green audits are conducted periodically to monitor and improve our environmental performance."
+      content: "IIMT is committed to creating a sustainable campus that serves as a live laboratory for environmental stewardship:\n\nSolar Energy: Rooftop solar panels generate renewable energy, reducing our dependence on conventional power by over 20%.\n\nCampus Plantation: Over 1,500 trees and plants across the campus create green corridors, reduce heat islands, and improve air quality.\n\nWaste Management: A comprehensive waste segregation and recycling programme diverts over 60% of campus waste from landfills. Composting units convert organic waste into fertilizer for campus gardens.\n\nWater Conservation: Rainwater harvesting systems and efficient fixtures reduce water consumption across the campus.\n\nAwareness Programmes: Regular workshops, seminars, and competitions on environmental themes instill ecological consciousness in students. Green audits are conducted periodically to monitor and improve our environmental performance.",
+      bannerImage: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80",
+      images: [
+        { url: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=400&q=80" }
+      ]
     },
     mandatoryDisclosure: {
       complianceStatement: "The information provided below is submitted as required by the All India Council for Technical Education (AICTE) and is updated annually to ensure full transparency. Any discrepancies found in the reported data should be immediately brought to the notice of the Admissions Office at Knowledge Park, Greater Noida.\n\nAICTE mandates public disclosure for the benefit of current and prospective students, parents, and regulatory authorities. It serves as a comprehensive record of the institution's facilities, faculty, and academic standards, ensuring accountability in the delivery of professional education.",
@@ -390,7 +418,8 @@ async function seed() {
         { category: "Financial Information", items: [{ text: "Fee structure per program" }, { text: "Scholarship details" }, { text: "Audited financial statements (annual)" }] },
         { category: "Infrastructure", items: [{ text: "Total campus area" }, { text: "Built-up area" }, { text: "Library resources" }, { text: "Computer labs and IT infrastructure" }] },
         { category: "Faculty", items: [{ text: "Permanent faculty list with qualifications" }, { text: "Visiting faculty details" }, { text: "Faculty development programs" }] }
-      ]
+      ],
+      bannerImage: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1200&q=80"
     },
     researchJournal: {
       description: "Management Stream (ISSN: 0974-0554) is the peer-reviewed research journal published by Ishan Institute of Management & Technology. Listed in the UGC CARE list, the journal publishes original research papers in areas of management, commerce, economics, and allied social sciences. The journal is published bi-annually and invites contributions from researchers, academicians, and practitioners.",
@@ -398,7 +427,8 @@ async function seed() {
       frequency: "Bi-annual",
       ugcCare: "Listed",
       peerReviewed: "Yes",
-      websiteUrl: "https://ms.ishan.ac"
+      websiteUrl: "https://ms.ishan.ac",
+      bannerImage: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80"
     }
   });
   console.log('✅ Seeded: About Us');
@@ -415,7 +445,15 @@ async function seed() {
       overview: "The Bachelor of Business Administration (BBA) programme at IIMT is designed to develop the next generation of business leaders. The programme provides a rigorous grounding in management principles, economics, marketing, human resources, and finance — while simultaneously developing soft skills, analytical thinking, and leadership capabilities.\n\nStudents benefit from live industry projects, guest lectures by corporate professionals, and a dedicated placement programme. The CUET-based admission process ensures meritocratic selection.",
       curriculumStructure: "Semester 1-2: Business Fundamentals — Principles of Management, Business Communication, Economics, Financial Accounting, Business Mathematics\n\nSemester 3-4: Core Specialisation — Marketing Management, Human Resource Management, Financial Management, Business Law, Research Methodology\n\nSemester 5-6: Advanced & Applied — Strategic Management, Entrepreneurship, Electives (Marketing/HR/Finance), Live Project, Campus Placement Preparation",
       careerScope: "BBA graduates from IIMT are equipped for roles in Banking & Financial Services, Marketing & Sales, Human Resource Management, Retail Management, Entrepreneurship, and preparation for MBA programmes at premier institutions.\n\nRecent BBA graduates have joined HDFC Bank, ICICI Bank, Kotak Mahindra, Amazon, Byju's, and various FMCG and consulting firms.",
-      slug: "bba"
+      slug: "bba",
+      bannerImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80",
+      studentActivityImages: [
+        { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80" }
+      ],
+      placementOutcomeImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80",
+      facultyTeachingImage: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80"
     },
     {
       programName: "B.Com",
@@ -426,7 +464,15 @@ async function seed() {
       overview: "The Bachelor of Commerce (B.Com) programme at IIMT provides a comprehensive education in accounting, commerce, taxation, and financial management. The programme is uniquely enhanced with practical certifications in Tally, GST Filing, and Auditing — making graduates immediately work-ready.\n\nAffiliated to CCS University, the B.Com degree is recognised by all government and private institutions. Graduates are eligible for CA, ICWA, CS, and MBA programmes.",
       curriculumStructure: "Semester 1-2: Financial Accounting, Business Economics, Business Mathematics & Statistics, Corporate Law\n\nSemester 3-4: Cost Accounting, Income Tax, Company Law, Auditing, Banking & Insurance\n\nSemester 5-6: Advanced Accounting, GST & Indirect Taxation, Financial Management, Tally ERP Certification, Internship",
       careerScope: "B.Com graduates are hired for roles in Accounting, Banking, Taxation, Financial Analysis, and Auditing. IIMT's Tally and GST certification gives graduates an edge in CA firms, banks, and corporate finance departments.\n\nTop recruiters include Deloitte, KPMG, HDFC Bank, Axis Bank, and numerous regional firms.",
-      slug: "bcom"
+      slug: "bcom",
+      bannerImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+      studentActivityImages: [
+        { url: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1521791136368-1a851902d357?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1542744173-8e0ee26cf115?auto=format&fit=crop&w=400&q=80" }
+      ],
+      placementOutcomeImage: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=600&q=80",
+      facultyTeachingImage: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80"
     },
     {
       programName: "BCA",
@@ -437,7 +483,15 @@ async function seed() {
       overview: "The Bachelor of Computer Applications (BCA) programme at IIMT prepares students for careers in software development, database management, web technologies, and IT infrastructure. The programme combines strong theoretical foundations with extensive hands-on lab sessions — ensuring graduates can contribute from Day 1 in a professional environment.\n\nStudents have access to 120+ computer systems, licensed development environments, and IIMT's dedicated Python and web development lab.",
       curriculumStructure: "Semester 1-2: Fundamentals of Computing, C Programming, Web Technologies (HTML/CSS), Mathematics for Computing, Database Basics\n\nSemester 3-4: Data Structures, Java Programming, DBMS with MySQL, Networking Fundamentals, Software Engineering\n\nSemester 5-6: Python Programming, Cloud Computing, Android Development, Cyber Security Basics, Final Project",
       careerScope: "BCA graduates join as Software Developers, Web Developers, IT Support Engineers, Database Administrators, and Systems Analysts. Many BCA graduates advance to MCA or MTech programmes.\n\nRecent placement partners include Infosys, Wipro, TCS, HCL, Tech Mahindra, and various software startups.",
-      slug: "bca"
+      slug: "bca",
+      bannerImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
+      studentActivityImages: [
+        { url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" }
+      ],
+      placementOutcomeImage: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=600&q=80",
+      facultyTeachingImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80"
     },
     {
       programName: "M.Com",
@@ -448,7 +502,15 @@ async function seed() {
       overview: "The Master of Commerce (M.Com) programme at IIMT is a postgraduate programme that deepens the student's understanding of advanced commerce, financial management, corporate governance, and research methods.\n\nM.Com graduates are positioned for senior roles in finance, teaching, research, and corporate planning. The programme is ideal for students pursuing NET/JRF for academic careers.",
       curriculumStructure: "Semester 1-2: Advanced Financial Accounting, Business Environment, Research Methodology, Corporate Tax Planning, Managerial Economics\n\nSemester 3-4: Securities & Capital Markets, International Finance, Dissertation / Major Project, Electives in Specialisation Area",
       careerScope: "M.Com graduates occupy roles in Corporate Finance, Investment Banking, Academic Research, and CA/ICWA offices. Many pursue UGC NET/JRF to enter academia.\n\nInstitutions like Deloitte, RBI, SEBI, and state PSUs recruit M.Com postgraduates from IIMT.",
-      slug: "mcom"
+      slug: "mcom",
+      bannerImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+      studentActivityImages: [
+        { url: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" }
+      ],
+      placementOutcomeImage: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=600&q=80",
+      facultyTeachingImage: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80"
     },
     {
       programName: "B.Ed",
@@ -459,7 +521,15 @@ async function seed() {
       overview: "The Bachelor of Education (B.Ed) programme at IIMT is approved by the National Council for Teacher Education (NCTE) and affiliated to CCS University, Meerut. This professional teacher training programme equips graduates with the pedagogical skills, subject knowledge, and teaching methodologies required to excel in secondary and senior secondary education.\n\nThe 2-year curriculum includes extensive school internship placements in affiliated schools across Greater Noida — providing real classroom experience under expert supervision.",
       curriculumStructure: "Year 1: Childhood and Growing Up, Contemporary India and Education, Learning and Teaching, Language Across the Curriculum, Understanding Disciplines & Subjects, School Internship I\n\nYear 2: Gender, School and Society, Knowledge and Curriculum, Assessment for Learning, Creating Inclusive School, Specialisation Pedagogy Subjects, School Internship II",
       careerScope: "B.Ed graduates are eligible to teach at secondary and senior secondary schools (Classes 6-12) across India. Teaching opportunities exist in CBSE, ICSE, state board schools, both private and government.\n\nRecent B.Ed graduates from IIMT have joined Delhi Public School, Ryan International, KV, and various state government schools through TET/CTET qualifying examinations.",
-      slug: "bed"
+      slug: "bed",
+      bannerImage: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80",
+      studentActivityImages: [
+        { url: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1491841573190-72d61a7a14e9?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=80" }
+      ],
+      placementOutcomeImage: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80",
+      facultyTeachingImage: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80"
     },
     {
       programName: "M.Ed",
@@ -470,7 +540,15 @@ async function seed() {
       overview: "The Master of Education (M.Ed) programme at IIMT is the highest professional qualification for educators, approved by NCTE. It trains educational administrators, researchers, teacher educators, and curriculum specialists to reform and lead educational institutions.\n\nM.Ed graduates are well-positioned for senior roles in school administration, teacher training institutions (DIETs, CTEs), and educational policy bodies.",
       curriculumStructure: "Year 1: Education in Emerging Indian Society, Educational Research & Statistics, Philosophical Perspectives in Education, Psychological Perspectives in Education, Sociological Perspectives\n\nYear 2: Educational Administration & Management, Curriculum Development, ICT in Education, Specialisation Elective, Dissertation / Research Project",
       careerScope: "M.Ed graduates work as Teacher Educators, Educational Administrators, Curriculum Designers, Educational Consultants, and Researchers. They are eligible for Lecturer/Assistant Professor posts in B.Ed colleges and are NET/JRF qualified for academic research roles.",
-      slug: "med"
+      slug: "med",
+      bannerImage: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=80",
+      studentActivityImages: [
+        { url: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1491841573190-72d61a7a14e9?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=80" }
+      ],
+      placementOutcomeImage: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80",
+      facultyTeachingImage: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80"
     }
   ]);
   console.log('✅ Seeded: Courses');
@@ -480,79 +558,143 @@ async function seed() {
   await IimtCampusLife.create({
     infrastructure: {
       content: "IIMT's campus in Knowledge Park-III, Greater Noida, is spread across a well-designed green area featuring smart classrooms, air-conditioned labs, a state-of-the-art library, indoor and outdoor sports facilities, hostels, and a large auditorium. The campus is fully Wi-Fi enabled with CCTV surveillance throughout.\n\nModern infrastructure includes advanced computer laboratories, smart projector-equipped classrooms, dedicated faculty research rooms, seminar halls, and a vibrant student commons area.",
-      imageUrl: "/assets/hero-campus.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
       specs: [
         { label: "Location", value: "Knowledge Park-III, Greater Noida" },
         { label: "Campus Area", value: "5+ Acres" },
         { label: "Connectivity", value: "100 Mbps Wi-Fi" },
         { label: "Security", value: "24/7 CCTV & Security Guard" },
+      ],
+      bannerImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+      images: [
+        { url: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=400&q=80" }
       ]
     },
-    itLab: {
+    itLabs: {
       content: "The IT labs at IIMT are designed to provide hands-on computing experience for students across all programmes. Equipped with 120+ systems with the latest hardware and licensed software, the labs support practical sessions in programming, database management, web development, and accounting software.\n\nBCA students have dedicated access to advanced development environments including VS Code, Eclipse, IntelliJ IDEA, MySQL Workbench, and Python environments. BBA and B.Com students use the labs for Tally ERP, Excel, and Digital Marketing tools.\n\nThe lab infrastructure includes 100 Mbps dedicated internet connectivity, networked printers, UPS backup, and professional IT support. Students can access the labs from 8:30 AM to 5:30 PM, Monday to Saturday.",
-      imageUrl: "/assets/hero-campus.jpg",
-      specs: [
-        { label: "Computers", value: "120+ desktops" },
-        { label: "Internet Speed", value: "100 Mbps dedicated" },
-        { label: "Software", value: "VS Code, MySQL, Tally, Python" },
-        { label: "Timings", value: "8:30 AM – 5:30 PM" },
+      imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+      specs: {
+        computers: "120+ desktops",
+        internetSpeed: "100 Mbps dedicated",
+        software: "VS Code, MySQL, Tally, Python",
+        timings: "8:30 AM – 5:30 PM"
+      },
+      rules: [
+        { text: "Food and drinks are strictly prohibited inside the lab." },
+        { text: "Silence must be maintained at all times to ensure a productive environment." },
+        { text: "Do not modify any system settings or install unauthorized software." },
+        { text: "Keep bags and personal belongings in designated racks outside." }
+      ],
+      equipmentWideImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+      equipmentCloseups: [
+        { url: "https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&w=400&q=80" }
+      ],
+      studentsWorkingImages: [
+        { url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" }
+      ],
+      safetySignageImage: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&w=400&q=80",
+      bannerImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+      images: [
+        { url: "https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" }
       ]
     },
     library: {
       content: "The IIMT library serves as the academic backbone of the institution, housing over 15,000 books across management, commerce, computer science, education, and general reference categories. The library subscribes to national and international journals and provides INFLIBNET N-LIST access for digital resources — giving students access to 6,000+ e-journals and e-books.\n\nA spacious reading room accommodates 100+ students simultaneously, providing a quiet, air-conditioned environment for focused study. The library also maintains a dedicated reference section, previous year question papers, and project/dissertation archives for student use.\n\nTimings: Monday to Saturday, 8:00 AM to 6:00 PM. Students can borrow up to 3 books for 14 days.",
-      imageUrl: "/assets/students-library.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80",
       specs: [
         { label: "Total Books", value: "15,000+" },
         { label: "Digital Access", value: "INFLIBNET N-LIST" },
         { label: "E-Journals", value: "6,000+" },
         { label: "Seating", value: "100+ seats" },
+      ],
+      bannerImage: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80",
+      images: [
+        { url: "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80" }
       ]
     },
     auditorium: {
       content: "The IIMT auditorium is a fully equipped venue with a seating capacity for 500+ delegates. Featuring professional sound systems, stage lighting, projection screens, and climate control, the auditorium serves as the primary venue for convocations, cultural events, executive talks, and institutional ceremonies.\n\nKshitiz — the annual flagship cultural festival — is hosted in the auditorium, drawing thousands of participants from IIMT and partner institutions. Regular seminars, guest lectures, and inter-college competitions also take place here.",
-      imageUrl: "/assets/auditorium.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80",
       specs: [
         { label: "Seating", value: "500+ seats" },
         { label: "AV Setup", value: "Professional Sound & Lights" },
         { label: "Events", value: "Kshitiz, Seminars, Convocation" },
+      ],
+      bannerImage: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80",
+      images: [
+        { url: "https://images.unsplash.com/photo-1503095391757-1120024f744b?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1461151304267-38535e780c79?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=400&q=80" }
       ]
     },
     sports: {
       content: "Sports and physical wellbeing are integral to the IIMT experience. The campus features dedicated outdoor facilities for cricket, football, basketball, and athletics, along with indoor facilities for table tennis, carrom, and chess.\n\nThe Annual Sports Meet brings together students from all programmes for inter-department and inter-college competitions. IIMT encourages sports participation through sports scholarships for state and national level achievers, and through the NSSO physical training module integrated into academic schedules.",
-      imageUrl: "",
+      imageUrl: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80",
       specs: [
         { label: "Outdoor", value: "Cricket, Football, Basketball" },
         { label: "Indoor", value: "Table Tennis, Chess, Carrom" },
         { label: "Annual Event", value: "Sports Meet" },
+      ],
+      bannerImage: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=80",
+      images: [
+        { url: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1544698310-74ea9d1c8258?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=400&q=80" }
       ]
     },
     hostel: {
       content: "IIMT provides separate hostel facilities for boys and girls in close proximity to the campus. Both hostels are supervised by resident wardens, equipped with 24-hour CCTV surveillance, mess facilities offering nutritious meals, Wi-Fi, study rooms, and common recreation areas.\n\nHostel admissions are allocated on a first-come-first-served basis. Students from outside the Delhi NCR region are given priority. The hostels are inspected regularly by the administration and maintain strict standards of hygiene and security.",
-      imageUrl: "/assets/hero-campus.jpg",
+      imageUrl: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80",
       specs: [
         { label: "Security", value: "24/7 CCTV & Wardens" },
         { label: "Connectivity", value: "Free Wi-Fi" },
         { label: "Food", value: "Mess & Cafeteria" },
+      ],
+      bannerImage: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&q=80",
+      images: [
+        { url: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=400&q=80" }
       ]
     },
     culturalActivities: {
       content: "Cultural activities at IIMT are central to student development. The flagship Kshitiz Cultural Festival — held annually — is a three-day celebration of music, dance, drama, art, and innovation. The event attracts participants from colleges across Delhi NCR and has grown into one of the most anticipated student festivals in Greater Noida.\n\nBeyond Kshitiz, IIMT organises regular events including Independence Day and Republic Day celebrations, Teacher's Day programmes, Freshers Welcomes, Farewell galas, inter-departmental competitions, and personality development workshops.",
-      imageUrl: "",
+      imageUrl: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80",
       specs: [
         { label: "Flagship Event", value: "Kshitiz Fest" },
         { label: "Activities", value: "Music, Dance, Drama, Arts" },
         { label: "Clubs", value: "Literary, Cultural, Tech" },
+      ],
+      bannerImage: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+      images: [
+        { url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=400&q=80" },
+        { url: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=400&q=80" }
       ]
     },
     visitingFaculty: [
-      { name: "CA Rakesh Mehta", org: "Mehta & Associates", specialisation: "Advanced Accounting & Taxation", dept: "Commerce" },
-      { name: "Mr. Sunil Kapoor", org: "HDFC Bank (Retd. VP)", specialisation: "Banking Operations & Risk Management", dept: "Management" },
-      { name: "Ms. Deepika Nair", org: "Google India (Sr. Manager)", specialisation: "Digital Marketing & Analytics", dept: "IT" },
-      { name: "Dr. Anjali Saxena", org: "DPS Greater Noida (Principal)", specialisation: "School Administration & Leadership", dept: "Education" },
-      { name: "CFA Arun Bhatia", org: "Axis Capital", specialisation: "Investment Analysis & Portfolio Mgmt", dept: "Commerce" },
-      { name: "Mr. Rajiv Tandon", org: "Infosys (Project Lead)", specialisation: "Software Development & Agile", dept: "IT" },
-      { name: "Dr. Preeti Malhotra", org: "NCERT (Sr. Researcher)", specialisation: "Curriculum Design & Assessment", dept: "Education" },
-      { name: "Mr. Harsh Vardhan", org: "Startup Founder, eVentures", specialisation: "Entrepreneurship & Business Strategy", dept: "Management" }
+      { name: "CA Rakesh Mehta", org: "Mehta & Associates", specialisation: "Advanced Accounting & Taxation", dept: "Commerce", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" },
+      { name: "Mr. Sunil Kapoor", org: "HDFC Bank (Retd. VP)", specialisation: "Banking Operations & Risk Management", dept: "Management", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" },
+      { name: "Ms. Deepika Nair", org: "Google India (Sr. Manager)", specialisation: "Digital Marketing & Analytics", dept: "IT", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" },
+      { name: "Dr. Anjali Saxena", org: "DPS Greater Noida (Principal)", specialisation: "School Administration & Leadership", dept: "Education", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" },
+      { name: "CFA Arun Bhatia", org: "Axis Capital", specialisation: "Investment Analysis & Portfolio Mgmt", dept: "Commerce", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" },
+      { name: "Mr. Rajiv Tandon", org: "Infosys (Project Lead)", specialisation: "Software Development & Agile", dept: "IT", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" },
+      { name: "Dr. Preeti Malhotra", org: "NCERT (Sr. Researcher)", specialisation: "Curriculum Design & Assessment", dept: "Education", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" },
+      { name: "Mr. Harsh Vardhan", org: "Startup Founder, eVentures", specialisation: "Entrepreneurship & Business Strategy", dept: "Management", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" }
+    ],
+    faculty: [
+      { name: "Dr. Sandeep Kumar", designation: "Professor & Head", dept: "Management", qualification: "PhD, MBA", specialisation: "Strategic Management & Corporate Governance", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" },
+      { name: "Dr. Shalini Gupta", designation: "Associate Professor", dept: "Commerce", qualification: "PhD, M.Com", specialisation: "Financial Accounting & Auditing", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" },
+      { name: "Mr. Alok Singh", designation: "Assistant Professor", dept: "IT", qualification: "M.Tech, BCA", specialisation: "Database Systems & Web Technologies", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" },
+      { name: "Dr. Rashmi Verma", designation: "Professor", dept: "Education", qualification: "PhD, M.Ed", specialisation: "Educational Psychology & Pedagogy", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" }
     ]
   });
   console.log('✅ Seeded: Campus Life');
@@ -608,6 +750,12 @@ async function seed() {
       { category: "Sports Scholarship", concession: "Up to 15% fee waiver", description: "State or National level sports achievement required. Submit sports certificates during admission process." },
       { category: "Single Girl Child", concession: "5% fee concession", description: "For students who are the sole girl child in their family. Submit affidavit with admission documents." },
     ],
+    scholarshipsBanner: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=1200&q=80",
+    scholarshipsHandoverImages: [
+      { url: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80" },
+      { url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=400&q=80" }
+    ],
+    faqsBanner: "https://images.unsplash.com/photo-1521791136368-1a851902d357?auto=format&fit=crop&w=1200&q=80",
     faqs: [
       { question: "Is IIMT affiliated to CCS University?", answer: "Yes, IIMT is affiliated to Chaudhary Charan Singh (CCS) University, Meerut, for its degree programs." },
       { question: "What are the timings for the admissions office?", answer: "The admissions office is open from Monday to Saturday, 9:00 AM to 5:00 PM." },
@@ -744,7 +892,11 @@ async function seed() {
       address: "IIMT — Ishan Institute of Management & Technology, Knowledge Park-III, Greater Noida, Uttar Pradesh 201308",
       phone: "8448797700",
       email: "info@ishan.ac",
-      mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.2!2d77.49!3d28.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sIIMT+Greater+Noida!5e0!3m2!1sen!2sin!4v1"
+      mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.2!2d77.49!3d28.47!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sIIMT+Greater+Noida!5e0!3m2!1sen!2sin!4v1",
+      bannerImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+      images: [
+        { url: "https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=400&q=80" }
+      ]
     },
     collegeContacts: [
       { collegeName: "Admissions Office", phone: "8448797700", email: "admissions@ishan.ac", address: "Ground Floor, IIMT Main Building, Knowledge Park-III" },
@@ -753,9 +905,72 @@ async function seed() {
       { collegeName: "B.Ed / M.Ed Department", phone: "8448797703", email: "education@ishan.ac", address: "Block C, IIMT Campus" },
       { collegeName: "Accounts / Fee Office", phone: "8448797704", email: "accounts@ishan.ac", address: "Administrative Block, Ground Floor" },
       { collegeName: "Placement Cell", phone: "8448797705", email: "placements@ishan.ac", address: "Placement Office, Block A, First Floor" },
-    ]
+    ],
+    feedback: {
+      pageTitle: "Feedback",
+      pageSubtitle: "We value your feedback",
+      description: "Please let us know how we can improve",
+      bannerImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+      images: []
+    },
+    careers: {
+      pageTitle: "Careers at IIMT",
+      pageSubtitle: "Join our team",
+      description: "Explore opportunities",
+      email: "hr@ishan.ac",
+      bannerImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+      images: [],
+      jobs: []
+    }
   });
   console.log('✅ Seeded: Contact Us');
+
+  // ─── 11.5 STUDENT ZONE ───────────────────────────────────────────────────────
+  await IimtStudentZone.deleteMany({});
+  await IimtStudentZone.create({
+    downloads: {
+      pageTitle: "Downloads",
+      pageSubtitle: "Access important forms and documents",
+      bannerImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+      files: []
+    },
+    pastPapers: {
+      pageTitle: "Past Exam Papers",
+      pageSubtitle: "Prepare for your exams",
+      subheading: "Resources",
+      heading: "Previous Years' Question Papers",
+      description: "Download past papers for practice.",
+      footerText: "Contact library for more.",
+      bannerImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+      papers: []
+    },
+    codeOfConduct: {
+      pageTitle: "Code of Conduct",
+      pageSubtitle: "Rules and Regulations",
+      bannerImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+      content: "Students are expected to maintain discipline."
+    },
+    antiRagging: {
+      pageTitle: "Anti-Ragging",
+      pageSubtitle: "Zero Tolerance Policy",
+      helplinePhone: "1800-180-5522",
+      bannerImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+      content: "Ragging is strictly prohibited."
+    },
+    grievanceRedressal: {
+      pageTitle: "Grievance Redressal",
+      pageSubtitle: "Submit your concerns",
+      bannerImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+      content: "We are here to help."
+    },
+    privacyPolicy: {
+      pageTitle: "Privacy Policy",
+      pageSubtitle: "How we protect your data",
+      bannerImage: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+      content: "Your privacy is important to us."
+    }
+  });
+  console.log('✅ Seeded: Student Zone');
 
   // ─── 12. ACADEMICS ───────────────────────────────────────────────────────────
   await IimtAcademics.deleteMany({});
@@ -810,11 +1025,25 @@ async function seed() {
     ],
     skillDevelopment: {
       description: "IIMT's Skill Development Cell organizes structured workshops and training sessions every semester, designed to bridge the gap between academic knowledge and professional competence. These programs are mandatory for all students and contribute to their overall personality development.",
-      skills: ["Communication Skills & Public Speaking", "Resume Building & Interview Prep", "Leadership & Team Management", "Business Etiquette & Grooming", "Presentation Skills", "Time Management & Goal Setting", "Critical Thinking & Problem Solving", "Emotional Intelligence"]
+      skills: [
+        { text: "Communication Skills & Public Speaking" },
+        { text: "Resume Building & Interview Prep" },
+        { text: "Leadership & Team Management" },
+        { text: "Business Etiquette & Grooming" },
+        { text: "Presentation Skills" },
+        { text: "Time Management & Goal Setting" },
+        { text: "Critical Thinking & Problem Solving" },
+        { text: "Emotional Intelligence" }
+      ]
     },
     debatesGD: {
       description: "At IIMT, we believe the ability to articulate and defend ideas is as important as academic excellence. Regular debates and GD sessions prepare students for corporate interviews, competitive exams, and future leadership roles. This culture of open dialogue helps build confidence, critical thinking, and respectful disagreement.",
-      participationPoints: ["Inter-college competitions", "Campus debate society", "Faculty-led workshops", "Alumni mentoring sessions"],
+      participationPoints: [
+        { text: "Inter-college competitions" },
+        { text: "Campus debate society" },
+        { text: "Faculty-led workshops" },
+        { text: "Alumni mentoring sessions" }
+      ],
       activities: [
         { title: "Topic-based Debates", description: "Regular sessions on current affairs, economic policies, and ethical dilemmas.", icon: "Mic2" },
         { title: "Management Case GDs", description: "Group discussions centered around real-world business cases and decision-making.", icon: "Briefcase" },
@@ -826,9 +1055,9 @@ async function seed() {
     industrialVisits: {
       description: "Industrial visits are a core part of experiential learning at IIMT. Students visit manufacturing plants, financial institutions, tech companies, and government organisations to witness classroom theory in action. These visits are organised semester-wise for all programmes to ensure students stay updated with current industry practices.",
       whyVisitsMatter: [
-        "Professional environment exposure helps students adapt to workplace culture early.",
-        "Industry networking opportunities with professionals and HR managers during visits.",
-        "Organisational culture insights provide clarity on career paths and industry expectations."
+        { text: "Professional environment exposure helps students adapt to workplace culture early." },
+        { text: "Industry networking opportunities with professionals and HR managers during visits." },
+        { text: "Organisational culture insights provide clarity on career paths and industry expectations." }
       ],
       visits: [
         { company: "Mother Dairy", sector: "FMCG / Manufacturing", program: "B.Com, BBA", year: "2023-24", outcome: "Understanding large-scale logistics, quality control, and supply chain management." },

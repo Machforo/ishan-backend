@@ -27,7 +27,8 @@ const facultySchema = new mongoose.Schema({
   bio: String,
   publications: String,
   experience: String,
-  image: String
+  image: String,
+  departmentBanner: String
 }, { timestamps: true });
 
 // --- Programs Collection ---
@@ -42,6 +43,11 @@ const programSchema = new mongoose.Schema({
   annualFee: String,
   careerScope: String,
   image: String,
+  bannerImage: String,
+  studentActivityImages: [{ url: String }],
+  placementOutcomeImage: String,
+  facultyTeachingImage: String,
+  images: [{ url: String }],
   slug: { type: String, unique: true }
 }, { timestamps: true });
 
@@ -100,14 +106,19 @@ const faqSchema = new mongoose.Schema({
 // --- About Us Singleton ---
 const aboutUsSchema = new mongoose.Schema({
   ourStory: { title: String, content: String, image: String },
+  bannerImage: String,
+  editorialPhotos: [{ url: String }],
   milestones: [{ year: String, title: String, desc: String, event: String }],
   keyDifferentiators: [{ title: String }],
-  principalMessage: { name: String, designation: String, message: String, image: String },
-  missionVision: { vision: String, mission: String, coreValues: String, image1: String, image2: String },
+  principalMessage: { name: String, designation: String, message: String, image: String, candidImage: String },
+  missionVision: { vision: String, mission: String, coreValues: String, image1: String, image2: String, bannerImage: String },
   approvals: [{ title: String, description: String, logo: String }],
-  WhyIshanLaw: { content: String, image: String, reasons: [{ title: String, description: String, icon: String }] },
-  bestPractices: [{ title: String, content: String }],
-  greenInitiatives: { content: String, image: String, initiatives: [{ title: String, desc: String, stat: String, icon: String }] }
+  approvalsPageBanner: String,
+  WhyIshanLaw: { content: String, image: String, bannerImage: String, images: [{ url: String }], reasons: [{ title: String, description: String, icon: String }] },
+  bestPractices: [{ title: String, content: String, image: String }],
+  bestPracticesBanner: String,
+  greenInitiatives: { content: String, image: String, bannerImage: String, images: [{ url: String }], initiatives: [{ title: String, desc: String, stat: String, icon: String }] },
+  faqsBanner: String
 }, { timestamps: true });
 
 // --- Regulatory Singletons ---
@@ -165,6 +176,8 @@ const visitSchema = new mongoose.Schema({
   overviewHeading: String,
   overviewContent: String,
   image: String,
+  bannerImage: String,
+  visitPhotos: [{ url: String }],
   visits: [{ company: String, location: String, date: String, description: String, takeaways: String }]
 }, { timestamps: true });
 
@@ -201,6 +214,9 @@ const researchJournalSchema = new mongoose.Schema({
   subtitle: String,
   content: String,
   image: String,
+  bannerImage: String,
+  journalCoverImage: String,
+  editorialBoardPhotos: [{ url: String }],
   stats: [{ label: String, value: String }],
   guidelinesLink: String
 }, { timestamps: true });
@@ -216,7 +232,9 @@ const placementSchema = new mongoose.Schema({
   placementNumbers: [{ value: String, label: String, icon: String }],
   recruitingPartners: [{ name: String, logo: String }],
   successStories: [{ name: String, program: String, company: String, package: String, quote: String, image: String }],
-  placementProcess: [{ step: String, desc: String }]
+  placementProcess: [{ step: String, desc: String }],
+  bannerImage: String,
+  ceremonyPhoto: String
 }, { timestamps: true });
 
 const researchProjectSchema = new mongoose.Schema({
@@ -267,12 +285,18 @@ const admissionSchema = new mongoose.Schema({
   documents: [{ docName: String }],
   alertBanner: { title: String, content: String, isActive: Boolean },
   admissionContact: { phone: String, email: String },
-  scholarships: [{ category: String, concession: String, description: String }]
+  scholarships: [{ category: String, concession: String, description: String }],
+  bannerImage: String,
+  orientationPhotos: [{ url: String }],
+  scholarshipsBanner: String,
+  scholarshipsHandoverPhotos: [{ url: String }]
 }, { timestamps: true });
 
 const programsOverviewSchema = new mongoose.Schema({
   content: String,
   image: String,
+  bannerImage: String,
+  editorialPhotos: [{ url: String }],
   keyPoints: [{ point: String }]
 }, { timestamps: true });
 
@@ -296,6 +320,8 @@ const genericPageSchema = new mongoose.Schema({
   subtitle: String,
   content: String,
   image: String,
+  bannerImage: String,
+  images: [{ url: String }],
   items: [{ title: String, desc: String, icon: String }]
 }, { timestamps: true });
 
@@ -357,9 +383,17 @@ const footerSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const infrastructureSchema = new mongoose.Schema({
-  library: { image: String, content: String, totalBooks: String },
+  library: { image: String, content: String, totalBooks: String, bannerImage: String, images: [{ url: String }] },
   mootCourt: { image: String, description: String },
-  hostel: { image: String, content: String }
+  hostel: { image: String, content: String, bannerImage: String, images: [{ url: String }] },
+  infrastructure: { bannerImage: String, images: [{ url: String }] },
+  auditorium: { bannerImage: String, images: [{ url: String }] },
+  sports: { bannerImage: String, images: [{ url: String }] },
+  itLab: { bannerImage: String, images: [{ url: String }] },
+  newsEventsBanner: String,
+  alumniNetworkBanner: String,
+  alumniMeetPhoto: String,
+  newsEventsBannerImage: String
 }, { timestamps: true });
 
 module.exports = {

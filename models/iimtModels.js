@@ -24,13 +24,14 @@ const iimtHomePageSchema = new mongoose.Schema({
   partnerships: [{ name: String, image: String }],
   aboutIimt: { heading: String, description: String, image: String },
   standApart: {
+    heading: String,
     description: String,
-    points: [String],
+    points: [{ title: String, description: String, icon: String }],
     cta: String
   },
   lifeAtIimt: {
     heading: String,
-    images: [String]
+    images: [{ url: String }]
   },
   successStories: {
     students: [{ photo: String, feedback: String, name: String }],
@@ -46,14 +47,28 @@ const iimtHomePageSchema = new mongoose.Schema({
 
 // --- IIMT About Us ---
 const iimtAboutUsSchema = new mongoose.Schema({
-  ourStory: { image: String, description: String },
+  ourStory: { 
+    image: String, 
+    description: String,
+    bannerImage: String,
+    editorialPhotos: [{ url: String }],
+    timelineInfographic: String
+  },
   ourJourney: [{ year: String, event: String }],
   keyDifferentiators: [{ title: String, description: String }],
-  directorMessage: { name: String, designation: String, message: String, image: String },
+  directorMessage: { 
+    name: String, 
+    designation: String, 
+    message: String, 
+    image: String,
+    candidImage: String
+  },
   missionVision: { 
     vision: String, 
     mission: String, 
-    coreValues: [String] 
+    coreValues: [{ text: String }],
+    bannerImage: String,
+    editorialPhotos: [{ url: String }]
   },
   approvalsAffiliations: [{ 
     name: String, 
@@ -61,9 +76,34 @@ const iimtAboutUsSchema = new mongoose.Schema({
     subheading: String, 
     description: String 
   }],
-  whyIimt: { content: String },
-  bestPractices: [{ title: String, content: String }],
-  greenInitiatives: { content: String }
+  whyIimt: { 
+    content: String,
+    bannerImage: String,
+    images: [{ url: String }]
+  },
+  bestPractices: [{ title: String, content: String, image: String }],
+  bestPracticesBanner: String,
+  greenInitiatives: { 
+    content: String,
+    bannerImage: String,
+    images: [{ url: String }]
+  },
+  campusCredibilityPhoto: String,
+  mandatoryDisclosure: {
+    complianceStatement: String,
+    downloadPdfUrl: String,
+    disclosures: [{ category: String, items: [{ text: String }] }],
+    bannerImage: String
+  },
+  researchJournal: {
+    description: String,
+    issn: String,
+    frequency: String,
+    ugcCare: String,
+    peerReviewed: String,
+    websiteUrl: String,
+    bannerImage: String
+  }
 }, { timestamps: true });
 
 // --- IIMT Courses ---
@@ -79,12 +119,28 @@ const iimtCourseSchema = new mongoose.Schema({
   annualFee: String,
   annualIntake: String,
   eligibility: String,
-  slug: { type: String, unique: true }
+  slug: { type: String, unique: true },
+  bannerImage: String,
+  studentActivityImages: [{ url: String }],
+  placementOutcomeImage: String,
+  facultyTeachingImage: String,
+  images: [{ url: String }]
 }, { timestamps: true });
 
 // --- IIMT Campus Life ---
 const iimtCampusLifeSchema = new mongoose.Schema({
-  infrastructure: { image: String, content: String, facilities: [{ icon: String, title: String, desc: String, link: String }] },
+  infrastructure: { 
+    image: String, 
+    imageUrl: String,
+    content: String, 
+    facilities: [{ icon: String, title: String, desc: String, link: String }],
+    heroWideAngle: String,
+    eventPhoto: String,
+    entranceImage: String,
+    interiorDetails: [{ url: String }],
+    bannerImage: String,
+    images: [{ url: String }]
+  },
   itLabs: { 
     specs: {
       computers: String,
@@ -92,31 +148,74 @@ const iimtCampusLifeSchema = new mongoose.Schema({
       software: String,
       timings: String
     },
-    rules: [{ text: String }]
+    rules: [{ text: String }],
+    equipmentWideImage: String,
+    equipmentCloseups: [{ url: String }],
+    studentsWorkingImages: [{ url: String }],
+    safetySignageImage: String,
+    bannerImage: String,
+    images: [{ url: String }]
   },
   library: {
     image: String,
+    imageUrl: String,
     content: String,
-    specs: [{ label: String, value: String }]
+    specs: [{ label: String, value: String }],
+    equipmentWideImage: String,
+    equipmentCloseups: [{ url: String }],
+    studentsWorkingImages: [{ url: String }],
+    safetySignageImage: String,
+    bannerImage: String,
+    images: [{ url: String }]
   },
   auditorium: {
     image: String,
+    imageUrl: String,
     content: String,
-    specs: [{ label: String, value: String }]
+    specs: [{ label: String, value: String }],
+    heroWideAngle: String,
+    eventPhoto: String,
+    entranceImage: String,
+    interiorDetails: [{ url: String }],
+    equipmentWideImage: String,
+    equipmentCloseups: [{ url: String }],
+    studentsWorkingImages: [{ url: String }],
+    safetySignageImage: String,
+    bannerImage: String,
+    images: [{ url: String }]
   },
   sports: {
     content: String,
-    specs: [{ label: String, value: String }]
+    specs: [{ label: String, value: String }],
+    heroWideAngle: String,
+    eventPhoto: String,
+    entranceImage: String,
+    interiorDetails: [{ url: String }],
+    bannerImage: String,
+    images: [{ url: String }]
   },
   hostel: {
     image: String,
     content: String,
     amenities: [{ text: String }],
-    specs: [{ label: String, value: String }]
+    specs: [{ label: String, value: String }],
+    roomInteriors: [{ url: String }],
+    washroomImages: [{ url: String }],
+    diningHallImages: [{ url: String }],
+    commonRoomImages: [{ url: String }],
+    securityCctvImages: [{ url: String }],
+    bannerImage: String,
+    images: [{ url: String }]
   },
   culturalActivities: {
     content: String,
-    specs: [{ label: String, value: String }]
+    specs: [{ label: String, value: String }],
+    performancesImages: [{ url: String }],
+    competitionsImages: [{ url: String }],
+    crowdShotsImages: [{ url: String }],
+    prizeCeremonyImages: [{ url: String }],
+    bannerImage: String,
+    images: [{ url: String }]
   },
   faculty: [{
     name: String,
@@ -130,7 +229,8 @@ const iimtCampusLifeSchema = new mongoose.Schema({
     name: String,
     org: String,
     specialisation: String,
-    dept: String
+    dept: String,
+    image: String
   }]
 }, { timestamps: true });
 
@@ -140,6 +240,7 @@ const iimtStudentZoneSchema = new mongoose.Schema({
   downloads: {
     pageTitle: String,
     pageSubtitle: String,
+    bannerImage: String,
     files: [{ name: String, fileType: String, category: String, size: String, link: String }]
   },
   pastPapers: {
@@ -149,27 +250,32 @@ const iimtStudentZoneSchema = new mongoose.Schema({
     heading: String,
     description: String,
     footerText: String,
+    bannerImage: String,
     papers: [{ name: String, program: String, year: String, size: String, link: String, semester: String }]
   },
   codeOfConduct: {
     pageTitle: String,
     pageSubtitle: String,
+    bannerImage: String,
     content: String
   },
   antiRagging: {
     pageTitle: String,
     pageSubtitle: String,
     helplinePhone: String,
+    bannerImage: String,
     content: String
   },
   grievanceRedressal: {
     pageTitle: String,
     pageSubtitle: String,
+    bannerImage: String,
     content: String
   },
   privacyPolicy: {
     pageTitle: String,
     pageSubtitle: String,
+    bannerImage: String,
     content: String
   }
 }, { timestamps: true });
@@ -178,12 +284,17 @@ const iimtStudentZoneSchema = new mongoose.Schema({
 const iimtAdmissionsSchema = new mongoose.Schema({
   howToApply: {
     highlight: String,
+    bannerImage: String,
+    images: [{ url: String }],
     admissionProcess: [{ step: String, desc: String }],
     documentChecklist: [String],
     helpContact: String
   },
   scholarships: [{ category: String, description: String }],
-  faqs: [{ question: String, answer: String }]
+  faqs: [{ question: String, answer: String }],
+  scholarshipsBanner: String,
+  scholarshipsHandoverImages: [{ url: String }],
+  faqsBanner: String
 }, { timestamps: true });
 
 // --- IIMT Placements ---
@@ -191,7 +302,9 @@ const iimtPlacementsSchema = new mongoose.Schema({
   stats: [{ label: String, value: String, description: String }],
   process: [{ step: String, desc: String }],
   partners: [{ name: String, logo: String }],
-  studentSuccess: [{ name: String, company: String, feedback: String, photo: String }]
+  studentSuccess: [{ name: String, company: String, feedback: String, photo: String }],
+  statsInfographic: String,
+  placementCeremonyImages: [{ url: String }]
 }, { timestamps: true });
 
 
@@ -211,13 +324,16 @@ const iimtLearningSchema = new mongoose.Schema({
       date: String,
       venue: String,
       category: String,
-      description: String
+      description: String,
+      image: String
     }]
   },
   skillDevelopment: {
     pageTitle: String,
     pageSubtitle: String,
     description: String,
+    bannerImage: String,
+    images: [{ url: String }],
     skills: [{ text: String }]
   },
   debatesGD: {
@@ -235,7 +351,9 @@ const iimtLearningSchema = new mongoose.Schema({
     }],
     highlightsHeading: String,
     pastHighlights: String,
-    highlightsFooter: String
+    highlightsFooter: String,
+    bannerImage: String,
+    images: [{ url: String }]
   },
   industrialVisits: {
     pageTitle: String,
@@ -255,7 +373,8 @@ const iimtLearningSchema = new mongoose.Schema({
       sector: String,
       program: String,
       year: String,
-      outcome: String
+      outcome: String,
+      image: String
     }]
   },
   guestLectures: {
@@ -273,7 +392,8 @@ const iimtLearningSchema = new mongoose.Schema({
       designation: String,
       topic: String,
       date: String,
-      takeaways: String
+      takeaways: String,
+      image: String
     }]
   }
 }, { timestamps: true });
@@ -282,7 +402,10 @@ const iimtLearningSchema = new mongoose.Schema({
 const iimtAcademicsSchema = new mongoose.Schema({
   educationOverview: {
     description: String,
-    highlights: [String]
+    highlights: [String],
+    bannerImage: String,
+    editorialPhotos: [{ url: String }],
+    infographicImage: String
   },
   pedagogyLabs: {
     introTitle: String,
@@ -293,7 +416,12 @@ const iimtAcademicsSchema = new mongoose.Schema({
       description: String,
       icon: String
     }],
-    practiceTeachingDesc: String
+    practiceTeachingDesc: String,
+    equipmentWideImage: String,
+    equipmentCloseups: [{ url: String }],
+    studentsWorkingImages: [{ url: String }],
+    safetySignageImage: String,
+    practiceTeachingImage: String
   },
   certificatePrograms: {
     introText: String,
@@ -327,7 +455,8 @@ const iimtFeePaymentSchema = new mongoose.Schema({
   title: String,
   description: String,
   cta: String,
-  link: String
+  link: String,
+  bannerImage: String
 }, { timestamps: true });
 
 // --- IIMT Student Portal ---
@@ -344,7 +473,9 @@ const iimtContactUsSchema = new mongoose.Schema({
     address: String,
     phone: String,
     email: String,
-    mapEmbed: String
+    mapEmbed: String,
+    bannerImage: String,
+    images: [{ url: String }]
   },
   collegeContacts: [{
     collegeName: String,
@@ -355,13 +486,17 @@ const iimtContactUsSchema = new mongoose.Schema({
   feedback: {
     pageTitle: String,
     pageSubtitle: String,
-    description: String
+    description: String,
+    bannerImage: String,
+    images: [{ url: String }]
   },
   careers: {
     pageTitle: String,
     pageSubtitle: String,
     description: String,
     email: String,
+    bannerImage: String,
+    images: [{ url: String }],
     jobs: [{ title: String, qualification: String, dept: String, type: { type: String } }]
   }
 }, { timestamps: true });

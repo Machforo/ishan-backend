@@ -48,7 +48,7 @@ const homePageSchema = new mongoose.Schema({
   },
   whyChooseUs: [{ heading: String, description: String, icon: String }],
   gallery: [{ image: String }],
-  accreditations: [{ text: String }]
+  accreditations: [{ image: String, text: String }]
 }, { timestamps: true });
 
 // --- Doctor Collection ---
@@ -70,6 +70,7 @@ const departmentSchema = new mongoose.Schema({
   name: String,
   description: String,
   image: String,
+  gallery: [{ image: String, caption: String }],
   treatments: [String],
   slug: { type: String, unique: true },
   subtitle: String,
@@ -116,7 +117,8 @@ const panchkarmaSchema = new mongoose.Schema({
   duration: String,
   eligibility: String,
   slug: { type: String, unique: true },
-  image: String
+  image: String,
+  gallery: [{ image: String, caption: String }]
 }, { timestamps: true });
 
 module.exports = {
