@@ -84,7 +84,8 @@ const homePageSchema = new mongoose.Schema({
   recruiters: { title: String, logos: [logoSchema] },
   testimonials: { title: String, list: [testimonialSchema] },
   regulatoryBodies: { title: String, list: [approvalSchema] },
-  enquiryCta: { title: String, subtitle: String, buttonText: String }
+  enquiryCta: { title: String, subtitle: String, buttonText: String },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 module.exports = mongoose.model('HomePage', homePageSchema);

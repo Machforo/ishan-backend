@@ -14,6 +14,7 @@ const statsStripSchema = new mongoose.Schema({
     suffix: String,
     label: String,
     sub: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 module.exports = mongoose.model("statsStrip", statsStripSchema);

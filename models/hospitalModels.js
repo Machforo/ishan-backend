@@ -48,7 +48,8 @@ const homePageSchema = new mongoose.Schema({
   },
   whyChooseUs: [{ heading: String, description: String, icon: String }],
   gallery: [{ image: String }],
-  accreditations: [{ image: String, text: String }]
+  accreditations: [{ image: String, text: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Doctor Collection ---
@@ -62,7 +63,8 @@ const doctorSchema = new mongoose.Schema({
   opdTimings: String,
   specialization: [String],
   category: String,
-  days: String
+  days: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Department Detail ---
@@ -77,14 +79,16 @@ const departmentSchema = new mongoose.Schema({
   path: String,
   color: String,
   category: String,
-  icon: String
+  icon: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Patient Services ---
 const servicesSchema = new mongoose.Schema({
   title: String,
   description: String,
-  servicesList: [{ name: String, desc: String, icon: String, path: String }]
+  servicesList: [{ name: String, desc: String, icon: String, path: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Testimonials Collection ---
@@ -94,7 +98,8 @@ const testimonialSchema = new mongoose.Schema({
   designation: String,
   feedback: String,
   type: String,
-  rating: { type: Number, default: 5 }
+  rating: { type: Number, default: 5 },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Shared Lead Schema ---
@@ -105,7 +110,8 @@ const aboutUsSchema = new mongoose.Schema({
   title: String,
   subtitle: String,
   ourStory: { image: String, description: String },
-  missionVision: { vision: String, mission: String, values: [mongoose.Schema.Types.Mixed] }
+  missionVision: { vision: String, mission: String, values: [mongoose.Schema.Types.Mixed] },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Panchkarma Collection ---
@@ -118,7 +124,8 @@ const panchkarmaSchema = new mongoose.Schema({
   eligibility: String,
   slug: { type: String, unique: true },
   image: String,
-  gallery: [{ image: String, caption: String }]
+  gallery: [{ image: String, caption: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 module.exports = {

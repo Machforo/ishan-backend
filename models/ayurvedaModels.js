@@ -10,7 +10,8 @@ const homePageSchema = new mongoose.Schema({
   whySection: { heading: String, description: String, ctaText: String, ctaLink: String, campusImage: String },
   highlights: [{ title: String, description: String, icon: String }],
   lifeAtIshan: [{ image: String }],
-  accreditations: [{ image: String, name: String }]
+  accreditations: [{ image: String, name: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Ayurveda Course (BAMS, etc.) ---
@@ -21,7 +22,8 @@ const courseSchema = new mongoose.Schema({
   overview: String,
   syllabus: [String],
   careerScope: String,
-  slug: { type: String, unique: true }
+  slug: { type: String, unique: true },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Ayurveda About Us / Institute ---
@@ -36,7 +38,8 @@ const aboutUsSchema = new mongoose.Schema({
   principalMessage: { name: String, designation: String, experience: String, message: String, image: String, candidImage: String },
   missionVision: { vision: String, mission: String, values: [{ value: String }], bannerImage: String, editorialPhotos: [{ image: String, caption: String }] },
   approvalsSection: { title: String, subtitle: String, description: String, campusCredibilityPhoto: String },
-  approvals: [{ name: String, image: String, description: String }]
+  approvals: [{ name: String, image: String, description: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Ayurveda Admissions ---
@@ -61,7 +64,8 @@ const admissionSchema = new mongoose.Schema({
   feeStructure: {
     instructions: String,
     link: String
-  }
+  },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Ayurveda Academics ---
@@ -87,7 +91,8 @@ const academicsSchema = new mongoose.Schema({
     description: String,
     phases: [{ phase: String, years: String, subjects: String, pdf: String }]
   },
-  departments: [{ name: String, description: String }]
+  departments: [{ name: String, description: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 const facultySchema = new mongoose.Schema({
@@ -97,7 +102,8 @@ const facultySchema = new mongoose.Schema({
   experience: String,
   specialization: String,
   bio: String,
-  image: String
+  image: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 const visitingFacultySchema = new mongoose.Schema({
@@ -105,14 +111,16 @@ const visitingFacultySchema = new mongoose.Schema({
   org: String,
   specialisation: String,
   impact: String,
-  image: String
+  image: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Ayurveda Hospital ---
 const hospitalSchema = new mongoose.Schema({
   overview: { description: String, bedCount: String, opdCount: String, image: String },
   opdDepartments: [{ name: String, description: String }],
-  panchkarma: { description: String, therapies: [{ name: String, description: String }], image: String }
+  panchkarma: { description: String, therapies: [{ name: String, description: String }], image: String },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Student Corner (Policies) ---
@@ -121,7 +129,8 @@ const studentCornerSchema = new mongoose.Schema({
   grievanceRedressal: { content: String },
   poshPolicy: { content: String },
   codeOfConduct: { content: String },
-  privacyPolicy: { content: String }
+  privacyPolicy: { content: String },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Research & Careers ---
@@ -170,7 +179,8 @@ const researchSchema = new mongoose.Schema({
   },
   academicJournal: { title: String, issn: String, content: String },
   facultyPublications: [{ title: String, author: String, journal: String, year: String }],
-  projects: [{ title: String, body: String, status: String }]
+  projects: [{ title: String, body: String, status: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Ayurveda Facilities ---
@@ -179,7 +189,8 @@ const facilitiesSchema = new mongoose.Schema({
   hostel: { image: String, content: String, roomInteriors: [{ image: String, caption: String }], washroomImages: [{ image: String, caption: String }], diningHallImages: [{ image: String, caption: String }], commonRoomImages: [{ image: String, caption: String }], securityCctvImages: [{ image: String, caption: String }] },
   infrastructure: { image: String, content: String, features: [{ icon: String, title: String, desc: String }], heroWideAngle: String, interiorDetails: [{ image: String, caption: String }], eventPhoto: String, entranceImage: String },
   auditorium: { image: String, seating: String, heroWideAngle: String, interiorDetails: [{ image: String, caption: String }], eventPhoto: String, entranceImage: String },
-  sports: { image: String, content: String, heroWideAngle: String, interiorDetails: [{ image: String, caption: String }], eventPhoto: String, entranceImage: String }
+  sports: { image: String, content: String, heroWideAngle: String, interiorDetails: [{ image: String, caption: String }], eventPhoto: String, entranceImage: String },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Digital Services ---
@@ -190,14 +201,16 @@ const digitalServicesSchema = new mongoose.Schema({
   downloads: [{ title: String, fileUrl: String }],
   pastPapersSection: { tag: String, title: String, subtitle: String, description: String, image: String },
   pastPapers: [{ title: String, fileUrl: String, year: String }],
-  examinationPortal: { title: String, link: String }
+  examinationPortal: { title: String, link: String },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Collections ---
 const faqSchema = new mongoose.Schema({
   question: String,
   answer: String,
-  category: String
+  category: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 const newsSchema = new mongoose.Schema({
@@ -206,7 +219,8 @@ const newsSchema = new mongoose.Schema({
   image: String,
   description: String,
   link: String,
-  category: String
+  category: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 const eventSchema = new mongoose.Schema({
@@ -214,19 +228,22 @@ const eventSchema = new mongoose.Schema({
   date: String,
   location: String,
   description: String,
-  image: String
+  image: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 const photoGallerySchema = new mongoose.Schema({
   title: String,
   image: String,
-  category: String
+  category: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 const videoGallerySchema = new mongoose.Schema({
   title: String,
   videoUrl: String,
-  category: String
+  category: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 const pressCoverageSchema = new mongoose.Schema({
@@ -234,7 +251,8 @@ const pressCoverageSchema = new mongoose.Schema({
   date: String,
   source: String,
   link: String,
-  image: String
+  image: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 const blogSchema = new mongoose.Schema({
@@ -243,14 +261,16 @@ const blogSchema = new mongoose.Schema({
   author: String,
   image: String,
   content: String,
-  slug: String
+  slug: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 const testimonialSchema = new mongoose.Schema({
   name: String,
   designation: String,
   feedback: String,
-  image: String
+  image: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Contact Singleton ---
@@ -269,14 +289,16 @@ const contactSchema = new mongoose.Schema({
     phone: String,
     email: String,
     address: String
-  }]
+  }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Regulatory Singletons ---
 const mandatoryDisclosureSchema = new mongoose.Schema({
   statement: String,
   image: String,
-  disclosureItems: [{ category: String, items: String }]
+  disclosureItems: [{ category: String, items: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 const codeOfConductSchema = new mongoose.Schema({
@@ -285,7 +307,8 @@ const codeOfConductSchema = new mongoose.Schema({
   content: String,
   intro: String,
   image: String,
-  rules: [{ category: String, items: String }]
+  rules: [{ category: String, items: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Navbar & Footer Site Configuration ---
@@ -317,7 +340,8 @@ const siteConfigSchema = new mongoose.Schema({
     contact: { address: String, phone: String, email: String },
     bottomLinks: [{ label: String, href: String }],
     copyrightText: String
-  }
+  },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Departments Collection ---
@@ -332,7 +356,8 @@ const departmentSchema = new mongoose.Schema({
   equipmentWideImage: String,
   equipmentCloseups: [{ image: String, caption: String }],
   studentsWorkingImages: [{ image: String, caption: String }],
-  safetySignageImage: String
+  safetySignageImage: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- Shared Lead Schema (Imported) ---

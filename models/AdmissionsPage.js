@@ -5,6 +5,7 @@ const schema = new mongoose.Schema({
   scholarships: [{ category: String, concession: String }],
   international: { title: { type: String, default: "International Admissions" }, content: { type: String, default: "" } },
   steps: [{ step: String, title: String, desc: String }],
-  importantDates: [{ label: String, date: String }]
+  importantDates: [{ label: String, date: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 module.exports = mongoose.model('AdmissionsPage', schema);

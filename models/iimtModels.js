@@ -42,7 +42,8 @@ const iimtHomePageSchema = new mongoose.Schema({
     programs: [{ label: String, href: String }],
     socialLinks: [{ platform: String, href: String }],
     contact: { address: String, phone: String, email: String }
-  }
+  },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT About Us ---
@@ -103,7 +104,8 @@ const iimtAboutUsSchema = new mongoose.Schema({
     peerReviewed: String,
     websiteUrl: String,
     bannerImage: String
-  }
+  },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT Courses ---
@@ -124,7 +126,8 @@ const iimtCourseSchema = new mongoose.Schema({
   studentActivityImages: [{ url: String }],
   placementOutcomeImage: String,
   facultyTeachingImage: String,
-  images: [{ url: String }]
+  images: [{ url: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT Campus Life ---
@@ -231,7 +234,8 @@ const iimtCampusLifeSchema = new mongoose.Schema({
     specialisation: String,
     dept: String,
     image: String
-  }]
+  }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 
@@ -277,7 +281,8 @@ const iimtStudentZoneSchema = new mongoose.Schema({
     pageSubtitle: String,
     bannerImage: String,
     content: String
-  }
+  },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT Admissions ---
@@ -294,7 +299,8 @@ const iimtAdmissionsSchema = new mongoose.Schema({
   faqs: [{ question: String, answer: String }],
   scholarshipsBanner: String,
   scholarshipsHandoverImages: [{ url: String }],
-  faqsBanner: String
+  faqsBanner: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT Placements ---
@@ -304,7 +310,8 @@ const iimtPlacementsSchema = new mongoose.Schema({
   partners: [{ name: String, logo: String }],
   studentSuccess: [{ name: String, company: String, feedback: String, photo: String }],
   statsInfographic: String,
-  placementCeremonyImages: [{ url: String }]
+  placementCeremonyImages: [{ url: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 
@@ -395,7 +402,8 @@ const iimtLearningSchema = new mongoose.Schema({
       takeaways: String,
       image: String
     }]
-  }
+  },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT Academics ---
@@ -432,14 +440,16 @@ const iimtAcademicsSchema = new mongoose.Schema({
       eligibility: String,
       desc: String
     }]
-  }
+  },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT Gallery ---
 const iimtGallerySchema = new mongoose.Schema({
   photos: [{ title: String, url: String }],
   videos: [{ title: String, url: String }],
-  pressCoverage: [{ title: String, url: String, date: String }]
+  pressCoverage: [{ title: String, url: String, date: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT News & Events ---
@@ -447,7 +457,8 @@ const iimtNewsEventSchema = new mongoose.Schema({
   title: String, 
   date: Date, 
   description: String, 
-  image: String 
+  image: String ,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT Fee Payment ---
@@ -456,7 +467,8 @@ const iimtFeePaymentSchema = new mongoose.Schema({
   description: String,
   cta: String,
   link: String,
-  bannerImage: String
+  bannerImage: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT Student Portal ---
@@ -464,7 +476,8 @@ const iimtStudentPortalSchema = new mongoose.Schema({
   title: String,
   description: String,
   cta: String,
-  link: String
+  link: String,
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT Contact Us ---
@@ -498,7 +511,8 @@ const iimtContactUsSchema = new mongoose.Schema({
     bannerImage: String,
     images: [{ url: String }],
     jobs: [{ title: String, qualification: String, dept: String, type: { type: String } }]
-  }
+  },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 const Lead = require('./Lead');

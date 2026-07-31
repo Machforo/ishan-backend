@@ -5,6 +5,7 @@ const schema = new mongoose.Schema({
   missionVision: { mission: { type: String, default: "" }, vision: { type: String, default: "" } },
   awards: [{ title: String, description: String, image: String, year: String }],
   approvals: [{ name: String, fullTitle: String, description: String, image: String, link: String }],
-  milestones: [{ year: String, event: String }]
+  milestones: [{ year: String, event: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 module.exports = mongoose.model('AboutUs', schema);

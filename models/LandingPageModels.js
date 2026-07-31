@@ -160,7 +160,8 @@ const landingPageSchema = new mongoose.Schema({
     whatsapp: { type: String, default: "911234567890" },
     phone: { type: String, default: "+91-120-2326600" },
     applyLink: { type: String, default: "https://ishan-ascend.vercel.app/admissions" }
-  }
+  },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 module.exports = {

@@ -26,7 +26,8 @@ const dynamicPageSchema = new mongoose.Schema({
   published: {
     type: Boolean,
     default: true
-  }
+  },
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // Ensure slugs are unique per portal

@@ -7,6 +7,7 @@ const schema = new mongoose.Schema({
   },
   recruiters: [{ name: String, logo: String }],
   alumni: [{ name: String, batch: String, company: String, role: String, quote: String, image: String }],
-  processSteps: [{ step: String, title: String, desc: String }]
+  processSteps: [{ step: String, title: String, desc: String }],
+  pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 module.exports = mongoose.model('PlacementsPage', schema);
