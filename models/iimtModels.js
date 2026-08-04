@@ -53,7 +53,8 @@ const iimtAboutUsSchema = new mongoose.Schema({
     description: String,
     bannerImage: String,
     editorialPhotos: [{ url: String }],
-    timelineInfographic: String
+    timelineInfographic: String,
+    timelineImages: [{ url: String }]
   },
   ourJourney: [{ year: String, event: String }],
   keyDifferentiators: [{ title: String, description: String }],

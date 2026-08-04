@@ -29,7 +29,7 @@ const courseSchema = new mongoose.Schema({
 // --- Ayurveda About Us / Institute ---
 const aboutUsSchema = new mongoose.Schema({
   ourStory: { title: String, subtitle: String, image: String, description: String, bannerImage: String, editorialPhotos: [{ image: String, caption: String }] },
-  groupHistory: { title: String, subtitle: String, content: String, timelineInfographic: String },
+  groupHistory: { title: String, subtitle: String, content: String, timelineInfographic: String, timelineImages: [{ url: String }] },
   milestonesSection: { title: String, subtitle: String },
   milestones: [{ year: String, event: String }],
   keyDifferentiatorsSection: { title: String, subtitle: String },
