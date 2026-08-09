@@ -37,7 +37,8 @@ const researchCardSchema = new mongoose.Schema({
   id: Number,
   tag: String,
   title: String,
-  image: String
+  image: String,
+  link: String
 });
 
 const testimonialSchema = new mongoose.Schema({
@@ -95,7 +96,9 @@ const landingPageSchema = new mongoose.Schema({
     subheading: { type: String, default: "Explore programmes across Law, Management, Pharmacy, Ayurveda and Education, approved by BCI, AICTE, PCI, NCISM and NCTE." },
     searchPlaceholder: { type: String, default: "Find Programmes" },
     ctaApply: { type: String, default: "Apply Now" },
-    ctaViewAll: { type: String, default: "View All" }
+    ctaApplyLink: { type: String, default: "#contact" },
+    ctaViewAll: { type: String, default: "View All" },
+    ctaViewAllLink: { type: String, default: "#colleges" }
   },
   collegeSection: {
     heading: { type: String, default: "Our 5 Colleges" },
@@ -107,8 +110,8 @@ const landingPageSchema = new mongoose.Schema({
     nationalitiesCount: { type: Number, default: 15 },
     sections: [campusLifeSchema]
   },
-  campusLinks: [{ text: String }],
-  facilityLinks: [{ text: String }],
+  campusLinks: [{ text: String, url: String }],
+  facilityLinks: [{ text: String, url: String }],
   researchSection: {
     heading: { type: String, default: "Research Hub" },
     subheading: { type: String, default: "Driving innovation and academic excellence." },
@@ -116,7 +119,7 @@ const landingPageSchema = new mongoose.Schema({
     ctaLink: { type: String, default: "#research" }
   },
   researchCards: [researchCardSchema],
-  researchLinks: [{ text: String }],
+  researchLinks: [{ text: String, url: String }],
   placementSection: {
     image: { type: String, default: "https://images.pexels.com/photos/31040302/pexels-photo-31040302.jpeg?w=900" },
     badgeNum: { type: String, default: "100%" },
@@ -135,7 +138,9 @@ const landingPageSchema = new mongoose.Schema({
   aboutImages: [{ url: String }],
   aboutContent: {
     title: { type: String, default: "The first multi-disciplinary institution of Greater Noida, shaping professionals since 1994" },
-    description: { type: String, default: "From a single management institute to five thriving colleges across Law, Management, Pharmacy, Ayurveda and Education, Ishan has grown into one of North India's most respected names in higher education, with 50,000+ alumni in leadership roles worldwide." }
+    description: { type: String, default: "From a single management institute to five thriving colleges across Law, Management, Pharmacy, Ayurveda and Education, Ishan has grown into one of North India's most respected names in higher education, with 50,000+ alumni in leadership roles worldwide." },
+    ctaText: { type: String, default: "Our Story" },
+    ctaLink: { type: String, default: "#about" }
   },
   news: [newsSchema],
   socialPosts: [socialPostSchema],

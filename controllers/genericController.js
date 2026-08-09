@@ -1,12 +1,31 @@
+// Retry helper — retries on transient network/connection errors
+const RETRYABLE = ['ECONNRESET', 'ETIMEDOUT', 'ENOTFOUND', 'ECONNREFUSED'];
+async function withRetry(fn, retries = 2, delayMs = 300) {
+  for (let attempt = 1; attempt <= retries + 1; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      const isRetryable = RETRYABLE.includes(err.code) ||
+        (err.name && err.name.includes('Mongo')) ||
+        err.message?.includes('ECONNRESET');
+      if (attempt <= retries && isRetryable) {
+        await new Promise((r) => setTimeout(r, delayMs * attempt));
+      } else {
+        throw err;
+      }
+    }
+  }
+}
+
 // --- Singleton Configuration Providers ---
 exports.getSection = (Model) => async (req, res) => {
   try {
     console.log(`Fetching section for model: ${Model.modelName}`);
-    let config = await Model.findOne();
+    let config = await withRetry(() => Model.findOne());
     if (!config) {
       console.log(`No config found for ${Model.modelName}, creating new one...`);
       config = new Model({});
-      await config.save();
+      await withRetry(() => config.save());
     }
     res.json(config);
   } catch (err) {
@@ -17,15 +36,17 @@ exports.getSection = (Model) => async (req, res) => {
 
 exports.updateSection = (Model) => async (req, res) => {
   try {
-    let config = await Model.findOne();
+    let config = await withRetry(() => Model.findOne());
     const updateData = { ...req.body };
     delete updateData._id;
     delete updateData.__v;
     if (config) {
-      config = await Model.findByIdAndUpdate(config._id, updateData, { new: true, overwrite: true });
+      config = await withRetry(() =>
+        Model.findByIdAndUpdate(config._id, updateData, { new: true, overwrite: true })
+      );
     } else {
       config = new Model(updateData);
-      await config.save();
+      await withRetry(() => config.save());
     }
     res.json(config);
   } catch (err) {

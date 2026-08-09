@@ -33,9 +33,33 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use('/', express.static('public'));
 
 // Database Connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/ishan-cms')
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.error('Error connecting to MongoDB:', err));
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/ishan-cms';
+const MONGO_OPTS = {
+  serverSelectionTimeoutMS: 10000,  // give up selecting a server after 10s
+  socketTimeoutMS: 45000,           // close idle sockets after 45s
+  heartbeatFrequencyMS: 10000,      // check server health every 10s
+  maxPoolSize: 10,
+};
+
+function connectWithRetry(attempt = 1) {
+  mongoose.connect(MONGO_URI, MONGO_OPTS)
+    .then(() => console.log('Connected to MongoDB'))
+    .catch((err) => {
+      const delay = Math.min(attempt * 2000, 30000); // up to 30s back-off
+      console.error(`MongoDB connection error (attempt ${attempt}), retrying in ${delay / 1000}s:`, err.message);
+      setTimeout(() => connectWithRetry(attempt + 1), delay);
+    });
+}
+
+mongoose.connection.on('error', (err) => {
+  console.error('MongoDB runtime error:', err.message);
+});
+mongoose.connection.on('disconnected', () => {
+  console.warn('MongoDB disconnected — attempting reconnect...');
+  connectWithRetry();
+});
+
+connectWithRetry();
 
 // Routes
 const authRoutes = require('./routes/auth');

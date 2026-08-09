@@ -15,6 +15,7 @@ router.post('/leads', (req, res, next) => {
   req.body.source = "Landing Page 2";
   next();
 }, genericCtrl.createItem(Lead));
+router.put('/leads/:id', authMiddleware, genericCtrl.updateItem(Lead));
 router.delete('/leads/:id', authMiddleware, genericCtrl.deleteItem(Lead));
 
 

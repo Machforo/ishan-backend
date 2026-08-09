@@ -4,7 +4,9 @@ const programmeHeadAndTextSchema = new mongoose.Schema({
     subheading: String,
     searchPlaceholder: String,
     ctaApply: String,
-    ctaViewAll: String
+    ctaViewAll: String,
+    ctaApplyLink: { type: String, default: "#contact" },
+    ctaViewAllLink: { type: String, default: "#colleges" }
 })
 const ProgrammeHeadAndText = mongoose.model("ProgrammeHeadAndText", programmeHeadAndTextSchema);
 module.exports = ProgrammeHeadAndText;
