@@ -13,9 +13,9 @@ const iimtHomePageSchema = new mongoose.Schema({
     portalLinks: [{ label: String, href: String }],
     navLinks: [{ label: String, href: String, featured: { img: String, title: String, desc: String, href: String }, columns: [{ heading: String, icon: String, links: [{ label: String, href: String }] }], extraImgs: [{ img: String, caption: String, href: String }] }]
   },
-  banners: [{ 
-    heading: String, 
-    subheading: String, 
+  banners: [{
+    heading: String,
+    subheading: String,
     image: String,
     cta1: String,
     cta2: String
@@ -43,13 +43,14 @@ const iimtHomePageSchema = new mongoose.Schema({
     socialLinks: [{ platform: String, href: String }],
     contact: { address: String, phone: String, email: String }
   },
+  faqs: [{ question: String, answer: String }],
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT About Us ---
 const iimtAboutUsSchema = new mongoose.Schema({
-  ourStory: { 
-    image: String, 
+  ourStory: {
+    image: String,
     description: String,
     bannerImage: String,
     editorialPhotos: [{ url: String }],
@@ -58,34 +59,34 @@ const iimtAboutUsSchema = new mongoose.Schema({
   },
   ourJourney: [{ year: String, event: String }],
   keyDifferentiators: [{ title: String, description: String }],
-  directorMessage: { 
-    name: String, 
-    designation: String, 
-    message: String, 
+  directorMessage: {
+    name: String,
+    designation: String,
+    message: String,
     image: String,
     candidImage: String
   },
-  missionVision: { 
-    vision: String, 
-    mission: String, 
+  missionVision: {
+    vision: String,
+    mission: String,
     coreValues: [{ text: String }],
     bannerImage: String,
     editorialPhotos: [{ url: String }]
   },
-  approvalsAffiliations: [{ 
-    name: String, 
-    image: String, 
-    subheading: String, 
-    description: String 
+  approvalsAffiliations: [{
+    name: String,
+    image: String,
+    subheading: String,
+    description: String
   }],
-  whyIimt: { 
+  whyIimt: {
     content: String,
     bannerImage: String,
     images: [{ url: String }]
   },
   bestPractices: [{ title: String, content: String, image: String }],
   bestPracticesBanner: String,
-  greenInitiatives: { 
+  greenInitiatives: {
     content: String,
     bannerImage: String,
     images: [{ url: String }]
@@ -133,10 +134,10 @@ const iimtCourseSchema = new mongoose.Schema({
 
 // --- IIMT Campus Life ---
 const iimtCampusLifeSchema = new mongoose.Schema({
-  infrastructure: { 
-    image: String, 
+  infrastructure: {
+    image: String,
     imageUrl: String,
-    content: String, 
+    content: String,
     facilities: [{ icon: String, title: String, desc: String, link: String }],
     heroWideAngle: String,
     eventPhoto: String,
@@ -145,7 +146,7 @@ const iimtCampusLifeSchema = new mongoose.Schema({
     bannerImage: String,
     images: [{ url: String }]
   },
-  itLabs: { 
+  itLabs: {
     specs: {
       computers: String,
       internetSpeed: String,
@@ -298,18 +299,33 @@ const iimtAdmissionsSchema = new mongoose.Schema({
   },
   scholarships: [{ category: String, description: String }],
   faqs: [{ question: String, answer: String }],
-  scholarshipsBanner: String,
-  scholarshipsHandoverImages: [{ url: String }],
+  scholarshipBanner: String,
+  scholarshipRecipientPhoto: String,
   faqsBanner: String,
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
 // --- IIMT Placements ---
 const iimtPlacementsSchema = new mongoose.Schema({
+  heading: String,
+  subheading: String,
+  partnersHeading: String,
   stats: [{ label: String, value: String, description: String }],
   process: [{ step: String, desc: String }],
   partners: [{ name: String, logo: String }],
   studentSuccess: [{ name: String, company: String, feedback: String, photo: String }],
+  eCell: {
+    aboutTitle: String,
+    aboutDescription: String,
+    offerings: [{ title: String, description: String, icon: String }],
+    internshipTitle: String,
+    internshipDescription: String,
+    internshipPoints: [{ text: String }],
+    internshipCtaText: String,
+    internshipCtaLink: String,
+    alumniSpotlightTitle: String,
+    alumniSpotlightDescription: String
+  },
   statsInfographic: String,
   placementCeremonyImages: [{ url: String }],
   pageGallery: { title: String, images: [{ url: String }] }
@@ -455,10 +471,10 @@ const iimtGallerySchema = new mongoose.Schema({
 
 // --- IIMT News & Events ---
 const iimtNewsEventSchema = new mongoose.Schema({
-  title: String, 
-  date: Date, 
-  description: String, 
-  image: String ,
+  title: String,
+  date: Date,
+  description: String,
+  image: String,
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
@@ -533,7 +549,7 @@ module.exports = {
   IimtStudentPortal: mongoose.model('IimtStudentPortal', iimtStudentPortalSchema, 'iimt_studentportal'),
   IimtContactUs: mongoose.model('IimtContactUs', iimtContactUsSchema, 'iimt_contactus'),
   IimtAcademics: mongoose.model('IimtAcademics', iimtAcademicsSchema, 'iimt_academics'),
-  
+
 
   IimtStudentZone: mongoose.model('IimtStudentZone', iimtStudentZoneSchema, 'iimt_studentzone'),
   IimtLead: mongoose.model('IimtLead', Lead.schema, 'iimt_leads'),
