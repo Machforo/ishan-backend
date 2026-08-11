@@ -114,4 +114,46 @@ router.delete('/page-galleries/:id', async (req, res) => {
     } catch(e) { res.status(500).json({error: e.message}); }
 });
 
+
+// --- Global URL-Based Page Sections ---
+const GlobalSection = require('../models/GlobalSection');
+
+router.get('/page-sections/by-url', async (req, res) => {
+    try {
+        const item = await GlobalSection.findOne({ portal: 'ayurveda', urlPath: req.query.url });
+        res.json(item || {});
+    } catch(e) {
+        res.status(500).json({error: e.message});
+    }
+});
+
+router.get('/page-sections', async (req, res) => {
+    try {
+        const items = await GlobalSection.find({ portal: 'ayurveda' });
+        res.json(items);
+    } catch(e) { res.status(500).json({error: e.message}); }
+});
+
+router.post('/page-sections', async (req, res) => {
+    try {
+        const item = new GlobalSection({ ...req.body, portal: 'ayurveda' });
+        await item.save();
+        res.status(201).json(item);
+    } catch(e) { res.status(500).json({error: e.message}); }
+});
+
+router.put('/page-sections/:id', async (req, res) => {
+    try {
+        const item = await GlobalSection.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.json(item);
+    } catch(e) { res.status(500).json({error: e.message}); }
+});
+
+router.delete('/page-sections/:id', async (req, res) => {
+    try {
+        await GlobalSection.findByIdAndDelete(req.params.id);
+        res.json({ message: 'Deleted' });
+    } catch(e) { res.status(500).json({error: e.message}); }
+});
+
 module.exports = router;
