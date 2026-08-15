@@ -67,7 +67,6 @@ const newsSchema = new mongoose.Schema({
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
-// --- Contact Singleton ---
 const contactSchema = new mongoose.Schema({
   address: String,
   phone: String,
@@ -75,6 +74,7 @@ const contactSchema = new mongoose.Schema({
   mapEmbed: String,
   bannerImage: String,
   images: [{ url: String }],
+  feedbackPage: { title: String, subtitle: String, description: String, image: String, bannerImage: String },
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
@@ -284,6 +284,7 @@ const admissionSchema = new mongoose.Schema({
   scholarships: [{ category: String, concession: String, description: String }],
   bannerImage: String,
   images: [{ url: String }],
+  certificateProgramsPage: { title: String, subtitle: String, description: String, image: String, bannerImage: String },
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
@@ -293,6 +294,9 @@ const certificateSchema = new mongoose.Schema({
   fee: String,
   eligibility: String,
   desc: String,
+  image: String,
+  bannerImage: String,
+  images: [{ url: String }],
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
