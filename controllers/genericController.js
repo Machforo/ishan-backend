@@ -42,7 +42,7 @@ exports.updateSection = (Model) => async (req, res) => {
     delete updateData.__v;
     if (config) {
       config = await withRetry(() =>
-        Model.findByIdAndUpdate(config._id, updateData, { new: true, overwrite: true })
+        Model.findByIdAndUpdate(config._id, updateData, { returnDocument: 'after', overwrite: true })
       );
     } else {
       config = new Model(updateData);
@@ -50,7 +50,7 @@ exports.updateSection = (Model) => async (req, res) => {
     }
     res.json(config);
   } catch (err) {
-    res.status(400).json({ message: err.message });
+    console.error(err); res.status(400).json({ message: err.message });
   }
 };
 
@@ -76,7 +76,7 @@ exports.createItem = (Model) => async (req, res) => {
 
 exports.updateItem = (Model) => async (req, res) => {
   try {
-    const item = await Model.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const item = await Model.findByIdAndUpdate(req.params.id, req.body, { returnDocument: 'after' });
     if (!item) return res.status(404).json({ message: 'Item not found' });
     res.json(item);
   } catch (err) {
@@ -117,7 +117,7 @@ exports.getAllLeads = (Model) => async (req, res) => {
 exports.updateLeadStatus = (Model) => async (req, res) => {
   try {
     const { status } = req.body;
-    const lead = await Model.findByIdAndUpdate(req.params.id, { status }, { new: true });
+    const lead = await Model.findByIdAndUpdate(req.params.id, { status }, { returnDocument: 'after' });
     if (!lead) return res.status(404).json({ message: 'Lead not found' });
     res.json(lead);
   } catch (err) {

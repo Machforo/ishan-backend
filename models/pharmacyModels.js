@@ -3,11 +3,20 @@ const mongoose = require('mongoose');
 // --- Pharmacy HomePage ---
 const homePageSchema = new mongoose.Schema({
   navMenu: { items: [{ name: String, link: String }] },
-  banners: [{ heading: String, subheading: String, image: String, ctaText: String }],
+  banners: [{ badge: String, heading: String, subheading: String, description: String, image: String, ctaText: String, ctaLink: String, cta2Text: String, cta2Link: String }],
   stats: [{ label: String, value: String, icon: String }],
   aboutSnippet: { title: String, content: String, image: String },
   brands: [{ name: String, logo: String }],
+  whyIshanHeading: String,
+  whyIshanDescription: String,
+  whyIshanContent: String,
   whyIshan: [{ title: String, description: String, icon: String }],
+  programsSection: { badge: String, heading: String, description: String },
+  facultySection: { badge: String, heading: String, description: String },
+  newsSection: { badge: String, heading: String },
+  testimonialsSection: { badge: String, heading: String },
+  faqsSection: { badge: String, heading: String },
+  enquirySection: { badge: String, heading: String, description: String },
   placements: { heading: String, subheading: String, stats: [{ label: String, value: String }] },
   gallery: [{ image: String }],
   footer: { quickLinks: [{ text: String, link: String }], contact: { address: String, phone: String, email: String } },
@@ -100,8 +109,9 @@ const aboutUsSchema = new mongoose.Schema({
   ourStory: { title: String, content: String, image: String },
   milestones: [{ year: String, title: String, desc: String, event: String }],
   keyDifferentiators: [{ title: String }],
-  principalMessage: { name: String, designation: String, message: String, image: String },
+  principalMessage: { name: String, designation: String, message: String, image: String, bottomImage: String },
   missionVision: { vision: String, mission: String, coreValues: String, image1: String, image2: String },
+  approvalsPage: { badge: String, heading: String, description: String, features: [{ title: String, description: String }] },
   approvals: [{ title: String, description: String, logo: String }],
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
@@ -160,7 +170,7 @@ const lectureSchema = new mongoose.Schema({
   overviewContent: String,
   bannerImage: String,
   images: [{ url: String }],
-  events: [{ speaker: String, designation: String, topic: String, date: String, takeaways: String }],
+  events: [{ speaker: String, designation: String, topic: String, title: String, date: String, takeaways: String, description: String, image: String }],
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
@@ -172,7 +182,7 @@ const visitSchema = new mongoose.Schema({
   image: String,
   bannerImage: String,
   images: [{ url: String }],
-  visits: [{ company: String, location: String, date: String, description: String, takeaways: String }],
+  visits: [{ company: String, location: String, title: String, date: String, description: String, takeaways: String, image: String }],
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
@@ -203,8 +213,10 @@ const pressSchema = new mongoose.Schema({
   publication: String,
   date: String,
   headline: String,
+  title: String,
   url: String,
   tag: String,
+  image: String,
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
@@ -285,6 +297,7 @@ const admissionSchema = new mongoose.Schema({
   bannerImage: String,
   images: [{ url: String }],
   certificateProgramsPage: { title: String, subtitle: String, description: String, image: String, bannerImage: String },
+  scholarshipPage: { description: String, image: String },
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
@@ -302,6 +315,7 @@ const certificateSchema = new mongoose.Schema({
 
 const courseSchema = new mongoose.Schema({
   programName: String,
+  subtitle: String,
   duration: String,
   eligibility: String,
   annualIntake: String,

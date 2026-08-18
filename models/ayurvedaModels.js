@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { campusLifeSchema } = require('./campusLifeSchema');
 
 // --- Ayurveda HomePage ---
 const homePageSchema = new mongoose.Schema({
@@ -364,6 +365,7 @@ const departmentSchema = new mongoose.Schema({
 const Lead = require('./Lead');
 
 module.exports = {
+  AyurvedaCampusLife: mongoose.model('AyurvedaCampusLife', campusLifeSchema, 'ayurveda_campuslife'),
   AyurvedaHomePage: mongoose.model('AyurvedaHomePage', homePageSchema, 'ayurveda_homepages'),
   AyurvedaAboutUs: mongoose.model('AyurvedaAboutUs', aboutUsSchema, 'ayurveda_aboutus'),
   AyurvedaCourse: mongoose.model('AyurvedaCourse', courseSchema, 'ayurveda_courses'),

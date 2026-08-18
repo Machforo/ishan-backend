@@ -117,7 +117,7 @@ router.put('/page-galleries/:id', async (req, res) => {
             if (urlPath.length > 1 && urlPath.endsWith('/')) urlPath = urlPath.slice(0, -1);
             req.body.urlPath = urlPath;
         }
-        const item = await GlobalGallery.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const item = await GlobalGallery.findByIdAndUpdate(req.params.id, req.body, { returnDocument: 'after' });
         res.json(item);
     } catch(e) { res.status(500).json({error: e.message}); }
 });
@@ -159,7 +159,7 @@ router.post('/page-sections', async (req, res) => {
 
 router.put('/page-sections/:id', async (req, res) => {
     try {
-        const item = await GlobalSection.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const item = await GlobalSection.findByIdAndUpdate(req.params.id, req.body, { returnDocument: 'after' });
         res.json(item);
     } catch(e) { res.status(500).json({error: e.message}); }
 });

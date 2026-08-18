@@ -129,6 +129,10 @@ app.use('/api/iimt', iimtRoutes);
 const dynamicPageRoutes = require('./routes/dynamicPages');
 app.use('/api/dynamic-pages', dynamicPageRoutes);
 
+// Admin section visibility + duplicated sections (used by the admin panel sidebar)
+app.use('/api/page-settings', require('./routes/pageSettings'));
+app.use('/api/cloned-pages', require('./routes/clonedPages'));
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Ishan CMS Backend is running' });

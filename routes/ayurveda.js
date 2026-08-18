@@ -19,6 +19,7 @@ const singletons = [
   { path: '/siteconfig', model: models.AyurvedaSiteConfig },
   { path: '/mandatorydisclosure', model: models.AyurvedaMandatoryDisclosure },
   { path: '/codeofconduct', model: models.AyurvedaCodeOfConduct },
+  { path: '/campuslife', model: models.AyurvedaCampusLife },
 ];
 
 singletons.forEach(({ path, model }) => {
