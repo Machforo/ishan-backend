@@ -30,6 +30,8 @@ const singletons = [
   { path: '/debatesgd', model: models.LegalDebatesGD },
   { path: '/culturalactivities', model: models.LegalCulturalActivities },
   { path: '/guestlecturespage', model: models.LegalGuestLecturesPage },
+  { path: '/careerspage', model: models.LegalCareersPage },
+  { path: '/feedbackpage', model: models.LegalFeedbackPage },
   { path: '/researchjournal', model: models.LegalResearchJournal }
 ];
 

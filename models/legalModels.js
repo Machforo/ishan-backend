@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // --- Legal HomePage ---
 const homePageSchema = new mongoose.Schema({
   navMenu: { items: [{ name: String, link: String }] },
-  banners: [{ heading: String, subheading: String, image: String, ctaText: String }],
+  banners: [{ heading: String, subheading: String, image: String, ctaText: String, ctaLink: String, cta2Text: String, cta2Link: String }],
   stats: [{ label: String, value: String, icon: String }],
   aboutSnippet: { title: String, content: String, image: String },
   brands: [{ name: String, logo: String }],
@@ -86,8 +86,17 @@ const newsSchema = new mongoose.Schema({
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
+// --- Career & Feedback Pages ---
+const careersPageSchema = new mongoose.Schema({ title: String, subtitle: String, overview: String, image: String, bannerImage: String }, { timestamps: true });
+const feedbackPageSchema = new mongoose.Schema({ title: String, subtitle: String, overview: String, image: String, bannerImage: String }, { timestamps: true });
+
 // --- Contact Singleton ---
 const contactSchema = new mongoose.Schema({
+  title: String,
+  subtitle: String,
+  overview: String,
+  image: String,
+  bannerImage: String,
   address: String,
   phone: String,
   email: String,
@@ -122,7 +131,7 @@ const aboutUsSchema = new mongoose.Schema({
   principalMessage: { name: String, designation: String, message: String, image: String, candidImage: String },
   missionVision: { vision: String, mission: String, coreValues: String, image1: String, image2: String, bannerImage: String },
   approvals: [{ title: String, description: String, logo: String }],
-  approvalsPageBanner: String,
+  approvalsPageBanner: String, approvalsHeading: String, approvalsDescription: String,
   WhyIshanLaw: { content: String, image: String, bannerImage: String, images: [{ url: String }], reasons: [{ title: String, description: String, icon: String }] },
   bestPractices: [{ title: String, content: String, image: String }],
   bestPracticesBanner: String,
@@ -132,11 +141,12 @@ const aboutUsSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 // --- Regulatory Singletons ---
-const mandatoryDisclosureSchema = new mongoose.Schema({
+const mandatoryDisclosureSchema = new mongoose.Schema({ title: String, subtitle: String,
+  bannerImage: String,
   statement: String,
   disclosureItems: [{ category: String, items: String }],
-  antiRagging: { helpline: String, content: String, image: String, committeeText: String, reportMethods: [{ method: String }] },
-  grievanceRedressal: { content: String, image: String, portalLink: String, process: [{ step: String, description: String }] },
+  antiRagging: { title: String, subtitle: String, bannerImage: String, helpline: String, content: String, image: String, committeeText: String, reportMethods: [{ method: String }], pledgeTitle: String, pledgeText: String },
+  grievanceRedressal: { title: String, subtitle: String, bannerImage: String, content: String, image: String, portalLink: String, process: [{ step: String, description: String }] },
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
 
@@ -158,6 +168,9 @@ const facilitySchema = new mongoose.Schema({
   overviewHeading: String,
   overviewContent: String,
   image: String,
+  bannerImage: String,
+  editorialPhotos: [{ url: String }],
+  images: [{ url: String }],
   highlights: [{ title: String, description: String }],
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
@@ -343,6 +356,8 @@ const internshipExternshipSchema = new mongoose.Schema({
   subtitle: String,
   overview: String,
   image: String,
+  bannerImage: String,
+  images: [{ url: String }],
   opportunities: [{ title: String, desc: String }],
   pageGallery: { title: String, images: [{ url: String }] }
 }, { timestamps: true });
@@ -465,7 +480,9 @@ module.exports = {
   LegalPublication: mongoose.model('LegalPublication', publicationSchema, 'legal_publications'),
   LegalAlumni: mongoose.model('LegalAlumni', alumniSchema, 'legal_alumni'),
   LegalCareer: mongoose.model('LegalCareer', careerSchema, 'legal_careers'),
+  LegalCareersPage: mongoose.model('LegalCareersPage', careersPageSchema, 'legal_careerspage'),
   LegalFeedback: mongoose.model('LegalFeedback', feedbackSchema, 'legal_feedbacks'),
+  LegalFeedbackPage: mongoose.model('LegalFeedbackPage', feedbackPageSchema, 'legal_feedbackpage'),
   LegalAdmission: mongoose.model('LegalAdmission', admissionSchema, 'legal_admissions'),
   LegalProgramsOverview: mongoose.model('LegalProgramsOverview', programsOverviewSchema, 'legal_programsoverview'),
   LegalCertificateOverview: mongoose.model('LegalCertificateOverview', certificateOverviewSchema, 'legal_certificateoverview'),
