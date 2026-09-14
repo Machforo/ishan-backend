@@ -150,4 +150,11 @@ router.delete('/page-sections/:id', async (req, res) => {
     } catch(e) { res.status(500).json({error: e.message}); }
 });
 
+// Forward Page Layout & Dynamic Section Ordering requests
+const pageLayoutRoutes = require('./pageLayouts');
+router.use('/page-layout', (req, res, next) => {
+    req.url = '/iimt' + (req.url === '/' ? '/homepage' : req.url);
+    pageLayoutRoutes(req, res, next);
+});
+
 module.exports = router;

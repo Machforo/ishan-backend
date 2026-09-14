@@ -171,4 +171,12 @@ router.delete('/page-sections/:id', async (req, res) => {
     } catch(e) { res.status(500).json({error: e.message}); }
 });
 
+// Forward /page-layout requests directly to pageLayouts router
+const pageLayoutsRouter = require('./pageLayouts');
+router.use('/page-layout', (req, res, next) => {
+  req.url = '/pharmacy' + (req.url === '/' ? '/homepage' : req.url);
+  pageLayoutsRouter(req, res, next);
+});
+
 module.exports = router;
+

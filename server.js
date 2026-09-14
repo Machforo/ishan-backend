@@ -133,6 +133,47 @@ app.use('/api/dynamic-pages', dynamicPageRoutes);
 app.use('/api/page-settings', require('./routes/pageSettings'));
 app.use('/api/cloned-pages', require('./routes/clonedPages'));
 
+// Page Layout & Dynamic Section Ordering
+const pageLayoutRoutes = require('./routes/pageLayouts');
+app.use('/api/page-layouts', pageLayoutRoutes);
+// Alias for hospital portal endpoint: /api/hospital/page-layout/:pageId
+app.use('/api/hospital/page-layout', (req, res, next) => {
+  req.url = '/hospital' + (req.url === '/' ? '/homepage' : req.url);
+  pageLayoutRoutes(req, res, next);
+});
+// Alias for ayurveda portal endpoint: /api/ayurveda/page-layout/:pageId
+app.use('/api/ayurveda/page-layout', (req, res, next) => {
+  req.url = '/ayurveda' + (req.url === '/' ? '/homepage' : req.url);
+  pageLayoutRoutes(req, res, next);
+});
+// Alias for iimt / ascend portal endpoint: /api/iimt/page-layout/:pageId
+app.use('/api/iimt/page-layout', (req, res, next) => {
+  req.url = '/iimt' + (req.url === '/' ? '/homepage' : req.url);
+  pageLayoutRoutes(req, res, next);
+});
+// Alias for legal portal endpoint: /api/legal/page-layout/:pageId
+app.use('/api/legal/page-layout', (req, res, next) => {
+  req.url = '/legal' + (req.url === '/' ? '/homepage' : req.url);
+  pageLayoutRoutes(req, res, next);
+});
+// Alias for pharmacy portal endpoint: /api/pharmacy/page-layout/:pageId
+app.use('/api/pharmacy/page-layout', (req, res, next) => {
+  req.url = '/pharmacy' + (req.url === '/' ? '/homepage' : req.url);
+  pageLayoutRoutes(req, res, next);
+});
+// Alias for landing1 portal endpoint: /api/landing1/page-layout/:pageId
+app.use('/api/landing1/page-layout', (req, res, next) => {
+  req.url = '/landing1' + (req.url === '/' ? '/homepage' : req.url);
+  pageLayoutRoutes(req, res, next);
+});
+// Alias for landing2 portal endpoint: /api/landing2/page-layout/:pageId
+app.use('/api/landing2/page-layout', (req, res, next) => {
+  req.url = '/landing2' + (req.url === '/' ? '/homepage' : req.url);
+  pageLayoutRoutes(req, res, next);
+});
+
+
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Ishan CMS Backend is running' });
