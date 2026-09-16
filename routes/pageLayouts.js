@@ -2880,6 +2880,7 @@ router.put('/:siteKey/:pageId', async (req, res) => {
 router.post('/:siteKey/:pageId/sections', async (req, res) => {
   try {
     const siteKey = req.params.siteKey;
+    const portalAliases = getPortalAliases(siteKey);
     const pageId = normalizePageId(req.params.pageId);
     const newSection = req.body;
 
@@ -2891,7 +2892,7 @@ router.post('/:siteKey/:pageId/sections', async (req, res) => {
       newSection.id = `custom_${Date.now()}`;
     }
 
-    let layout = await PageLayout.findOne({ siteKey, pageId });
+    let layout = await PageLayout.findOne({ siteKey: { $in: portalAliases }, pageId });
     if (!layout) {
       const defaultSections = getDefaultSectionsFor(siteKey, pageId);
       layout = new PageLayout({ siteKey, pageId, sections: defaultSections });
@@ -2919,10 +2920,11 @@ router.post('/:siteKey/:pageId/sections', async (req, res) => {
 router.delete('/:siteKey/:pageId/sections/:sectionId', async (req, res) => {
   try {
     const siteKey = req.params.siteKey;
+    const portalAliases = getPortalAliases(siteKey);
     const pageId = normalizePageId(req.params.pageId);
     const { sectionId } = req.params;
 
-    const layout = await PageLayout.findOne({ siteKey, pageId });
+    const layout = await PageLayout.findOne({ siteKey: { $in: portalAliases }, pageId });
     if (!layout) {
       return res.status(404).json({ error: 'Layout not found' });
     }

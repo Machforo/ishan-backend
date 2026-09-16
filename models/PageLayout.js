@@ -12,7 +12,7 @@ const sectionItemSchema = new mongoose.Schema({
   name: { type: String, required: true },
   type: {
     type: String,
-    enum: ['builtin', 'custom_html', 'hero', 'split', 'cards', 'cta', 'faq'],
+    enum: ['builtin', 'custom_html', 'hero', 'split', 'cards', 'cta', 'faq', 'gallery'],
     default: 'builtin'
   },
   order: { type: Number, default: 0 },

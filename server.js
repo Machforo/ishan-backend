@@ -91,6 +91,7 @@ app.use('/api/job-applications', jobAppRoutes);
 app.use('/api/ayurveda', ayurvedaRoutes);
 app.use('/api/hospital', hospitalRoutes);
 app.use('/api/legal', legalRoutes);
+app.use('/api/law', legalRoutes);
 app.use('/api/pharmacy', pharmacyRoutes);
 
 const marqueeRoutes = require('./routes/marquee');
@@ -119,6 +120,8 @@ const landingPage1Routes = require('./routes/landingPage1');
 const landingPage2Routes = require('./routes/landingPage2');
 app.use('/api/landing1', landingPage1Routes);
 app.use('/api/landing2', landingPage2Routes);
+app.use('/api/landingPage1', landingPage1Routes);
+app.use('/api/landingPage2', landingPage2Routes);
 
 
 // Isolated IIMT routes
@@ -156,6 +159,11 @@ app.use('/api/legal/page-layout', (req, res, next) => {
   req.url = '/legal' + (req.url === '/' ? '/homepage' : req.url);
   pageLayoutRoutes(req, res, next);
 });
+// Alias for law portal endpoint: /api/law/page-layout/:pageId
+app.use('/api/law/page-layout', (req, res, next) => {
+  req.url = '/law' + (req.url === '/' ? '/homepage' : req.url);
+  pageLayoutRoutes(req, res, next);
+});
 // Alias for pharmacy portal endpoint: /api/pharmacy/page-layout/:pageId
 app.use('/api/pharmacy/page-layout', (req, res, next) => {
   req.url = '/pharmacy' + (req.url === '/' ? '/homepage' : req.url);
@@ -166,9 +174,19 @@ app.use('/api/landing1/page-layout', (req, res, next) => {
   req.url = '/landing1' + (req.url === '/' ? '/homepage' : req.url);
   pageLayoutRoutes(req, res, next);
 });
+// Alias for landingPage1 portal endpoint: /api/landingPage1/page-layout/:pageId
+app.use('/api/landingPage1/page-layout', (req, res, next) => {
+  req.url = '/landingPage1' + (req.url === '/' ? '/homepage' : req.url);
+  pageLayoutRoutes(req, res, next);
+});
 // Alias for landing2 portal endpoint: /api/landing2/page-layout/:pageId
 app.use('/api/landing2/page-layout', (req, res, next) => {
   req.url = '/landing2' + (req.url === '/' ? '/homepage' : req.url);
+  pageLayoutRoutes(req, res, next);
+});
+// Alias for landingPage2 portal endpoint: /api/landingPage2/page-layout/:pageId
+app.use('/api/landingPage2/page-layout', (req, res, next) => {
+  req.url = '/landingPage2' + (req.url === '/' ? '/homepage' : req.url);
   pageLayoutRoutes(req, res, next);
 });
 

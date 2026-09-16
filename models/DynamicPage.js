@@ -4,7 +4,7 @@ const dynamicPageSchema = new mongoose.Schema({
   portal: {
     type: String,
     required: true,
-    enum: ['iimt', 'ayurveda', 'law', 'pharmacy', 'hospital', 'landing1', 'landing2']
+    enum: ['iimt', 'ayurveda', 'law', 'legal', 'pharmacy', 'hospital', 'landing1', 'landing2', 'landingPage1', 'landingPage2']
   },
   title: {
     type: String,
