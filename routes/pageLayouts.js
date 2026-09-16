@@ -2609,6 +2609,32 @@ const normalizePageId = (pageId) => {
   return clean;
 };
 
+// Portal aliases helper for matching across variants
+const getPortalAliases = (siteKey) => {
+  if (siteKey === 'landing1' || siteKey === 'landingPage1' || siteKey === 'landing-page-1') {
+    return ['landing1', 'landingPage1', 'landing-page-1'];
+  }
+  if (siteKey === 'landing2' || siteKey === 'landingPage2' || siteKey === 'landing-page-2') {
+    return ['landing2', 'landingPage2', 'landing-page-2'];
+  }
+  if (siteKey === 'ayurveda' || siteKey === 'vedic') {
+    return ['ayurveda', 'vedic'];
+  }
+  if (siteKey === 'hospital') {
+    return ['hospital'];
+  }
+  if (siteKey === 'iimt' || siteKey === 'ascend') {
+    return ['iimt', 'ascend'];
+  }
+  if (siteKey === 'legal' || siteKey === 'law') {
+    return ['legal', 'law'];
+  }
+  if (siteKey === 'pharmacy') {
+    return ['pharmacy'];
+  }
+  return [siteKey];
+};
+
 /**
  * Helper to get default sections for a site and page.
  * Never returns a 2-section stub. Every page receives a realistic, rich multi-section schema.
@@ -2653,10 +2679,11 @@ function getDefaultSectionsFor(siteKey, pageId) {
 router.get('/:siteKey/:pageId', async (req, res) => {
   try {
     const siteKey = req.params.siteKey;
+    const portalAliases = getPortalAliases(siteKey);
     const pageId = normalizePageId(req.params.pageId);
     const urlPath = PAGE_URL_MAP[pageId] || ('/' + pageId);
 
-    let layout = await PageLayout.findOne({ siteKey, pageId }).lean();
+    let layout = await PageLayout.findOne({ siteKey: { $in: portalAliases }, pageId }).lean();
     const defaultSecs = getDefaultSectionsFor(siteKey, pageId);
     let sections = layout?.sections && layout.sections.length > 0 ? [...layout.sections] : defaultSecs;
 
@@ -2672,7 +2699,7 @@ router.get('/:siteKey/:pageId', async (req, res) => {
     // Synchronize with URL-based sections in GlobalSection
     try {
       const globalDoc = await GlobalSection.findOne({
-        portal: siteKey,
+        portal: { $in: portalAliases },
         $or: [{ urlPath }, { urlPath: urlPath.replace(/^\//, '') }]
       }).lean();
 
@@ -2746,8 +2773,9 @@ router.get('/:siteKey/:pageId', async (req, res) => {
 router.delete('/:siteKey/:pageId', async (req, res) => {
   try {
     const siteKey = req.params.siteKey;
+    const portalAliases = getPortalAliases(siteKey);
     const pageId = normalizePageId(req.params.pageId);
-    await PageLayout.findOneAndDelete({ siteKey, pageId });
+    await PageLayout.findOneAndDelete({ siteKey: { $in: portalAliases }, pageId });
     res.json({ message: 'Layout successfully reset to default sections', siteKey, pageId });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -2761,8 +2789,9 @@ router.delete('/:siteKey/:pageId', async (req, res) => {
 router.post('/:siteKey/:pageId/reset', async (req, res) => {
   try {
     const siteKey = req.params.siteKey;
+    const portalAliases = getPortalAliases(siteKey);
     const pageId = normalizePageId(req.params.pageId);
-    await PageLayout.findOneAndDelete({ siteKey, pageId });
+    await PageLayout.findOneAndDelete({ siteKey: { $in: portalAliases }, pageId });
     const defaultSections = getDefaultSectionsFor(siteKey, pageId);
     res.json({ message: 'Layout successfully reset to default sections', sections: defaultSections });
   } catch (err) {
@@ -2777,7 +2806,8 @@ router.post('/:siteKey/:pageId/reset', async (req, res) => {
 router.get('/:siteKey', async (req, res) => {
   try {
     const siteKey = req.params.siteKey;
-    const layouts = await PageLayout.find({ siteKey }).lean();
+    const portalAliases = getPortalAliases(siteKey);
+    const layouts = await PageLayout.find({ siteKey: { $in: portalAliases } }).lean();
     res.json(layouts);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -2792,6 +2822,7 @@ router.get('/:siteKey', async (req, res) => {
 router.put('/:siteKey/:pageId', async (req, res) => {
   try {
     const siteKey = req.params.siteKey;
+    const portalAliases = getPortalAliases(siteKey);
     const pageId = normalizePageId(req.params.pageId);
     let { sections } = req.body;
 
@@ -2807,7 +2838,7 @@ router.put('/:siteKey/:pageId', async (req, res) => {
     }));
 
     const layout = await PageLayout.findOneAndUpdate(
-      { siteKey, pageId },
+      { siteKey: { $in: portalAliases }, pageId },
       { $set: { siteKey, pageId, sections } },
       { returnDocument: 'after', upsert: true, setDefaultsOnInsert: true }
     );
@@ -2824,13 +2855,13 @@ router.put('/:siteKey/:pageId', async (req, res) => {
     try {
       if (customHtmlSections.length > 0) {
         await GlobalSection.findOneAndUpdate(
-          { portal: siteKey, urlPath },
+          { portal: { $in: portalAliases }, urlPath },
           { $set: { portal: siteKey, urlPath, sections: customHtmlSections } },
           { upsert: true, returnDocument: 'after' }
         );
       } else {
         // If all custom sections were removed or hidden, clear GlobalSection for this path
-        await GlobalSection.findOneAndDelete({ portal: siteKey, urlPath });
+        await GlobalSection.findOneAndDelete({ portal: { $in: portalAliases }, urlPath });
       }
     } catch (syncErr) {
       console.warn('Error syncing with GlobalSection:', syncErr.message);
