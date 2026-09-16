@@ -101,6 +101,12 @@ const DEFAULT_AYURVEDA_LAYOUTS = {
     { id: 'differentiators', name: 'Key Differentiators', type: 'builtin', order: 5, isHidden: false },
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 6, isHidden: false }
   ],
+  principal_message: [
+    { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
+    { id: 'profile', name: "Principal's Profile & Photo", type: 'builtin', order: 1, isHidden: false },
+    { id: 'message', name: "Welcome Message & Vision", type: 'builtin', order: 2, isHidden: false },
+    { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 3, isHidden: false }
+  ],
   mission_vision: [
     {
         "id": "header",
@@ -870,6 +876,14 @@ const DEFAULT_IIMT_LAYOUTS = {
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'content', name: 'Content', type: 'builtin', order: 1, isHidden: false },
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 2, isHidden: false }
+  ],
+  director_message: [
+    { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
+    { id: 'profile', name: "Director Profile & Leadership", type: 'builtin', order: 1, isHidden: false },
+    { id: 'message', name: "Director Welcome Message", type: 'builtin', order: 2, isHidden: false },
+    { id: 'candid_image', name: "Campus Setting & Photo", type: 'builtin', order: 3, isHidden: false },
+    { id: 'gallery', name: "Campus Leadership Gallery", type: 'builtin', order: 4, isHidden: false },
+    { id: 'cta', name: "Admissions Enquiry CTA", type: 'builtin', order: 5, isHidden: false }
   ],
   mission_vision: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
@@ -2540,6 +2554,8 @@ const PAGE_URL_MAP = {
   grievance_redressal: '/grievance-redressal',
   privacy_policy: '/privacy-policy',
   campus_life: '/campus-life',
+  principal_message: '/principal-message',
+  director_message: '/director-message',
 
   // Legal Subpages
   moot_court: '/moot-court',
@@ -2581,6 +2597,7 @@ const normalizePageId = (pageId) => {
   if (raw === 'programs-overview' || raw === 'education-overview' || raw === 'programsoverview') return 'education_overview';
   if (raw === 'why-choose-us' || raw === 'why-ishan-law' || raw === 'whyishanlaw') return 'why_choose_us';
   if (raw === 'principal-message' || raw === 'principalmessage') return 'principal_message';
+  if (raw === 'director-message' || raw === 'directormessage') return 'director_message';
   if (raw === 'pharmaceutical-chemistry' || raw === 'pharmaceuticalchemistry') return 'pharmaceutical_chemistry';
   if (raw === 'pharmacy-practice' || raw === 'pharmacypractice') return 'pharmacy_practice';
   if (raw === 'human-anatomy' || raw === 'humananatomy') return 'human_anatomy';
