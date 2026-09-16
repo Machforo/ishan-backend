@@ -2661,14 +2661,20 @@ router.get('/:siteKey/:pageId', async (req, res) => {
 
       if (globalDoc && Array.isArray(globalDoc.sections) && globalDoc.sections.length > 0) {
         globalDoc.sections.forEach((gSec, idx) => {
+          const gHtmlNorm = (gSec.htmlContent || '').replace(/\s+/g, ' ').trim();
           // Check if this global section is already in sections list
-          const exists = sections.some(
-            s => s.htmlContent === gSec.htmlContent || s.id === `url_sec_${idx}`
-          );
+          const exists = sections.some(s => {
+            if (s.id && (s.id === `url_sec_${idx}` || s.id.startsWith(`url_sec_${idx}_`))) return true;
+            if (s.htmlContent) {
+              const sHtmlNorm = s.htmlContent.replace(/\s+/g, ' ').trim();
+              if (sHtmlNorm === gHtmlNorm) return true;
+            }
+            return false;
+          });
 
           if (!exists && gSec.htmlContent) {
             sections.push({
-              id: `url_sec_${idx}_${Date.now()}`,
+              id: `url_sec_${idx}`,
               name: gSec.templateName || `URL-Based Section ${idx + 1}`,
               type: 'custom_html',
               order: sections.length,
@@ -2686,11 +2692,29 @@ router.get('/:siteKey/:pageId', async (req, res) => {
     // Sort sections by order
     sections.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
+    // Deduplicate sections to guarantee no section or duplicate HTML is ever returned twice
+    const seenIds = new Set();
+    const seenHtmls = new Set();
+    const dedupedSections = [];
+
+    for (const sec of sections) {
+      if (seenIds.has(sec.id)) continue;
+      seenIds.add(sec.id);
+
+      if (sec.type === 'custom_html' && sec.htmlContent) {
+        const norm = sec.htmlContent.replace(/\s+/g, ' ').trim();
+        if (seenHtmls.has(norm)) continue;
+        seenHtmls.add(norm);
+      }
+
+      dedupedSections.push(sec);
+    }
+
     res.json({
       siteKey,
       pageId,
       urlPath,
-      sections,
+      sections: dedupedSections,
       isDefault: !layout
     });
   } catch (err) {
