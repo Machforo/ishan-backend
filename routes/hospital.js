@@ -44,14 +44,20 @@ const GlobalGallery = require('../models/GlobalGallery');
 
 router.get('/page-galleries/by-url', async (req, res) => {
     try {
-        let url = req.query.url || '';
-        if (!url.startsWith('/')) url = '/' + url;
-        if (url.length > 1 && url.endsWith('/')) url = url.slice(0, -1);
-        
-        // Also check against the exact query just in case it was saved differently
+        let rawUrl = req.query.url || '/';
+        let cleanUrl = rawUrl.trim();
+        if (!cleanUrl.startsWith('/')) cleanUrl = '/' + cleanUrl;
+        if (cleanUrl.length > 1 && cleanUrl.endsWith('/')) cleanUrl = cleanUrl.slice(0, -1);
+        const noSlash = cleanUrl.replace(/^\//, '');
+
         const item = await GlobalGallery.findOne({ 
             portal: 'hospital', 
-            $or: [{ urlPath: url }, { urlPath: req.query.url }, { urlPath: url.substring(1) }] 
+            $or: [
+                { urlPath: cleanUrl },
+                { urlPath: rawUrl },
+                { urlPath: noSlash },
+                { urlPath: '/' + noSlash }
+            ] 
         });
         res.json(item || {});
     } catch(e) {
@@ -104,7 +110,21 @@ const GlobalSection = require('../models/GlobalSection');
 
 router.get('/page-sections/by-url', async (req, res) => {
     try {
-        const item = await GlobalSection.findOne({ portal: 'hospital', urlPath: req.query.url });
+        let rawUrl = req.query.url || '/';
+        let cleanUrl = rawUrl.trim();
+        if (!cleanUrl.startsWith('/')) cleanUrl = '/' + cleanUrl;
+        if (cleanUrl.length > 1 && cleanUrl.endsWith('/')) cleanUrl = cleanUrl.slice(0, -1);
+        const noSlash = cleanUrl.replace(/^\//, '');
+
+        const item = await GlobalSection.findOne({ 
+            portal: 'hospital', 
+            $or: [
+                { urlPath: cleanUrl },
+                { urlPath: rawUrl },
+                { urlPath: noSlash },
+                { urlPath: '/' + noSlash }
+            ] 
+        });
         res.json(item || {});
     } catch(e) {
         res.status(500).json({error: e.message});

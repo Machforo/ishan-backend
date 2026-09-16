@@ -102,17 +102,136 @@ const DEFAULT_AYURVEDA_LAYOUTS = {
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 6, isHidden: false }
   ],
   mission_vision: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "banner_image",
+        "name": "Banner Image",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "vision",
+        "name": "Vision Statement",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "mission",
+        "name": "Mission Statement",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "values",
+        "name": "Ayurvedic Principles & Values",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    },
+    {
+        "id": "gallery",
+        "name": "Photo & Media Gallery",
+        "type": "builtin",
+        "order": 5,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 6,
+        "isHidden": false
+    }
+],
   approvals: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'approvals_grid', name: 'Statutory Approvals Grid', type: 'builtin', order: 1, isHidden: false }
   ],
   why_choose_us: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Why Study at IAMC",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "hospital_tieup",
+        "name": "Attached 100+ Bed Ayurvedic Hospital",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "facilities_grid",
+        "name": "Clinical & Research Advantages",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   mandatory_disclosure: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "disclosure_docs",
+        "name": "NCISM & University Mandatory Disclosures",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    }
+],
   code_of_conduct: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "conduct_rules",
+        "name": "Campus Discipline & Conduct Code",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    }
+],
   faqs: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'faq_accordion', name: 'Faq Accordion', type: 'builtin', order: 1, isHidden: false },
@@ -125,7 +244,35 @@ const DEFAULT_AYURVEDA_LAYOUTS = {
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 3, isHidden: false }
   ],
   scope_of_bams: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Career Pathways & Scope of BAMS",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "sectors_grid",
+        "name": "Clinical Practice, Govt, Pharma & Research",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   syllabus: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'curriculum_overview', name: 'Curriculum Overview', type: 'builtin', order: 1, isHidden: false },
@@ -149,11 +296,109 @@ const DEFAULT_AYURVEDA_LAYOUTS = {
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 4, isHidden: false }
   ],
   certificate_programs: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Value-Added Certifications Overview",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "programs_list",
+        "name": "Industry Certification Modules",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   facilities: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Campus Infrastructure & Herbal Farm",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "facilities_grid",
+        "name": "Specialized Labs, Dissection & Pharmacy",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "gallery",
+        "name": "Campus Photo Gallery",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   herbal_garden: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Dravyaguna Herbal Garden & Demonstration Farm",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "species_grid",
+        "name": "Rare Medicinal Plant Species Showcase",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "gallery",
+        "name": "Garden Photo Gallery",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   hostel: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'hostel_banner', name: 'Hostel Banner', type: 'builtin', order: 1, isHidden: false },
@@ -163,7 +408,42 @@ const DEFAULT_AYURVEDA_LAYOUTS = {
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 5, isHidden: false }
   ],
   auditorium_sports: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Auditorium & Sports Complex Overview",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "amenities_grid",
+        "name": "Indoor Yoga Hall, Sports Grounds & Gym",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "gallery",
+        "name": "Sports & Event Facilities Gallery",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   faculty: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'leadership', name: 'Leadership', type: 'builtin', order: 1, isHidden: false },
@@ -171,27 +451,265 @@ const DEFAULT_AYURVEDA_LAYOUTS = {
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 3, isHidden: false }
   ],
   visiting_faculty: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Visiting & Guest Scholars Profile",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "faculty_grid",
+        "name": "Visiting Professors Directory",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   news_events: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "featured",
+        "name": "Featured Campus Announcements",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "events_list",
+        "name": "All News & Events Feed",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   events_calendar: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "calendar_view",
+        "name": "Academic & Event Calendar",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "upcoming_list",
+        "name": "Upcoming Schedule List",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   photo_gallery: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "category_filters",
+        "name": "Category Filter Tabs",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "gallery_grid",
+        "name": "Campus Photo Gallery Grid",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   video_gallery: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "video_grid",
+        "name": "Video Tours & Student Stories",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    }
+],
   press_coverage: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "press_clippings",
+        "name": "Print & Digital Media Coverage",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    }
+],
   downloads: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'download_list', name: 'Download List', type: 'builtin', order: 1, isHidden: false }
   ],
   past_papers: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "filter_bar",
+        "name": "Semester & Subject Filter Bar",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "papers_list",
+        "name": "Past Exam Question Papers",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   fee_payment: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "payment_methods",
+        "name": "Online Payment Gateway Options",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "bank_details",
+        "name": "Official Bank Account Details",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Fee Support Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   student_portal: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "portal_links",
+        "name": "ERP, LMS & Library Quick Links",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "announcements",
+        "name": "Student Notice Board",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Student Support Helpline",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   placements: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'stats_bar', name: 'Stats Bar', type: 'builtin', order: 1, isHidden: false },
@@ -200,9 +718,79 @@ const DEFAULT_AYURVEDA_LAYOUTS = {
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 4, isHidden: false }
   ],
   research: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Ayurvedic Research & Clinical Trials",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "projects_list",
+        "name": "Ongoing Drug Standardization & Trials",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "gallery",
+        "name": "Research Laboratories Gallery",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   research_journal: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "journal_overview",
+        "name": "IIMT Journal of Management & IT",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "editorial_board",
+        "name": "Editorial Board Members",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "call_for_papers",
+        "name": "Call for Research Papers & Guidelines",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   publications: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'overview', name: 'Overview & Highlights', type: 'builtin', order: 1, isHidden: false },
@@ -210,7 +798,42 @@ const DEFAULT_AYURVEDA_LAYOUTS = {
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 3, isHidden: false }
   ],
   alumni_network: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "IAMC Vaidya Alumni Association",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "distinguished_alumni",
+        "name": "Renowned Ayurvedic Practitioners & Alumni",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "register_form",
+        "name": "Alumni Registration & Directory",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   contact: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'contact_cards', name: 'Contact & Location Info Cards', type: 'builtin', order: 1, isHidden: false },
@@ -268,31 +891,409 @@ const DEFAULT_IIMT_LAYOUTS = {
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 2, isHidden: false }
   ],
   best_practices: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "banner_image",
+        "name": "Banner Image",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "practices_list",
+        "name": "NAAC Best Practices List",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "gallery",
+        "name": "Photo & Media Gallery",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   green_initiatives: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "banner_image",
+        "name": "Banner Image",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "initiatives_list",
+        "name": "Green Campus Initiatives",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "gallery",
+        "name": "Green Campus Gallery",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   mandatory_disclosure: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'compliance_statement', name: 'Compliance Statement', type: 'builtin', order: 1, isHidden: false }
   ],
   education_overview: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Academic Framework & Overview",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "programs_grid",
+        "name": "Degree Programs Directory",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "pedagogy_highlights",
+        "name": "Teaching Pedagogy & Methodology",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   pedagogy_labs: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Pedagogy & Experiential Learning",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "labs_grid",
+        "name": "Computer Labs & Simulation Facilities",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "gallery",
+        "name": "Laboratories Photo Gallery",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   certificate_programs: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Value-Added Certifications Overview",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "programs_list",
+        "name": "Industry Certification Modules",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   skill_development: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Skill Cell Framework & Vision",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "modules_grid",
+        "name": "Communication & Tech Skill Tracks",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "gallery",
+        "name": "Training Workshops Gallery",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   e_cell: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "about",
+        "name": "About E-Cell & Incubation Hub",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "offerings",
+        "name": "Mentorship & Venture Offerings",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "internships",
+        "name": "Corporate Internship Programs",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "stories",
+        "name": "Entrepreneurial Success Stories",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 5,
+        "isHidden": false
+    }
+],
   guest_lectures: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Corporate Leader Series Overview",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "lectures_grid",
+        "name": "Recent & Upcoming Guest Lectures",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "gallery",
+        "name": "Session Highlights Gallery",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   industrial_visits: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Experiential Industry Visits Overview",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "visits_grid",
+        "name": "Corporate & Plant Excursions",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "gallery",
+        "name": "Industrial Visit Photo Gallery",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   debates_gd: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Public Speaking & GD Overview",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "activities_grid",
+        "name": "Debates, GDs & Mock Parliament",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "gallery",
+        "name": "Activity Photo Gallery",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   news_events: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "featured",
+        "name": "Featured Campus Announcements",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "events_list",
+        "name": "All News & Events Feed",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   infrastructure: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'overview', name: 'Overview & Highlights', type: 'builtin', order: 1, isHidden: false },
@@ -329,30 +1330,233 @@ const DEFAULT_IIMT_LAYOUTS = {
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 2, isHidden: false }
   ],
   events_calendar: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "calendar_view",
+        "name": "Academic & Event Calendar",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "upcoming_list",
+        "name": "Upcoming Schedule List",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   faqs: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'faq_accordion', name: 'Faq Accordion', type: 'builtin', order: 1, isHidden: false },
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 2, isHidden: false }
   ],
   photo_gallery: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "category_filters",
+        "name": "Category Filter Tabs",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "gallery_grid",
+        "name": "Campus Photo Gallery Grid",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   video_gallery: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "video_grid",
+        "name": "Video Tours & Student Stories",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    }
+],
   press_coverage: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "press_clippings",
+        "name": "Print & Digital Media Coverage",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    }
+],
   downloads: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'download_list', name: 'Download List', type: 'builtin', order: 1, isHidden: false }
   ],
   past_papers: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "filter_bar",
+        "name": "Semester & Subject Filter Bar",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "papers_list",
+        "name": "Past Exam Question Papers",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   code_of_conduct: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "conduct_rules",
+        "name": "Campus Discipline & Conduct Code",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    }
+],
   fee_payment: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "payment_methods",
+        "name": "Online Payment Gateway Options",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "bank_details",
+        "name": "Official Bank Account Details",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Fee Support Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   student_portal: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "portal_links",
+        "name": "ERP, LMS & Library Quick Links",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "announcements",
+        "name": "Student Notice Board",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Student Support Helpline",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   admissions: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'alert_banner', name: 'Alert Banner', type: 'builtin', order: 1, isHidden: false },
@@ -362,7 +1566,28 @@ const DEFAULT_IIMT_LAYOUTS = {
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 5, isHidden: false }
   ],
   admissions_enquiry: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "enquiry_form",
+        "name": "Admissions Enquiry Form",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "counselling_info",
+        "name": "Counseling & Helpline Cards",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    }
+],
   consultation: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'booking_form', name: 'Booking Form', type: 'builtin', order: 1, isHidden: false }
@@ -382,13 +1607,76 @@ const DEFAULT_IIMT_LAYOUTS = {
     { id: 'cta', name: 'Admissions Enquiry CTA', type: 'builtin', order: 6, isHidden: false }
   ],
   research_journal: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "journal_overview",
+        "name": "IIMT Journal of Management & IT",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "editorial_board",
+        "name": "Editorial Board Members",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "call_for_papers",
+        "name": "Call for Research Papers & Guidelines",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 4,
+        "isHidden": false
+    }
+],
   faculty: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'core_faculty_grid', name: 'Core Faculty Grid', type: 'builtin', order: 1, isHidden: false }
   ],
   visiting_faculty: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "overview",
+        "name": "Visiting & Guest Scholars Profile",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "faculty_grid",
+        "name": "Visiting Professors Directory",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "cta",
+        "name": "Admissions Enquiry CTA",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   contact: [
     { id: 'header', name: 'Page Header & Intro', type: 'builtin', order: 0, isHidden: false },
     { id: 'contact_cards', name: 'Contact & Location Info Cards', type: 'builtin', order: 1, isHidden: false },
@@ -404,11 +1692,88 @@ const DEFAULT_IIMT_LAYOUTS = {
     { id: 'feedback_form', name: 'Feedback Form', type: 'builtin', order: 1, isHidden: false }
   ],
   anti_ragging: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "policy_statement",
+        "name": "UGC Zero-Tolerance Anti-Ragging Policy",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "committee_members",
+        "name": "Anti-Ragging Squad & Committee",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "helpline",
+        "name": "24x7 Emergency Anti-Ragging Helpline",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   grievance_redressal: [
-  ],
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "grievance_mechanism",
+        "name": "Internal Grievance Redressal Procedure",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "committee",
+        "name": "Grievance Redressal Committee",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    },
+    {
+        "id": "submission_form",
+        "name": "Submit Online Grievance Form",
+        "type": "builtin",
+        "order": 3,
+        "isHidden": false
+    }
+],
   privacy_policy: [
-  ]
+    {
+        "id": "header",
+        "name": "Page Header & Intro",
+        "type": "builtin",
+        "order": 0,
+        "isHidden": false
+    },
+    {
+        "id": "policy_content",
+        "name": "Data Protection & Privacy Policy",
+        "type": "builtin",
+        "order": 1,
+        "isHidden": false
+    },
+    {
+        "id": "contact_dpo",
+        "name": "Data Protection Officer Contact",
+        "type": "builtin",
+        "order": 2,
+        "isHidden": false
+    }
+]
 };
 
 // Default built-in sections for Legal portal (apex-legal / Ishan Law)
@@ -1276,7 +2641,16 @@ router.get('/:siteKey/:pageId', async (req, res) => {
 
     let layout = await PageLayout.findOne({ siteKey, pageId }).lean();
     const defaultSecs = getDefaultSectionsFor(siteKey, pageId);
-    let sections = layout?.sections ? [...layout.sections] : defaultSecs;
+    let sections = layout?.sections && layout.sections.length > 0 ? [...layout.sections] : defaultSecs;
+
+    // Smart auto-recovery: If saved layout has no builtin sections or only custom sections, merge with defaultSecs
+    if (layout && layout.sections && defaultSecs && defaultSecs.length > 0) {
+      const hasBuiltins = layout.sections.some(s => s.type === 'builtin');
+      if (!hasBuiltins) {
+        const customSecs = layout.sections.filter(s => s.type !== 'builtin');
+        sections = [...defaultSecs, ...customSecs];
+      }
+    }
 
     // Synchronize with URL-based sections in GlobalSection
     try {
